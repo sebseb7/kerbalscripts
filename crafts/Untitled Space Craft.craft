@@ -1,0 +1,4127 @@
+ship = Untitled Space Craft
+version = 1.2.0
+description = 
+type = VAB
+size = 1.9548744,3.68235779,2.0780046
+PART
+{
+	part = ALCOR.LanderCapsule_4294196788
+	partName = Part
+	pos = 0,15,0
+	attPos = 0,0,0
+	attPos0 = 0,15,0
+	rot = 0,0,0,1
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = -1
+	resPri = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = -1
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	link = HECS2.ProbeCore_4294182834
+	link = ExtCamRadialVErt_4294132564
+	link = JSIPrimitiveExternalCamera_4294122292
+	link = parachuteDrogue_4294084102
+	attN = bottom,parachuteDrogue_4294084102
+	attN = top,HECS2.ProbeCore_4294182834
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleCommand
+		isEnabled = True
+		hibernation = False
+		hibernateOnWarp = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			HibernateToggle
+			{
+				actionGroup = None
+				active = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleSAS
+		isEnabled = True
+		standaloneToggle = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleReactionWheel
+		isEnabled = True
+		actuatorModeCycle = 0
+		authorityLimiter = 100
+		stateString = Active
+		stagingEnabled = True
+		WheelState = Active
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			CycleAction
+			{
+				actionGroup = None
+			}
+			Activate
+			{
+				actionGroup = None
+			}
+			Deactivate
+			{
+				actionGroup = None
+			}
+			Toggle
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleAnimateGeneric
+		isEnabled = True
+		aniState = LOCKED
+		animSwitch = True
+		animTime = 0
+		animSpeed = 0.5
+		deployPercent = 100
+		animationIsDisabled = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleAnimateGeneric
+		isEnabled = True
+		aniState = LOCKED
+		animSwitch = True
+		animTime = 0
+		animSpeed = 0.5
+		deployPercent = 100
+		animationIsDisabled = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleAnimateGeneric
+		isEnabled = True
+		aniState = LOCKED
+		animSwitch = True
+		animTime = 0
+		animSpeed = 0.5
+		deployPercent = 100
+		animationIsDisabled = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleAnimateGeneric
+		isEnabled = True
+		aniState = LOCKED
+		animSwitch = True
+		animTime = 0
+		animSpeed = 0.5
+		deployPercent = 100
+		animationIsDisabled = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleAnimateGeneric
+		isEnabled = True
+		aniState = LOCKED
+		animSwitch = True
+		animTime = 0
+		animSpeed = 1
+		deployPercent = 100
+		animationIsDisabled = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleScienceExperiment
+		isEnabled = True
+		Deployed = False
+		Inoperable = False
+		cooldownToGo = 0
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			DeployAction
+			{
+				actionGroup = None
+			}
+			ResetAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleScienceContainer
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			CollectAllAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = FlagDecal
+		isEnabled = True
+		flagDisplayed = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleConductionMultiplier
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = RasterPropMonitorComputer
+		isEnabled = True
+		vesselDescription = 
+		RPMCid = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleModActions
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			Action1
+			{
+				actionGroup = None
+				active = False
+			}
+			Action2
+			{
+				actionGroup = None
+				active = False
+			}
+			Action3
+			{
+				actionGroup = None
+				active = False
+			}
+			Action4
+			{
+				actionGroup = None
+				active = False
+			}
+			Action5
+			{
+				actionGroup = None
+				active = False
+			}
+			Action6
+			{
+				actionGroup = None
+				active = False
+			}
+			Action7
+			{
+				actionGroup = None
+				active = False
+			}
+			Action8
+			{
+				actionGroup = None
+				active = False
+			}
+			Action9
+			{
+				actionGroup = None
+				active = False
+			}
+			Action10
+			{
+				actionGroup = None
+				active = False
+			}
+			Action11
+			{
+				actionGroup = None
+				active = False
+			}
+			Action12
+			{
+				actionGroup = None
+				active = False
+			}
+			Action13
+			{
+				actionGroup = None
+				active = False
+			}
+			Action14
+			{
+				actionGroup = None
+				active = False
+			}
+			Action15
+			{
+				actionGroup = None
+				active = False
+			}
+			Action16
+			{
+				actionGroup = None
+				active = False
+			}
+			Action17
+			{
+				actionGroup = None
+				active = False
+			}
+			Action18
+			{
+				actionGroup = None
+				active = False
+			}
+			Action19
+			{
+				actionGroup = None
+				active = False
+			}
+			Action20
+			{
+				actionGroup = None
+				active = False
+			}
+			Action21
+			{
+				actionGroup = None
+				active = False
+			}
+			Action22
+			{
+				actionGroup = None
+				active = False
+			}
+			Action23
+			{
+				actionGroup = None
+				active = False
+			}
+			Action24
+			{
+				actionGroup = None
+				active = False
+			}
+			Action25
+			{
+				actionGroup = None
+				active = False
+			}
+			Action26
+			{
+				actionGroup = None
+				active = False
+			}
+			Action27
+			{
+				actionGroup = None
+				active = False
+			}
+			Action28
+			{
+				actionGroup = None
+				active = False
+			}
+			Action29
+			{
+				actionGroup = None
+				active = False
+			}
+			Action30
+			{
+				actionGroup = None
+				active = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = AYCrewPart
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = AYPart
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		VesselProdPartsList
+		{
+		}
+		VesselConsPartsList
+		{
+			AYPwrPartList
+			{
+				PrtName = ALCOR.LanderCapsule
+				PrtTitle = ALCOR Pod(A)
+				PrtModuleName = ModuleCommand
+				PrtSubsystem = False
+				PrtPower = 0
+				PrtPowerF = 0
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = False
+				PrtEmergShutDnInclude = False
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ConsPartKey = 4294196788,ModuleCommand
+			}
+			AYPwrPartList
+			{
+				PrtName = ALCOR.LanderCapsule
+				PrtTitle = ALCOR Pod(A)
+				PrtModuleName = ModuleReactionWheel
+				PrtSubsystem = False
+				PrtPower = 2.1
+				PrtPowerF = 2.0999999
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = True
+				PrtEmergShutDnInclude = True
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ConsPartKey = 4294196788,ModuleReactionWheel
+			}
+			AYPwrPartList
+			{
+				PrtName = AmpYear SubSystems-Max
+				PrtTitle = AmpYear SubSystems-Max
+				PrtModuleName = RCS
+				PrtSubsystem = True
+				PrtPower = 0
+				PrtPowerF = 0
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = True
+				PrtEmergShutDnInclude = True
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ConsPartKey = 4294196788,RCS
+			}
+			AYPwrPartList
+			{
+				PrtName = AmpYear SubSystems-Max
+				PrtTitle = AmpYear SubSystems-Max
+				PrtModuleName = SAS
+				PrtSubsystem = True
+				PrtPower = 0
+				PrtPowerF = 0
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = True
+				PrtEmergShutDnInclude = True
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ConsPartKey = 4294196788,SAS
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = SCANRPMStorage
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = TrajectoriesVesselSettings
+		isEnabled = True
+		EntryAngle = 0
+		EntryHorizon = False
+		HighAngle = 0
+		HighHorizon = False
+		LowAngle = 0
+		LowHorizon = False
+		GroundAngle = 0
+		GroundHorizon = False
+		ProgradeEntry = False
+		RetrogradeEntry = False
+		hasTarget = False
+		targetLocation = (0, 0, 0)
+		targetReferenceBody = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleResourceActions2
+		isEnabled = True
+		setupRun = True
+		lockResource = False
+		lockEC = False
+		showRes = True
+		showEC = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleResource
+			{
+				actionGroup = None
+			}
+			EnableResource
+			{
+				actionGroup = None
+			}
+			DisableResource
+			{
+				actionGroup = None
+			}
+			ToggleElec
+			{
+				actionGroup = None
+			}
+			EnableElec
+			{
+				actionGroup = None
+			}
+			DisableElec
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleFuelCrossfeedActions2
+		isEnabled = True
+		setupRun = True
+		allowCrossfeed = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleCrossfeed
+			{
+				actionGroup = None
+			}
+			EnableCrossfeed
+			{
+				actionGroup = None
+			}
+			DisableCrossfeed
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleGoEvaActions2
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			KerbalOnEVA
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = PersistentDynamicPodNames
+		isEnabled = True
+		storedVesselName = 
+		vesselType = Lander
+		priority = 0
+		needsManualInput = False
+		used = False
+		originalStoredVesselName = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleTripLogger
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		Log
+		{
+			flight = 0
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 120
+		maxAmount = 120
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+	RESOURCE
+	{
+		name = MonoPropellant
+		amount = 20
+		maxAmount = 20
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+	RESOURCE
+	{
+		name = ReservePower
+		amount = 80
+		maxAmount = 80
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = HECS2.ProbeCore_4294182834
+	partName = Part
+	pos = 0,16.3699989,0
+	attPos = 0,0,0
+	attPos0 = 0,1.36999893,0
+	rot = 0,0,0,1
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = -1
+	resPri = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = -1
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	link = RC.radial_4294177536
+	link = smallRadialEngine_4294169144
+	link = rcsTankMini_4294158918
+	link = KWRadBattLargeS_4294098152
+	attN = top,rcsTankMini_4294158918
+	attN = bottom,ALCOR.LanderCapsule_4294196788
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleDataTransmitter
+		isEnabled = True
+		xmitIncomplete = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			StartTransmissionAction
+			{
+				actionGroup = None
+				active = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleCommand
+		isEnabled = True
+		hibernation = False
+		hibernateOnWarp = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			HibernateToggle
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleReactionWheel
+		isEnabled = True
+		actuatorModeCycle = 0
+		authorityLimiter = 100
+		stateString = Active
+		stagingEnabled = True
+		WheelState = Active
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			CycleAction
+			{
+				actionGroup = None
+			}
+			Activate
+			{
+				actionGroup = None
+			}
+			Deactivate
+			{
+				actionGroup = None
+			}
+			Toggle
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleSAS
+		isEnabled = True
+		standaloneToggle = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleKerbNetAccess
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OpenKerbNetAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleScienceContainer
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			CollectAllAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleModActions
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			Action1
+			{
+				actionGroup = None
+				active = False
+			}
+			Action2
+			{
+				actionGroup = None
+				active = False
+			}
+			Action3
+			{
+				actionGroup = None
+				active = False
+			}
+			Action4
+			{
+				actionGroup = None
+				active = False
+			}
+			Action5
+			{
+				actionGroup = None
+				active = False
+			}
+			Action6
+			{
+				actionGroup = None
+				active = False
+			}
+			Action7
+			{
+				actionGroup = None
+				active = False
+			}
+			Action8
+			{
+				actionGroup = None
+				active = False
+			}
+			Action9
+			{
+				actionGroup = None
+				active = False
+			}
+			Action10
+			{
+				actionGroup = None
+				active = False
+			}
+			Action11
+			{
+				actionGroup = None
+				active = False
+			}
+			Action12
+			{
+				actionGroup = None
+				active = False
+			}
+			Action13
+			{
+				actionGroup = None
+				active = False
+			}
+			Action14
+			{
+				actionGroup = None
+				active = False
+			}
+			Action15
+			{
+				actionGroup = None
+				active = False
+			}
+			Action16
+			{
+				actionGroup = None
+				active = False
+			}
+			Action17
+			{
+				actionGroup = None
+				active = False
+			}
+			Action18
+			{
+				actionGroup = None
+				active = False
+			}
+			Action19
+			{
+				actionGroup = None
+				active = False
+			}
+			Action20
+			{
+				actionGroup = None
+				active = False
+			}
+			Action21
+			{
+				actionGroup = None
+				active = False
+			}
+			Action22
+			{
+				actionGroup = None
+				active = False
+			}
+			Action23
+			{
+				actionGroup = None
+				active = False
+			}
+			Action24
+			{
+				actionGroup = None
+				active = False
+			}
+			Action25
+			{
+				actionGroup = None
+				active = False
+			}
+			Action26
+			{
+				actionGroup = None
+				active = False
+			}
+			Action27
+			{
+				actionGroup = None
+				active = False
+			}
+			Action28
+			{
+				actionGroup = None
+				active = False
+			}
+			Action29
+			{
+				actionGroup = None
+				active = False
+			}
+			Action30
+			{
+				actionGroup = None
+				active = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = AYCrewPart
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = AYPart
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		VesselProdPartsList
+		{
+		}
+		VesselConsPartsList
+		{
+			AYPwrPartList
+			{
+				PrtName = HECS2.ProbeCore
+				PrtTitle = Probodobodyne HECS2
+				PrtModuleName = ModuleCommand
+				PrtSubsystem = False
+				PrtPower = 0.05
+				PrtPowerF = 0.0500000007
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = False
+				PrtEmergShutDnInclude = False
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ConsPartKey = 4294182834,ModuleCommand
+			}
+			AYPwrPartList
+			{
+				PrtName = HECS2.ProbeCore
+				PrtTitle = Probodobodyne HECS2
+				PrtModuleName = ModuleDataTransmitter
+				PrtSubsystem = False
+				PrtPower = 6
+				PrtPowerF = 6
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = True
+				PrtEmergShutDnInclude = True
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ConsPartKey = 4294182834,ModuleDataTransmitter
+			}
+			AYPwrPartList
+			{
+				PrtName = HECS2.ProbeCore
+				PrtTitle = Probodobodyne HECS2
+				PrtModuleName = ModuleReactionWheel
+				PrtSubsystem = False
+				PrtPower = 5
+				PrtPowerF = 5
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = True
+				PrtEmergShutDnInclude = True
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ConsPartKey = 4294182834,ModuleReactionWheel
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = TrajectoriesVesselSettings
+		isEnabled = True
+		EntryAngle = 0
+		EntryHorizon = False
+		HighAngle = 0
+		HighHorizon = False
+		LowAngle = 0
+		LowHorizon = False
+		GroundAngle = 0
+		GroundHorizon = False
+		ProgradeEntry = False
+		RetrogradeEntry = False
+		hasTarget = False
+		targetLocation = (0, 0, 0)
+		targetReferenceBody = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleResourceActions2
+		isEnabled = True
+		setupRun = True
+		lockResource = False
+		lockEC = False
+		showRes = True
+		showEC = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleResource
+			{
+				actionGroup = None
+			}
+			EnableResource
+			{
+				actionGroup = None
+			}
+			DisableResource
+			{
+				actionGroup = None
+			}
+			ToggleElec
+			{
+				actionGroup = None
+			}
+			EnableElec
+			{
+				actionGroup = None
+			}
+			DisableElec
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleFuelCrossfeedActions2
+		isEnabled = True
+		setupRun = True
+		allowCrossfeed = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleCrossfeed
+			{
+				actionGroup = None
+			}
+			EnableCrossfeed
+			{
+				actionGroup = None
+			}
+			DisableCrossfeed
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = PersistentDynamicPodNames
+		isEnabled = True
+		storedVesselName = 
+		vesselType = Lander
+		priority = 0
+		needsManualInput = False
+		used = False
+		originalStoredVesselName = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleTripLogger
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		Log
+		{
+			flight = 0
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 1000
+		maxAmount = 1000
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+	RESOURCE
+	{
+		name = ReservePower
+		amount = 80
+		maxAmount = 80
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = RC.radial_4294177536
+	partName = Part
+	pos = -0.627856374,16.3324795,-0.362493157
+	attPos = 0,0,0
+	attPos0 = -0.627856374,-0.037519455,-0.362493157
+	rot = -1.03238222E-07,0.500000119,5.96046306E-08,0.866025329
+	attRot = 0,0,0,1
+	attRot0 = -1.03238222E-07,0.500000119,5.96046306E-08,0.866025329
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 0
+	resPri = 0
+	dstg = 0
+	sidx = 0
+	sqor = 0
+	sepI = -1
+	attm = 1
+	modCost = 353
+	modMass = 0
+	modSize = 0,0,0
+	srfN = srfAttach,HECS2.ProbeCore_4294182834
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = RealChuteModule
+		isEnabled = True
+		caseMass = 0.0799999982
+		cutSpeed = 0.5
+		timer = 0
+		mustGoDown = True
+		deployOnGround = False
+		spareChutes = 5
+		initiated = True
+		wait = True
+		armed = False
+		oneWasDeployed = False
+		staged = False
+		launched = False
+		chuteCount = 5
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ActionDeploy
+			{
+				actionGroup = None
+			}
+			ActionCut
+			{
+				actionGroup = None
+			}
+			ActionArm
+			{
+				actionGroup = None
+			}
+			ActionDisarm
+			{
+				actionGroup = None
+			}
+		}
+		PARACHUTE
+		{
+			material = Nylon
+			preDeployedDiameter = 1.25
+			deployedDiameter = 30
+			minIsPressure = False
+			capOff = False
+			minDeployment = 30000
+			minPressure = 0.00999999978
+			deploymentAlt = 700
+			cutAlt = -1
+			preDeploymentSpeed = 2
+			deploymentSpeed = 6
+			time = 0
+			parachuteName = RC_canopy
+			baseParachuteName = RC_canopy
+			capName = cap
+			preDeploymentAnimation = RC_chute_semi_deploy
+			deploymentAnimation = RC_chute_full_deploy
+			forcedOrientation = 0
+			depState = STOWED
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ProceduralChute
+		isEnabled = True
+		caseId = 0
+		lastCaseId = 0
+		size = 0
+		lastSize = 0
+		planets = 0
+		presetId = 0
+		originalSize = (1, 1, 1)
+		top = 0
+		bottom = 0
+		debut = 1
+		initiated = True
+		mustGoDown = True
+		deployOnGround = False
+		secondaryChute = False
+		timer = 0s
+		cutSpeed = 0.5
+		spares = 5
+		landingAlt = 0
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		CHUTE
+		{
+			chuteID = 0
+			modelID = 0
+			typeID = 0
+			lastTypeID = 0
+			position = -1.49856901,18.4368534,6.24299574
+			isPressure = False
+			calcSelect = True
+			getMass = True
+			useDry = True
+			preDepDiam = 1.25
+			depDiam = 30
+			predepClause = 30000
+			mass = 10
+			landingSpeed = 6
+			deceleration = 10
+			refDepAlt = 700
+			chuteCount = 1
+			deploymentAlt = 700
+			cutAlt = 
+			preDepSpeed = 2
+			depSpeed = 6
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleTestSubject
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleModActions
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			Action1
+			{
+				actionGroup = None
+				active = False
+			}
+			Action2
+			{
+				actionGroup = None
+				active = False
+			}
+			Action3
+			{
+				actionGroup = None
+				active = False
+			}
+			Action4
+			{
+				actionGroup = None
+				active = False
+			}
+			Action5
+			{
+				actionGroup = None
+				active = False
+			}
+			Action6
+			{
+				actionGroup = None
+				active = False
+			}
+			Action7
+			{
+				actionGroup = None
+				active = False
+			}
+			Action8
+			{
+				actionGroup = None
+				active = False
+			}
+			Action9
+			{
+				actionGroup = None
+				active = False
+			}
+			Action10
+			{
+				actionGroup = None
+				active = False
+			}
+			Action11
+			{
+				actionGroup = None
+				active = False
+			}
+			Action12
+			{
+				actionGroup = None
+				active = False
+			}
+			Action13
+			{
+				actionGroup = None
+				active = False
+			}
+			Action14
+			{
+				actionGroup = None
+				active = False
+			}
+			Action15
+			{
+				actionGroup = None
+				active = False
+			}
+			Action16
+			{
+				actionGroup = None
+				active = False
+			}
+			Action17
+			{
+				actionGroup = None
+				active = False
+			}
+			Action18
+			{
+				actionGroup = None
+				active = False
+			}
+			Action19
+			{
+				actionGroup = None
+				active = False
+			}
+			Action20
+			{
+				actionGroup = None
+				active = False
+			}
+			Action21
+			{
+				actionGroup = None
+				active = False
+			}
+			Action22
+			{
+				actionGroup = None
+				active = False
+			}
+			Action23
+			{
+				actionGroup = None
+				active = False
+			}
+			Action24
+			{
+				actionGroup = None
+				active = False
+			}
+			Action25
+			{
+				actionGroup = None
+				active = False
+			}
+			Action26
+			{
+				actionGroup = None
+				active = False
+			}
+			Action27
+			{
+				actionGroup = None
+				active = False
+			}
+			Action28
+			{
+				actionGroup = None
+				active = False
+			}
+			Action29
+			{
+				actionGroup = None
+				active = False
+			}
+			Action30
+			{
+				actionGroup = None
+				active = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = AYPart
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		VesselProdPartsList
+		{
+		}
+		VesselConsPartsList
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleFuelCrossfeedActions2
+		isEnabled = True
+		setupRun = True
+		allowCrossfeed = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleCrossfeed
+			{
+				actionGroup = None
+			}
+			EnableCrossfeed
+			{
+				actionGroup = None
+			}
+			DisableCrossfeed
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = smallRadialEngine_4294169144
+	partName = Part
+	pos = -0.780045271,16.3834953,0.450359315
+	attPos = 0,0,0
+	attPos0 = -0.780045271,0.0134963989,0.450359315
+	rot = -1.03238222E-07,-0.500000119,-5.96046341E-08,0.866025329
+	attRot = 0,0,0,1
+	attRot0 = -1.03238222E-07,-0.500000119,-5.96046341E-08,0.866025329
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 0
+	resPri = 0
+	dstg = 0
+	sidx = 1
+	sqor = 0
+	sepI = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	srfN = srfAttach,HECS2.ProbeCore_4294182834
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleEnginesFX
+		isEnabled = True
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 0
+		thrustPercentage = 100
+		manuallyOverridden = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = None
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+			}
+			ActivateAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleGimbal
+		isEnabled = True
+		gimbalLock = False
+		gimbalLimiter = 100
+		currentShowToggles = False
+		enableYaw = True
+		enablePitch = True
+		enableRoll = True
+		gimbalActive = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+			}
+			LockAction
+			{
+				actionGroup = None
+			}
+			FreeAction
+			{
+				actionGroup = None
+			}
+			TogglePitchAction
+			{
+				actionGroup = None
+			}
+			ToggleYawAction
+			{
+				actionGroup = None
+			}
+			ToggleRollAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleTestSubject
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleModActions
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			Action1
+			{
+				actionGroup = None
+				active = False
+			}
+			Action2
+			{
+				actionGroup = None
+				active = False
+			}
+			Action3
+			{
+				actionGroup = None
+				active = False
+			}
+			Action4
+			{
+				actionGroup = None
+				active = False
+			}
+			Action5
+			{
+				actionGroup = None
+				active = False
+			}
+			Action6
+			{
+				actionGroup = None
+				active = False
+			}
+			Action7
+			{
+				actionGroup = None
+				active = False
+			}
+			Action8
+			{
+				actionGroup = None
+				active = False
+			}
+			Action9
+			{
+				actionGroup = None
+				active = False
+			}
+			Action10
+			{
+				actionGroup = None
+				active = False
+			}
+			Action11
+			{
+				actionGroup = None
+				active = False
+			}
+			Action12
+			{
+				actionGroup = None
+				active = False
+			}
+			Action13
+			{
+				actionGroup = None
+				active = False
+			}
+			Action14
+			{
+				actionGroup = None
+				active = False
+			}
+			Action15
+			{
+				actionGroup = None
+				active = False
+			}
+			Action16
+			{
+				actionGroup = None
+				active = False
+			}
+			Action17
+			{
+				actionGroup = None
+				active = False
+			}
+			Action18
+			{
+				actionGroup = None
+				active = False
+			}
+			Action19
+			{
+				actionGroup = None
+				active = False
+			}
+			Action20
+			{
+				actionGroup = None
+				active = False
+			}
+			Action21
+			{
+				actionGroup = None
+				active = False
+			}
+			Action22
+			{
+				actionGroup = None
+				active = False
+			}
+			Action23
+			{
+				actionGroup = None
+				active = False
+			}
+			Action24
+			{
+				actionGroup = None
+				active = False
+			}
+			Action25
+			{
+				actionGroup = None
+				active = False
+			}
+			Action26
+			{
+				actionGroup = None
+				active = False
+			}
+			Action27
+			{
+				actionGroup = None
+				active = False
+			}
+			Action28
+			{
+				actionGroup = None
+				active = False
+			}
+			Action29
+			{
+				actionGroup = None
+				active = False
+			}
+			Action30
+			{
+				actionGroup = None
+				active = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = AYPart
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		VesselProdPartsList
+		{
+		}
+		VesselConsPartsList
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleFuelCrossfeedActions2
+		isEnabled = True
+		setupRun = True
+		allowCrossfeed = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleCrossfeed
+			{
+				actionGroup = None
+			}
+			EnableCrossfeed
+			{
+				actionGroup = None
+			}
+			DisableCrossfeed
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = rcsTankMini_4294158918
+	partName = Part
+	pos = 0,17.0574989,0
+	attPos = 0,0,0
+	attPos0 = 0,0.6875,0
+	rot = 0,0,0,1
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = -1
+	resPri = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = -1
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	link = parachuteSingle_4294089284
+	attN = top,parachuteSingle_4294089284
+	attN = bottom,HECS2.ProbeCore_4294182834
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleModActions
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			Action1
+			{
+				actionGroup = None
+				active = False
+			}
+			Action2
+			{
+				actionGroup = None
+				active = False
+			}
+			Action3
+			{
+				actionGroup = None
+				active = False
+			}
+			Action4
+			{
+				actionGroup = None
+				active = False
+			}
+			Action5
+			{
+				actionGroup = None
+				active = False
+			}
+			Action6
+			{
+				actionGroup = None
+				active = False
+			}
+			Action7
+			{
+				actionGroup = None
+				active = False
+			}
+			Action8
+			{
+				actionGroup = None
+				active = False
+			}
+			Action9
+			{
+				actionGroup = None
+				active = False
+			}
+			Action10
+			{
+				actionGroup = None
+				active = False
+			}
+			Action11
+			{
+				actionGroup = None
+				active = False
+			}
+			Action12
+			{
+				actionGroup = None
+				active = False
+			}
+			Action13
+			{
+				actionGroup = None
+				active = False
+			}
+			Action14
+			{
+				actionGroup = None
+				active = False
+			}
+			Action15
+			{
+				actionGroup = None
+				active = False
+			}
+			Action16
+			{
+				actionGroup = None
+				active = False
+			}
+			Action17
+			{
+				actionGroup = None
+				active = False
+			}
+			Action18
+			{
+				actionGroup = None
+				active = False
+			}
+			Action19
+			{
+				actionGroup = None
+				active = False
+			}
+			Action20
+			{
+				actionGroup = None
+				active = False
+			}
+			Action21
+			{
+				actionGroup = None
+				active = False
+			}
+			Action22
+			{
+				actionGroup = None
+				active = False
+			}
+			Action23
+			{
+				actionGroup = None
+				active = False
+			}
+			Action24
+			{
+				actionGroup = None
+				active = False
+			}
+			Action25
+			{
+				actionGroup = None
+				active = False
+			}
+			Action26
+			{
+				actionGroup = None
+				active = False
+			}
+			Action27
+			{
+				actionGroup = None
+				active = False
+			}
+			Action28
+			{
+				actionGroup = None
+				active = False
+			}
+			Action29
+			{
+				actionGroup = None
+				active = False
+			}
+			Action30
+			{
+				actionGroup = None
+				active = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = AYPart
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		VesselProdPartsList
+		{
+		}
+		VesselConsPartsList
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleResourceActions2
+		isEnabled = True
+		setupRun = True
+		lockResource = False
+		lockEC = False
+		showRes = True
+		showEC = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleResource
+			{
+				actionGroup = None
+			}
+			EnableResource
+			{
+				actionGroup = None
+			}
+			DisableResource
+			{
+				actionGroup = None
+			}
+			ToggleElec
+			{
+				actionGroup = None
+				active = False
+			}
+			EnableElec
+			{
+				actionGroup = None
+				active = False
+			}
+			DisableElec
+			{
+				actionGroup = None
+				active = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleFuelCrossfeedActions2
+		isEnabled = True
+		setupRun = True
+		allowCrossfeed = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleCrossfeed
+			{
+				actionGroup = None
+			}
+			EnableCrossfeed
+			{
+				actionGroup = None
+			}
+			DisableCrossfeed
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = MonoPropellant
+		amount = 80
+		maxAmount = 80
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = ExtCamRadialVErt_4294132564
+	partName = Part
+	pos = -0.503721535,15.3995552,0.872471333
+	attPos = 0,0,0
+	attPos0 = -0.503721535,0.399555206,0.872471333
+	rot = -1.13674981E-08,0.965925813,4.24240767E-08,0.258819073
+	attRot = 0,0,0,1
+	attRot0 = -1.13674981E-08,0.965925813,4.24240767E-08,0.258819073
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = -1
+	resPri = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	srfN = srfAttach,ALCOR.LanderCapsule_4294196788
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = JSIExternalCameraSelector
+		isEnabled = True
+		current = 1
+		showCones = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleModActions
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			Action1
+			{
+				actionGroup = None
+				active = False
+			}
+			Action2
+			{
+				actionGroup = None
+				active = False
+			}
+			Action3
+			{
+				actionGroup = None
+				active = False
+			}
+			Action4
+			{
+				actionGroup = None
+				active = False
+			}
+			Action5
+			{
+				actionGroup = None
+				active = False
+			}
+			Action6
+			{
+				actionGroup = None
+				active = False
+			}
+			Action7
+			{
+				actionGroup = None
+				active = False
+			}
+			Action8
+			{
+				actionGroup = None
+				active = False
+			}
+			Action9
+			{
+				actionGroup = None
+				active = False
+			}
+			Action10
+			{
+				actionGroup = None
+				active = False
+			}
+			Action11
+			{
+				actionGroup = None
+				active = False
+			}
+			Action12
+			{
+				actionGroup = None
+				active = False
+			}
+			Action13
+			{
+				actionGroup = None
+				active = False
+			}
+			Action14
+			{
+				actionGroup = None
+				active = False
+			}
+			Action15
+			{
+				actionGroup = None
+				active = False
+			}
+			Action16
+			{
+				actionGroup = None
+				active = False
+			}
+			Action17
+			{
+				actionGroup = None
+				active = False
+			}
+			Action18
+			{
+				actionGroup = None
+				active = False
+			}
+			Action19
+			{
+				actionGroup = None
+				active = False
+			}
+			Action20
+			{
+				actionGroup = None
+				active = False
+			}
+			Action21
+			{
+				actionGroup = None
+				active = False
+			}
+			Action22
+			{
+				actionGroup = None
+				active = False
+			}
+			Action23
+			{
+				actionGroup = None
+				active = False
+			}
+			Action24
+			{
+				actionGroup = None
+				active = False
+			}
+			Action25
+			{
+				actionGroup = None
+				active = False
+			}
+			Action26
+			{
+				actionGroup = None
+				active = False
+			}
+			Action27
+			{
+				actionGroup = None
+				active = False
+			}
+			Action28
+			{
+				actionGroup = None
+				active = False
+			}
+			Action29
+			{
+				actionGroup = None
+				active = False
+			}
+			Action30
+			{
+				actionGroup = None
+				active = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = AYPart
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		VesselProdPartsList
+		{
+		}
+		VesselConsPartsList
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleFuelCrossfeedActions2
+		isEnabled = True
+		setupRun = True
+		allowCrossfeed = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleCrossfeed
+			{
+				actionGroup = None
+			}
+			EnableCrossfeed
+			{
+				actionGroup = None
+			}
+			DisableCrossfeed
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = JSIPrimitiveExternalCamera_4294122292
+	partName = Part
+	pos = -0.549476206,14.6122046,-0.549476206
+	attPos = 0,0,0
+	attPos0 = -0.549476206,-0.387795448,-0.549476206
+	rot = -0.270597994,0.65328151,-0.65328151,-0.270597994
+	attRot = 0,0,0,1
+	attRot0 = -0.270597994,0.65328151,-0.65328151,-0.270597994
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = -1
+	resPri = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	srfN = srfAttach,ALCOR.LanderCapsule_4294196788
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = JSIExternalCameraSelector
+		isEnabled = True
+		current = 2
+		showCones = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleModActions
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			Action1
+			{
+				actionGroup = None
+				active = False
+			}
+			Action2
+			{
+				actionGroup = None
+				active = False
+			}
+			Action3
+			{
+				actionGroup = None
+				active = False
+			}
+			Action4
+			{
+				actionGroup = None
+				active = False
+			}
+			Action5
+			{
+				actionGroup = None
+				active = False
+			}
+			Action6
+			{
+				actionGroup = None
+				active = False
+			}
+			Action7
+			{
+				actionGroup = None
+				active = False
+			}
+			Action8
+			{
+				actionGroup = None
+				active = False
+			}
+			Action9
+			{
+				actionGroup = None
+				active = False
+			}
+			Action10
+			{
+				actionGroup = None
+				active = False
+			}
+			Action11
+			{
+				actionGroup = None
+				active = False
+			}
+			Action12
+			{
+				actionGroup = None
+				active = False
+			}
+			Action13
+			{
+				actionGroup = None
+				active = False
+			}
+			Action14
+			{
+				actionGroup = None
+				active = False
+			}
+			Action15
+			{
+				actionGroup = None
+				active = False
+			}
+			Action16
+			{
+				actionGroup = None
+				active = False
+			}
+			Action17
+			{
+				actionGroup = None
+				active = False
+			}
+			Action18
+			{
+				actionGroup = None
+				active = False
+			}
+			Action19
+			{
+				actionGroup = None
+				active = False
+			}
+			Action20
+			{
+				actionGroup = None
+				active = False
+			}
+			Action21
+			{
+				actionGroup = None
+				active = False
+			}
+			Action22
+			{
+				actionGroup = None
+				active = False
+			}
+			Action23
+			{
+				actionGroup = None
+				active = False
+			}
+			Action24
+			{
+				actionGroup = None
+				active = False
+			}
+			Action25
+			{
+				actionGroup = None
+				active = False
+			}
+			Action26
+			{
+				actionGroup = None
+				active = False
+			}
+			Action27
+			{
+				actionGroup = None
+				active = False
+			}
+			Action28
+			{
+				actionGroup = None
+				active = False
+			}
+			Action29
+			{
+				actionGroup = None
+				active = False
+			}
+			Action30
+			{
+				actionGroup = None
+				active = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = AYPart
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		VesselProdPartsList
+		{
+		}
+		VesselConsPartsList
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleFuelCrossfeedActions2
+		isEnabled = True
+		setupRun = True
+		allowCrossfeed = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleCrossfeed
+			{
+				actionGroup = None
+			}
+			EnableCrossfeed
+			{
+				actionGroup = None
+			}
+			DisableCrossfeed
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = KWRadBattLargeS_4294098152
+	partName = Part
+	pos = 0,16.4433498,0.731837511
+	attPos = 0,0,0
+	attPos0 = 0,0.0733509064,0.731837511
+	rot = 0,1,-2.38418579E-07,0
+	attRot = 0,0,0,1
+	attRot0 = 0,1,-2.38418579E-07,0
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = -1
+	resPri = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	srfN = srfAttach,HECS2.ProbeCore_4294182834
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleModActions
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			Action1
+			{
+				actionGroup = None
+				active = False
+			}
+			Action2
+			{
+				actionGroup = None
+				active = False
+			}
+			Action3
+			{
+				actionGroup = None
+				active = False
+			}
+			Action4
+			{
+				actionGroup = None
+				active = False
+			}
+			Action5
+			{
+				actionGroup = None
+				active = False
+			}
+			Action6
+			{
+				actionGroup = None
+				active = False
+			}
+			Action7
+			{
+				actionGroup = None
+				active = False
+			}
+			Action8
+			{
+				actionGroup = None
+				active = False
+			}
+			Action9
+			{
+				actionGroup = None
+				active = False
+			}
+			Action10
+			{
+				actionGroup = None
+				active = False
+			}
+			Action11
+			{
+				actionGroup = None
+				active = False
+			}
+			Action12
+			{
+				actionGroup = None
+				active = False
+			}
+			Action13
+			{
+				actionGroup = None
+				active = False
+			}
+			Action14
+			{
+				actionGroup = None
+				active = False
+			}
+			Action15
+			{
+				actionGroup = None
+				active = False
+			}
+			Action16
+			{
+				actionGroup = None
+				active = False
+			}
+			Action17
+			{
+				actionGroup = None
+				active = False
+			}
+			Action18
+			{
+				actionGroup = None
+				active = False
+			}
+			Action19
+			{
+				actionGroup = None
+				active = False
+			}
+			Action20
+			{
+				actionGroup = None
+				active = False
+			}
+			Action21
+			{
+				actionGroup = None
+				active = False
+			}
+			Action22
+			{
+				actionGroup = None
+				active = False
+			}
+			Action23
+			{
+				actionGroup = None
+				active = False
+			}
+			Action24
+			{
+				actionGroup = None
+				active = False
+			}
+			Action25
+			{
+				actionGroup = None
+				active = False
+			}
+			Action26
+			{
+				actionGroup = None
+				active = False
+			}
+			Action27
+			{
+				actionGroup = None
+				active = False
+			}
+			Action28
+			{
+				actionGroup = None
+				active = False
+			}
+			Action29
+			{
+				actionGroup = None
+				active = False
+			}
+			Action30
+			{
+				actionGroup = None
+				active = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = AYPart
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		VesselProdPartsList
+		{
+		}
+		VesselConsPartsList
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleResourceActions2
+		isEnabled = True
+		setupRun = True
+		lockResource = False
+		lockEC = False
+		showRes = False
+		showEC = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleResource
+			{
+				actionGroup = None
+				active = False
+			}
+			EnableResource
+			{
+				actionGroup = None
+				active = False
+			}
+			DisableResource
+			{
+				actionGroup = None
+				active = False
+			}
+			ToggleElec
+			{
+				actionGroup = None
+			}
+			EnableElec
+			{
+				actionGroup = None
+			}
+			DisableElec
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleFuelCrossfeedActions2
+		isEnabled = True
+		setupRun = True
+		allowCrossfeed = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleCrossfeed
+			{
+				actionGroup = None
+			}
+			EnableCrossfeed
+			{
+				actionGroup = None
+			}
+			DisableCrossfeed
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 600
+		maxAmount = 600
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = parachuteSingle_4294089284
+	partName = Part
+	pos = 0,17.2600803,0
+	attPos = 0,0,0
+	attPos0 = 0,0.202581406,0
+	rot = 0,0,0,1
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 0
+	resPri = 0
+	dstg = 0
+	sidx = 2
+	sqor = 0
+	sepI = -1
+	attm = 0
+	modCost = 36.7999992
+	modMass = 0
+	modSize = 0,0,0
+	attN = bottom,rcsTankMini_4294158918
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleTestSubject
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleDragModifier
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleDragModifier
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleModActions
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			Action1
+			{
+				actionGroup = None
+				active = False
+			}
+			Action2
+			{
+				actionGroup = None
+				active = False
+			}
+			Action3
+			{
+				actionGroup = None
+				active = False
+			}
+			Action4
+			{
+				actionGroup = None
+				active = False
+			}
+			Action5
+			{
+				actionGroup = None
+				active = False
+			}
+			Action6
+			{
+				actionGroup = None
+				active = False
+			}
+			Action7
+			{
+				actionGroup = None
+				active = False
+			}
+			Action8
+			{
+				actionGroup = None
+				active = False
+			}
+			Action9
+			{
+				actionGroup = None
+				active = False
+			}
+			Action10
+			{
+				actionGroup = None
+				active = False
+			}
+			Action11
+			{
+				actionGroup = None
+				active = False
+			}
+			Action12
+			{
+				actionGroup = None
+				active = False
+			}
+			Action13
+			{
+				actionGroup = None
+				active = False
+			}
+			Action14
+			{
+				actionGroup = None
+				active = False
+			}
+			Action15
+			{
+				actionGroup = None
+				active = False
+			}
+			Action16
+			{
+				actionGroup = None
+				active = False
+			}
+			Action17
+			{
+				actionGroup = None
+				active = False
+			}
+			Action18
+			{
+				actionGroup = None
+				active = False
+			}
+			Action19
+			{
+				actionGroup = None
+				active = False
+			}
+			Action20
+			{
+				actionGroup = None
+				active = False
+			}
+			Action21
+			{
+				actionGroup = None
+				active = False
+			}
+			Action22
+			{
+				actionGroup = None
+				active = False
+			}
+			Action23
+			{
+				actionGroup = None
+				active = False
+			}
+			Action24
+			{
+				actionGroup = None
+				active = False
+			}
+			Action25
+			{
+				actionGroup = None
+				active = False
+			}
+			Action26
+			{
+				actionGroup = None
+				active = False
+			}
+			Action27
+			{
+				actionGroup = None
+				active = False
+			}
+			Action28
+			{
+				actionGroup = None
+				active = False
+			}
+			Action29
+			{
+				actionGroup = None
+				active = False
+			}
+			Action30
+			{
+				actionGroup = None
+				active = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = AYPart
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		VesselProdPartsList
+		{
+		}
+		VesselConsPartsList
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = RealChuteModule
+		isEnabled = True
+		caseMass = 0.0399999991
+		cutSpeed = 0.5
+		timer = 0
+		mustGoDown = False
+		deployOnGround = False
+		spareChutes = 5
+		initiated = True
+		wait = True
+		armed = False
+		oneWasDeployed = False
+		staged = False
+		launched = False
+		chuteCount = 5
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ActionDeploy
+			{
+				actionGroup = None
+			}
+			ActionCut
+			{
+				actionGroup = None
+			}
+			ActionArm
+			{
+				actionGroup = None
+			}
+			ActionDisarm
+			{
+				actionGroup = None
+			}
+		}
+		PARACHUTE
+		{
+			material = Nylon
+			preDeployedDiameter = 1
+			deployedDiameter = 25
+			minIsPressure = True
+			capOff = False
+			minDeployment = 25000
+			minPressure = 0.00999999978
+			deploymentAlt = 700
+			cutAlt = -1
+			preDeploymentSpeed = 2
+			deploymentSpeed = 6
+			time = 0
+			parachuteName = canopy
+			baseParachuteName = canopy
+			capName = cap
+			preDeploymentAnimation = semiDeploySmall
+			deploymentAnimation = fullyDeploySmall
+			forcedOrientation = 0
+			depState = STOWED
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ProceduralChute
+		isEnabled = True
+		caseId = -1
+		lastCaseId = -1
+		size = 0
+		lastSize = 0
+		planets = 0
+		presetId = 0
+		originalSize = (1.25, 1.25, 1.25)
+		top = 0
+		bottom = -0.0150811253
+		debut = 1.25
+		initiated = True
+		mustGoDown = False
+		deployOnGround = False
+		secondaryChute = False
+		timer = 0s
+		cutSpeed = 0.5
+		spares = 5
+		landingAlt = 0
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		CHUTE
+		{
+			chuteID = 0
+			modelID = 0
+			typeID = 0
+			lastTypeID = 0
+			position = 3.2700901,19.5311813,6.33998251
+			isPressure = True
+			calcSelect = True
+			getMass = True
+			useDry = True
+			preDepDiam = 1
+			depDiam = 25
+			predepClause = 0.01
+			mass = 10
+			landingSpeed = 6
+			deceleration = 10
+			refDepAlt = 700
+			chuteCount = 1
+			deploymentAlt = 700
+			cutAlt = 
+			preDepSpeed = 2
+			depSpeed = 6
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleFuelCrossfeedActions2
+		isEnabled = True
+		setupRun = True
+		allowCrossfeed = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleCrossfeed
+			{
+				actionGroup = None
+			}
+			EnableCrossfeed
+			{
+				actionGroup = None
+			}
+			DisableCrossfeed
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = parachuteDrogue_4294084102
+	partName = Part
+	pos = 0,14.3829355,0
+	attPos = 0,0,0
+	attPos0 = 0,-0.617064476,0
+	rot = 1,0,0,0
+	attRot = 0.999999881,0,0,0
+	attRot0 = 1,0,0,0
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 0
+	resPri = 0
+	dstg = 0
+	sidx = 3
+	sqor = 0
+	sepI = -1
+	attm = 0
+	modCost = 6.30000019
+	modMass = 0
+	modSize = 0,0,0
+	attN = bottom,ALCOR.LanderCapsule_4294196788
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleTestSubject
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleDragModifier
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleDragModifier
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleModActions
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			Action1
+			{
+				actionGroup = None
+				active = False
+			}
+			Action2
+			{
+				actionGroup = None
+				active = False
+			}
+			Action3
+			{
+				actionGroup = None
+				active = False
+			}
+			Action4
+			{
+				actionGroup = None
+				active = False
+			}
+			Action5
+			{
+				actionGroup = None
+				active = False
+			}
+			Action6
+			{
+				actionGroup = None
+				active = False
+			}
+			Action7
+			{
+				actionGroup = None
+				active = False
+			}
+			Action8
+			{
+				actionGroup = None
+				active = False
+			}
+			Action9
+			{
+				actionGroup = None
+				active = False
+			}
+			Action10
+			{
+				actionGroup = None
+				active = False
+			}
+			Action11
+			{
+				actionGroup = None
+				active = False
+			}
+			Action12
+			{
+				actionGroup = None
+				active = False
+			}
+			Action13
+			{
+				actionGroup = None
+				active = False
+			}
+			Action14
+			{
+				actionGroup = None
+				active = False
+			}
+			Action15
+			{
+				actionGroup = None
+				active = False
+			}
+			Action16
+			{
+				actionGroup = None
+				active = False
+			}
+			Action17
+			{
+				actionGroup = None
+				active = False
+			}
+			Action18
+			{
+				actionGroup = None
+				active = False
+			}
+			Action19
+			{
+				actionGroup = None
+				active = False
+			}
+			Action20
+			{
+				actionGroup = None
+				active = False
+			}
+			Action21
+			{
+				actionGroup = None
+				active = False
+			}
+			Action22
+			{
+				actionGroup = None
+				active = False
+			}
+			Action23
+			{
+				actionGroup = None
+				active = False
+			}
+			Action24
+			{
+				actionGroup = None
+				active = False
+			}
+			Action25
+			{
+				actionGroup = None
+				active = False
+			}
+			Action26
+			{
+				actionGroup = None
+				active = False
+			}
+			Action27
+			{
+				actionGroup = None
+				active = False
+			}
+			Action28
+			{
+				actionGroup = None
+				active = False
+			}
+			Action29
+			{
+				actionGroup = None
+				active = False
+			}
+			Action30
+			{
+				actionGroup = None
+				active = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = AYPart
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		VesselProdPartsList
+		{
+		}
+		VesselConsPartsList
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = RealChuteModule
+		isEnabled = True
+		caseMass = 0.0799999982
+		cutSpeed = 0.5
+		timer = 0
+		mustGoDown = False
+		deployOnGround = False
+		spareChutes = 5
+		initiated = True
+		wait = True
+		armed = False
+		oneWasDeployed = False
+		staged = False
+		launched = False
+		chuteCount = 5
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ActionDeploy
+			{
+				actionGroup = None
+			}
+			ActionCut
+			{
+				actionGroup = None
+			}
+			ActionArm
+			{
+				actionGroup = None
+			}
+			ActionDisarm
+			{
+				actionGroup = None
+			}
+		}
+		PARACHUTE
+		{
+			material = Kevlar
+			preDeployedDiameter = 5
+			deployedDiameter = 10
+			minIsPressure = True
+			capOff = False
+			minDeployment = 25000
+			minPressure = 0.00700000022
+			deploymentAlt = 2500
+			cutAlt = -1
+			preDeploymentSpeed = 1
+			deploymentSpeed = 4
+			time = 0
+			parachuteName = canopy
+			baseParachuteName = canopy
+			capName = cap
+			preDeploymentAnimation = semiDeployLarge
+			deploymentAnimation = fullyDeployLarge
+			forcedOrientation = 0
+			depState = STOWED
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ProceduralChute
+		isEnabled = True
+		caseId = -1
+		lastCaseId = -1
+		size = 0
+		lastSize = 0
+		planets = 0
+		presetId = 0
+		originalSize = (1, 1, 1)
+		top = 0
+		bottom = -0.00206490001
+		debut = 1
+		initiated = True
+		mustGoDown = False
+		deployOnGround = False
+		secondaryChute = False
+		timer = 0s
+		cutSpeed = 0.5
+		spares = 5
+		landingAlt = 0
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		CHUTE
+		{
+			chuteID = 1
+			modelID = 0
+			typeID = 0
+			lastTypeID = 0
+			position = 2.81360435,19.6879978,8.18221664
+			isPressure = True
+			calcSelect = True
+			getMass = True
+			useDry = True
+			preDepDiam = 5
+			depDiam = 10
+			predepClause = 0.007
+			mass = 10
+			landingSpeed = 6
+			deceleration = 10
+			refDepAlt = 700
+			chuteCount = 1
+			deploymentAlt = 2500
+			cutAlt = 
+			preDepSpeed = 1
+			depSpeed = 4
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleFuelCrossfeedActions2
+		isEnabled = True
+		setupRun = True
+		allowCrossfeed = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleCrossfeed
+			{
+				actionGroup = None
+			}
+			EnableCrossfeed
+			{
+				actionGroup = None
+			}
+			DisableCrossfeed
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
