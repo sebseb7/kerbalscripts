@@ -1,0 +1,140 @@
+{
+	"kind": "metapackage",
+	"abstract": "A list of modules installed on the default KSP instance",
+	"name": "installed-default",
+	"license": "unknown",
+	"version": "2016.11.30.10.30.17",
+	"identifier": "installed-default",
+	"spec_version": "v1.6",
+	"recommends": [
+		{
+			"name": "BZ1RadialAttachmentPoint"
+		},
+		{
+			"name": "Chatterer"
+		},
+		{
+			"name": "DockingcameraKURSstyle"
+		},
+		{
+			"name": "SCANsat"
+		},
+		{
+			"name": "EasyVesselSwitch"
+		},
+		{
+			"name": "PersistentDynamicPodNames"
+		},
+		{
+			"name": "RCSBuildAid"
+		},
+		{
+			"name": "HyperEdit"
+		},
+		{
+			"name": "DockingPortAlignmentIndicator"
+		},
+		{
+			"name": "AntennaSleep"
+		},
+		{
+			"name": "CommunityCategoryKit"
+		},
+		{
+			"name": "StationPartsExpansion"
+		},
+		{
+			"name": "NearFutureProps"
+		},
+		{
+			"name": "Trajectories"
+		},
+		{
+			"name": "KWRocketryRedux-GraduatedPwr"
+		},
+		{
+			"name": "KWRocketryRedux"
+		},
+		{
+			"name": "ProceduralParts"
+		},
+		{
+			"name": "EditorExtensionsRedux"
+		},
+		{
+			"name": "BetterBurnTime"
+		},
+		{
+			"name": "REPOSoftTech-Agencies"
+		},
+		{
+			"name": "Toolbar"
+		},
+		{
+			"name": "TweakScale"
+		},
+		{
+			"name": "KAS"
+		},
+		{
+			"name": "KIS"
+		},
+		{
+			"name": "SmartParts"
+		},
+		{
+			"name": "xScience"
+		},
+		{
+			"name": "NavBallsToYou"
+		},
+		{
+			"name": "FirespitterCore"
+		},
+		{
+			"name": "GravityTurnContinued"
+		},
+		{
+			"name": "CommunityResourcePack"
+		},
+		{
+			"name": "ModuleManager"
+		},
+		{
+			"name": "KerbalJointReinforcement"
+		},
+		{
+			"name": "WarpEverywhere"
+		},
+		{
+			"name": "DMagicOrbitalScience"
+		},
+		{
+			"name": "DecoupleFromHeatshield"
+		},
+		{
+			"name": "PersistentRotation"
+		},
+		{
+			"name": "FirespitterResourcesConfig"
+		},
+		{
+			"name": "CommunityTerrainTexturePack"
+		},
+		{
+			"name": "EVAHandrailsPackContinued"
+		},
+		{
+			"name": "GammaTextures"
+		},
+		{
+			"name": "PartAngleDisplay"
+		},
+		{
+			"name": "IONRCS"
+		},
+		{
+			"name": "PartCommanderCont"
+		}
+	]
+}
