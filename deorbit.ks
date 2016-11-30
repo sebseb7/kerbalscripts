@@ -15,8 +15,12 @@ SHIP:PARTSDUBBED("PARA_M4")[0]:getmodule("ModuleParachute"):setfield("min pressu
 SHIP:PARTSDUBBED("PARA_M4")[0]:getmodule("ModuleParachute"):setfield("altitude",100).
 
 
+if not(ship:body:name = "Kerbin") {
+	print "wait for kerbin:" + ship:body:name.
+	wait until ship:body:name = "Kerbin".
+}
 
-
+print "go".
 
 set tset to 0.
 lock throttle to tset. 
@@ -26,7 +30,7 @@ SET correctRoll to R(0,0,-180).
 SAS OFF.
 LOCK STEERING TO SHIP:RETROGRADE + correctRoll. 
 
-until periapsis < 250 {
+until periapsis < 42000 {
 	
 	if VECTORANGLE(SHIP:RETROGRADE:VECTOR,SHIP:FACING:VECTOR) < 1
 	{
@@ -44,7 +48,7 @@ set tset to 0.
 
 until SHIP:PARTSDUBBED("SMJET_DEC"):LENGTH = 0 {
 		
-	if SHIP:ALTITUDE < 55000 {
+	if SHIP:ALTITUDE < 65000 {
 	
 		print "stage".
 		LOCK STEERING TO SHIP:UP + correctRoll.
@@ -57,7 +61,10 @@ until SHIP:PARTSDUBBED("SMJET_DEC"):LENGTH = 0 {
 
 			SHIP:PARTSDUBBED("SMJET_DEC")[0]:getmodule("ModuleDecouple"):DOEVENT("decouple").
 			if SHIP:PARTSDUBBED("LASJET_NODE"):LENGTH = 1 {
-				SHIP:PARTSDUBBED("LASJET_NODE")[0]:getmodule("ModuleDockingNode"):DOEVENT("decouple node").
+				if SHIP:PARTSDUBBED("LASJET_NODE")[0]:getmodule("ModuleDockingNode"):CONTAINS("decouple node") {
+				
+					SHIP:PARTSDUBBED("LASJET_NODE")[0]:getmodule("ModuleDockingNode"):DOEVENT("decouple node").
+				}
 			}
 			wait 1.
 			LOCK STEERING TO SHIP:RETROGRADE + correctRoll. 
@@ -143,7 +150,11 @@ WHEN ALT:RADAR < 50 then {
 	SHIP:PARTSDUBBED("PARA_M4")[0]:getmodule("ModuleParachute"):setfield("altitude",5000).
 }
 
-wait until ALT:RADAR < 40.
+
+
+wait until false.
 
 unlock throttle.
+SAS ON.
+SET SASMODE TO "STABILITYASSIST".
 
