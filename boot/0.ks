@@ -14,7 +14,7 @@ ON AG1 {
 
 	PRINT "ag1 - las sep".
 
-	run las_sep.
+	run las_jet.
 	
 }
 
