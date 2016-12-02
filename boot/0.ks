@@ -27,6 +27,8 @@ ON AG2 {
 }
 
 ON AG9 {
+	
+	preserve.
 
 	PRINT "ag9 - deorbit".
 
@@ -34,11 +36,21 @@ ON AG9 {
 	
 }
 
-ON AG0 {
+ON AG10 {
 
 	preserve.
 
-	PRINT "ag0 - abort".
+	PRINT "ag10 - abort".
+
+	run abort.
+	
+}
+
+ON Abort {
+
+	preserve.
+
+	PRINT "abort - abort".
 
 	run abort.
 	
