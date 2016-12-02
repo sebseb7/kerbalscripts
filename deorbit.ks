@@ -1,7 +1,12 @@
 //DEORBIT
 //@LAZYGLOBAL OFF.
 
-//set deorbit_height to -1000.
+
+//todo: activate engines/stage
+
+
+set STEERINGMANAGER:ROLLCONTROLANGLERANGE to 30.
+
 set deorbit_height to 59000.
 set correctRoll to R(0,0,-180). 
 
@@ -62,12 +67,13 @@ function do_sm_sep {
 	
 	when VECTORANGLE(SHIP:UP:VECTOR,SHIP:FACING:VECTOR) < 5 or SHIP:ALTITUDE < 65000 then {
 	
-		print "- sep".
+		print "- sep timeout".
 
 		set lestimestamp to time:seconds.
 
-		when time:seconds>lestimestamp+3 then
+		when time:seconds > (lestimestamp+10) then
 		{
+			print "- timeout done".
 
 			if SHIP:PARTSDUBBED("SMJET_DEC"):LENGTH = 1 {
 				print ".1".
@@ -117,13 +123,7 @@ function check_for_sm_sep {
 
 		when SHIP:ALTITUDE < 63000 then {
 
-			if SHIP:PARTSDUBBED("LASJET_NODE"):LENGTH = 1 {
-				print ".3".
-				if SHIP:PARTSDUBBED("LASJET_NODE")[0]:getmodule("ModuleDockingNode"):ALLEVENTNAMES:CONTAINS("decouple node") {
-					print ".4".
-					SHIP:PARTSDUBBED("LASJET_NODE")[0]:getmodule("ModuleDockingNode"):DOEVENT("decouple node").
-				}
-			}
+			run las_jet.
 
 		}
 	
@@ -220,43 +220,28 @@ WHEN ship:velocity:surface:mag < 1500 then {
 			print round(missiontime) +" d3 "+round(alt:radar).
 		}
 
-		WHEN ALT:RADAR < 3450  and ship:velocity:surface:mag < 400 then {
+		WHEN ALT:RADAR < 3499  and ship:velocity:surface:mag < 419 then {
 			print round(missiontime) +" d4 "+round(alt:radar).
 			SHIP:PARTSDUBBED("PARA_M1")[0]:getmodule("ModuleParachute"):setfield("min pressure",0).
 		}
-		WHEN ALT:RADAR < 2000  and ship:velocity:surface:mag < 300 then {
+		WHEN ALT:RADAR < 3000  and ship:velocity:surface:mag < 300 then {
 			print round(missiontime) +" d5 "+round(alt:radar).
-			SHIP:PARTSDUBBED("PARA_M1")[0]:getmodule("ModuleParachute"):setfield("min pressure",0).
+			SHIP:PARTSDUBBED("PARA_M2")[0]:getmodule("ModuleParachute"):setfield("min pressure",0).
 		}
-		WHEN ALT:RADAR < 1500  and ship:velocity:surface:mag < 300 then {
+		WHEN ALT:RADAR < 2500  and ship:velocity:surface:mag < 300 then {
 			print round(missiontime) +" d6 "+round(alt:radar).
-			SHIP:PARTSDUBBED("PARA_M1")[0]:getmodule("ModuleParachute"):setfield("min pressure",0).
+			SHIP:PARTSDUBBED("PARA_M3")[0]:getmodule("ModuleParachute"):setfield("min pressure",0).
 		}
-		WHEN ALT:RADAR < 1200  and ship:velocity:surface:mag < 200 then {
+		WHEN ALT:RADAR < 2000  and ship:velocity:surface:mag < 200 then {
 			print round(missiontime) +" d7 "+round(alt:radar).
-			SHIP:PARTSDUBBED("PARA_M1")[0]:getmodule("ModuleParachute"):setfield("min pressure",0).
+			SHIP:PARTSDUBBED("PARA_M4")[0]:getmodule("ModuleParachute"):setfield("min pressure",0).
 		}
 
 
-		WHEN ALT:RADAR < 800  and ship:velocity:surface:mag < 200 then {
+		WHEN ALT:RADAR < 1000  and ship:velocity:surface:mag < 200 then {
 			print round(missiontime) +" d8 "+round(alt:radar).
 			SHIP:PARTSDUBBED("PARA_M1")[0]:getmodule("ModuleParachute"):setfield("altitude",5000).
 		}
-//		WHEN ALT:RADAR < 600  and ship:velocity:surface:mag < 200 then {
-//			print round(missiontime) +" d9 "+round(alt:radar).
-//			if SHIP:PARTSDUBBED("FLOAT1"):LENGTH = 1 {
-//				SHIP:PARTSDUBBED("FLOAT1")[0]:getmodule("FloaterModule"):DOEVENT("deploy").
-//			}
-//			if SHIP:PARTSDUBBED("FLOAT2"):LENGTH = 1 {
-//				SHIP:PARTSDUBBED("FLOAT2")[0]:getmodule("FloaterModule"):DOEVENT("deploy").
-//			}
-//			if SHIP:PARTSDUBBED("FLOAT3"):LENGTH = 1 {
-//				SHIP:PARTSDUBBED("FLOAT3")[0]:getmodule("FloaterModule"):DOEVENT("deploy").
-//			}
-//			if SHIP:PARTSDUBBED("FLOAT4"):LENGTH = 1 {
-//				SHIP:PARTSDUBBED("FLOAT4")[0]:getmodule("FloaterModule"):DOEVENT("deploy").
-//			}
-//		}
 		WHEN ALT:RADAR < 300  and ship:velocity:surface:mag < 200 then {
 			print round(missiontime) +" d10 "+round(alt:radar).
 			SHIP:PARTSDUBBED("PARA_M2")[0]:getmodule("ModuleParachute"):setfield("altitude",5000).
@@ -272,13 +257,14 @@ WHEN ship:velocity:surface:mag < 1500 then {
 		WHEN ship:velocity:surface:mag < 12 and  ALT:RADAR < 140 then {
 			print round(missiontime) +" d13 "+round(alt:radar).
 			if SHIP:PARTSDUBBED("HS"):LENGTH = 1 {
-				//SHIP:PARTSDUBBED("HS")[0]:getmodule("ModuleDecouple"):DOEVENT("jettison heat shield").
+				SHIP:PARTSDUBBED("HS")[0]:getmodule("ModuleDecouple"):DOEVENT("jettison heat shield").
 			}
 		}
 	}
 }
 
 print "here".
-wait until alt:radar < 10.
-print "deorbit done".
+when alt:radar < 10 then {.
+	print "sequence end".
+}
 

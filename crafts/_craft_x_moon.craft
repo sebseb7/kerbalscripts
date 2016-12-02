@@ -2,7 +2,7 @@ ship = _craft_x_moon
 version = 1.2.0
 description = 
 type = VAB
-size = 2.60933399,28.3905983,2.64739585
+size = 2.60933423,28.3905983,2.64739561
 PART
 {
 	part = batteryBank_4293281848
@@ -128,7 +128,7 @@ PART
 		name = ProceduralPart
 		isEnabled = True
 		tempColliderCenter = (0, 0, 0)
-		tempColliderSize = (1.50000024, 0.125, 1.50000012)
+		tempColliderSize = (1.5, 0.125, 1.49999988)
 		textureSet = Stockalike
 		shapeName = Cylinder
 		moduleCost = 112.438858
@@ -315,7 +315,7 @@ PART
 		name = ProceduralPart
 		isEnabled = True
 		tempColliderCenter = (0, 0, 0)
-		tempColliderSize = (1.50000024, 1.25, 1.50000012)
+		tempColliderSize = (1.5, 1.25, 1.49999988)
 		textureSet = PlainWhite
 		shapeName = Cylinder
 		moduleCost = 717.852661
@@ -1091,7 +1091,7 @@ PART
 {
 	part = solarPanels4_4292085176
 	partName = Part
-	pos = -1.02875352,32.7831497,-0.144974768
+	pos = -1.02875352,32.7831497,-0.144974709
 	attPos = 0,0,0
 	attPos0 = 0.52992332,0.185491562,0.52992326
 	rot = -0.270598263,0.65328145,0.65328151,0.270598024
@@ -1199,7 +1199,7 @@ PART
 {
 	part = solarPanels4_4292085064
 	partName = Part
-	pos = -1.02875352,32.7831497,-1.20482111
+	pos = -1.02875352,32.7831497,-1.20482123
 	attPos = 0,0,0
 	attPos0 = 0.52992332,0.185491562,-0.52992332
 	rot = 0.270597965,0.65328151,0.653281569,-0.270598024
@@ -1475,7 +1475,7 @@ PART
 {
 	part = smallRadialEngine_4292084006
 	partName = Part
-	pos = -2.20791006,31.9222908,-0.0256634951
+	pos = -2.2079103,31.9222908,-0.0256636739
 	attPos = 0.054533124,0.0677871704,0.0549021959
 	attPos0 = -0.649232507,-0.245325089,0.649232686
 	rot = -0.00210934388,0.382682323,-0.000873718236,-0.92387718
@@ -1643,7 +1643,7 @@ PART
 {
 	part = smallRadialEngine_4292083932
 	partName = Part
-	pos = -0.909442902,31.9222908,-0.0256646872
+	pos = -0.909442902,31.9222908,-0.0256646276
 	attPos = 0.054533124,0.0677871704,0.0549021959
 	attPos0 = 0.649232745,-0.245325089,0.649232507
 	rot = -0.00210934272,-0.382682502,0.000873718527,-0.92387712
@@ -2964,7 +2964,7 @@ PART
 		name = ProceduralPart
 		isEnabled = True
 		tempColliderCenter = (0, 0, 0)
-		tempColliderSize = (2.5, 1.375, 2.5)
+		tempColliderSize = (2.49999952, 1.375, 2.49999976)
 		textureSet = Original
 		shapeName = Cylinder
 		moduleCost = 2193.43481
@@ -3506,7 +3506,7 @@ PART
 		name = ProceduralPart
 		isEnabled = True
 		tempColliderCenter = (0, 0, 0)
-		tempColliderSize = (2.5, 14.625, 2.49732351)
+		tempColliderSize = (2.49999952, 14.625, 2.49732327)
 		textureSet = Original
 		shapeName = Cylinder
 		moduleCost = 23330.1348
@@ -6345,7 +6345,7 @@ PART
 	pos = -2.20191598,34.784874,-0.440778404
 	attPos = 0,0,0
 	attPos0 = -0.643238664,0.918788314,0.234119534
-	rot = 0.544860482,-0.820349634,-0.0960736051,0.144649625
+	rot = 0.544860423,-0.820349574,-0.0960735977,0.14464961
 	attRot = 0,-0.707106829,0,0.707106709
 	attRot0 = 0.544860482,-0.820349634,-0.0960736126,0.14464964
 	mir = 1,1,1
@@ -8089,7 +8089,7 @@ PART
 	pos = -2.35341907,33.8478622,-1.4351697
 	attPos = -0.0470867157,0,-0.0126166344
 	attPos0 = -0.747654855,-0.0182228088,-0.747654736
-	rot = 0.0756968185,0.905624926,0.182748169,-0.37512213
+	rot = 0.0756968111,0.905624866,0.182748154,-0.3751221
 	attRot = 0,0,0,1
 	attRot0 = -0.0756967664,-0.905624986,-0.182748154,0.37512216
 	mir = 1,1,1
