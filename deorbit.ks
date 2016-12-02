@@ -7,6 +7,7 @@
 
 set STEERINGMANAGER:ROLLCONTROLANGLERANGE to 30.
 
+//set deorbit_height to -1000.
 set deorbit_height to 59000.
 set correctRoll to R(0,0,-180). 
 
@@ -25,33 +26,39 @@ function set_parachute_pressure {
 	}
 }
 function set_parachute_alt {
+	parameter para_name.
+	parameter alti.
+			
+	if SHIP:PARTSDUBBED(para_name):LENGTH > 0 {
+
+		if SHIP:PARTSDUBBED(para_name)[0]:allmodules:contains("ModuleParachute") {
+
+			SHIP:PARTSDUBBED(para_name)[0]:getmodule("ModuleParachute"):setfield("altitude",alti).
+
+		}
+	}
 }
 function arm_parachute {
+	parameter para_name.
+	
+	if SHIP:PARTSDUBBED(para_name)[0]:getmodule("ModuleParachute"):alleventnames:CONTAINS("deploy chute") {
+		SHIP:PARTSDUBBED(para_name)[0]:getmodule("ModuleParachute"):DOEVENT("deploy chute").
+	}
 }
-function cut_parachute {
-}
 
-
-clearscreen.
-
-set_parachute_pressure("PARA_D1",1).
-SHIP:PARTSDUBBED("PARA_D1")[0]:getmodule("ModuleParachute"):setfield("altitude",100).
-SHIP:PARTSDUBBED("PARA_M1")[0]:getmodule("ModuleParachute"):setfield("min pressure",1).
-SHIP:PARTSDUBBED("PARA_M1")[0]:getmodule("ModuleParachute"):setfield("altitude",100).
-SHIP:PARTSDUBBED("PARA_M2")[0]:getmodule("ModuleParachute"):setfield("min pressure",1).
-SHIP:PARTSDUBBED("PARA_M2")[0]:getmodule("ModuleParachute"):setfield("altitude",100).
-SHIP:PARTSDUBBED("PARA_M3")[0]:getmodule("ModuleParachute"):setfield("min pressure",1).
-SHIP:PARTSDUBBED("PARA_M3")[0]:getmodule("ModuleParachute"):setfield("altitude",100).
-SHIP:PARTSDUBBED("PARA_M4")[0]:getmodule("ModuleParachute"):setfield("min pressure",1).
-SHIP:PARTSDUBBED("PARA_M4")[0]:getmodule("ModuleParachute"):setfield("altitude",100).
-
+set_parachute_pressure("PARA_M1",1).
+set_parachute_pressure("PARA_M2",1).
+set_parachute_pressure("PARA_M3",1).
+set_parachute_pressure("PARA_M4",1).
+set_parachute_alt("PARA_M1",100).
+set_parachute_alt("PARA_M2",100).
+set_parachute_alt("PARA_M3",100).
+set_parachute_alt("PARA_M4",100).
 
 if not(ship:body:name = "Kerbin") {
 	print "wait for kerbin:" + ship:body:name.
 	wait until ship:body:name = "Kerbin".
 }
-
-print "go".
 
 SAS OFF.
 set tset to 0.
@@ -104,7 +111,6 @@ function do_sm_sep {
 
 function check_for_sm_sep {
 
-	
 	if SHIP:PARTSDUBBED("SMJET_DEC"):LENGTH = 1 {
 	
 		print "- waitfor sm_sep at 68000".
@@ -126,8 +132,6 @@ function check_for_sm_sep {
 			run las_jet.
 
 		}
-	
-	
 	}
 		
 	when SHIP:ALTITUDE < 63000 then {
@@ -135,7 +139,6 @@ function check_for_sm_sep {
 		LOCK STEERING TO SHIP:RETROGRADE + correctRoll. 
 	}	
 }
-
 
 function do_deorbit {
 
@@ -156,7 +159,6 @@ function do_deorbit {
 			if periapsis > deorbit_height {
 				do_deorbit().
 			}
-		
 		}
 		
 		when periapsis < deorbit_height then {
@@ -170,8 +172,6 @@ function do_deorbit {
 	}
 }
 
-
-
 if periapsis > deorbit_height {
 
 	do_deorbit().
@@ -182,80 +182,56 @@ else
 	check_for_sm_sep().
 }
 
-
-
-
 WHEN ship:velocity:surface:mag < 1500 then {
-	if SHIP:PARTSDUBBED("PARA_D1")[0]:getmodule("ModuleParachute"):alleventnames:CONTAINS("deploy chute") {
-		SHIP:PARTSDUBBED("PARA_D1")[0]:getmodule("ModuleParachute"):DOEVENT("deploy chute").
-	}
-	if SHIP:PARTSDUBBED("PARA_M1")[0]:getmodule("ModuleParachute"):alleventnames:CONTAINS("deploy chute") {
-		SHIP:PARTSDUBBED("PARA_M1")[0]:getmodule("ModuleParachute"):DOEVENT("deploy chute").
-	}
-	if SHIP:PARTSDUBBED("PARA_M2")[0]:getmodule("ModuleParachute"):alleventnames:CONTAINS("deploy chute") {
-		SHIP:PARTSDUBBED("PARA_M2")[0]:getmodule("ModuleParachute"):DOEVENT("deploy chute").
-	}
-	if SHIP:PARTSDUBBED("PARA_M3")[0]:getmodule("ModuleParachute"):alleventnames:CONTAINS("deploy chute") {
-		SHIP:PARTSDUBBED("PARA_M3")[0]:getmodule("ModuleParachute"):DOEVENT("deploy chute").
-	}
-	if SHIP:PARTSDUBBED("PARA_M4")[0]:getmodule("ModuleParachute"):alleventnames:CONTAINS("deploy chute") {
-		SHIP:PARTSDUBBED("PARA_M4")[0]:getmodule("ModuleParachute"):DOEVENT("deploy chute").
-	}
+
+	print round(missiontime) +" arm chutes "+round(alt:radar).
+	arm_parachute("PARA_M1").
+	arm_parachute("PARA_M2").
+	arm_parachute("PARA_M3").
+	arm_parachute("PARA_M4").
 
 	WHEN alt:radar < 10000 then {
-		print round(missiontime) +" d1 "+round(alt:radar).
-		set_parachute_pressure("PARA_D1",0).
+		print round(missiontime) +" unlock steer "+round(alt:radar).
+		unlock steering.
 	}
 	WHEN alt:radar < 5000 then {
-		unlock steering.
-		WHEN ALT:RADAR < 8000 then {
-			print round(missiontime) +" d2 "+round(alt:radar).
-			SHIP:PARTSDUBBED("PARA_D1")[0]:getmodule("ModuleParachute"):setfield("altitude",5000).
-		}
 		
-		WHEN ALT:RADAR < 3500  and ship:velocity:surface:mag < 420 then {
-			if SHIP:PARTSDUBBED("PARA_D1")[0]:getmodule("ModuleParachute"):alleventnames:CONTAINS("cut parachute") {
-				SHIP:PARTSDUBBED("PARA_D1")[0]:getmodule("ModuleParachute"):DOEVENT("cut parachute").
-			}
-			print round(missiontime) +" d3 "+round(alt:radar).
+		WHEN ALT:RADAR < 6000  and ship:velocity:surface:mag < 300 then {
+			print round(missiontime) +" pre 1 "+round(alt:radar).
+			set_parachute_pressure("PARA_M1",0).
 		}
 
-		WHEN ALT:RADAR < 3499  and ship:velocity:surface:mag < 419 then {
-			print round(missiontime) +" d4 "+round(alt:radar).
-			SHIP:PARTSDUBBED("PARA_M1")[0]:getmodule("ModuleParachute"):setfield("min pressure",0).
-		}
 		WHEN ALT:RADAR < 3000  and ship:velocity:surface:mag < 300 then {
-			print round(missiontime) +" d5 "+round(alt:radar).
-			SHIP:PARTSDUBBED("PARA_M2")[0]:getmodule("ModuleParachute"):setfield("min pressure",0).
+			print round(missiontime) +" pre 2 "+round(alt:radar).
+			set_parachute_pressure("PARA_M2",0).
 		}
 		WHEN ALT:RADAR < 2500  and ship:velocity:surface:mag < 300 then {
-			print round(missiontime) +" d6 "+round(alt:radar).
-			SHIP:PARTSDUBBED("PARA_M3")[0]:getmodule("ModuleParachute"):setfield("min pressure",0).
+			print round(missiontime) +" pre 3 "+round(alt:radar).
+			set_parachute_pressure("PARA_M3",0).
 		}
 		WHEN ALT:RADAR < 2000  and ship:velocity:surface:mag < 200 then {
-			print round(missiontime) +" d7 "+round(alt:radar).
-			SHIP:PARTSDUBBED("PARA_M4")[0]:getmodule("ModuleParachute"):setfield("min pressure",0).
+			print round(missiontime) +" pre 4 "+round(alt:radar).
+			set_parachute_pressure("PARA_M4",0).
 		}
-
 
 		WHEN ALT:RADAR < 1000  and ship:velocity:surface:mag < 200 then {
-			print round(missiontime) +" d8 "+round(alt:radar).
-			SHIP:PARTSDUBBED("PARA_M1")[0]:getmodule("ModuleParachute"):setfield("altitude",5000).
+			print round(missiontime) +" full 1 "+round(alt:radar).
+			set_parachute_alt("PARA_M1",5000).
 		}
 		WHEN ALT:RADAR < 300  and ship:velocity:surface:mag < 200 then {
-			print round(missiontime) +" d10 "+round(alt:radar).
-			SHIP:PARTSDUBBED("PARA_M2")[0]:getmodule("ModuleParachute"):setfield("altitude",5000).
+			print round(missiontime) +" full 2 "+round(alt:radar).
+			set_parachute_alt("PARA_M2",5000).
 		}
 		WHEN ALT:RADAR < 200  and ship:velocity:surface:mag < 200 then {
-			print round(missiontime) +" d11 "+round(alt:radar).
-			SHIP:PARTSDUBBED("PARA_M3")[0]:getmodule("ModuleParachute"):setfield("altitude",5000).
+			print round(missiontime) +" full 3 "+round(alt:radar).
+			set_parachute_alt("PARA_M3",5000).
 		}
-		WHEN ALT:RADAR < 150 and ship:velocity:surface:mag < 200 then {
-			print round(missiontime) +" d12 "+round(alt:radar).
-			SHIP:PARTSDUBBED("PARA_M4")[0]:getmodule("ModuleParachute"):setfield("altitude",5000).
+		WHEN ALT:RADAR < 100 and ship:velocity:surface:mag < 200 then {
+			print round(missiontime) +" full 4 "+round(alt:radar).
+			set_parachute_alt("PARA_M4",5000).
 		}
 		WHEN ship:velocity:surface:mag < 12 and  ALT:RADAR < 140 then {
-			print round(missiontime) +" d13 "+round(alt:radar).
+			print round(missiontime) +" HS "+round(alt:radar).
 			if SHIP:PARTSDUBBED("HS"):LENGTH = 1 {
 				SHIP:PARTSDUBBED("HS")[0]:getmodule("ModuleDecouple"):DOEVENT("jettison heat shield").
 			}
@@ -263,7 +239,6 @@ WHEN ship:velocity:surface:mag < 1500 then {
 	}
 }
 
-print "here".
 when alt:radar < 10 then {.
 	print "sequence end".
 }
