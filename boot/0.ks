@@ -1,59 +1,70 @@
 CLEARSCREEN.
-PRINT "boot".
+PRINT "boot AGC".
 SET CONFIG:TELNET TO TRUE.
 PRINT "telnet: ok".
 SWITCH TO 0.
 
 
+run globals.
+
 wait until ship:loaded.
+wait until stage:ready.
 
-wait 2.
+wait 1.
 
+print "ready".
 
 ON AG1 {
-
-	PRINT "ag1 - las sep".
-
-	run las_jet.
-	
+	PRINT "ag1 - launch".
+	set prog_mode to 1.
+	run launch.
 }
 
 ON AG2 {
+	PRINT "ag2 - las sep".
+	run las_jet.
+}
 
-	PRINT "ag2 - deploy".
-
+ON AG3 {
+	PRINT "ag3 - deploy".
 	run deploy.
-	
+}
+
+ON AG6 {
+	preserve.
+	print "ag6 - up".
+	run ag6_up.
+}
+
+ON AG7 {
+	preserve.
+	print "ag7 - down".
+	run ag7_down.
+}
+
+ON AG8 {
+	preserve.
+	print "ag8 - right".
+	run ag8_right.
 }
 
 ON AG9 {
-	
 	preserve.
-
-	PRINT "ag9 - deorbit".
-
-	run deorbit.
-	
+	print "ag9 - left".
+	run ag9_left.
 }
 
 ON AG10 {
-
 	preserve.
-
-	PRINT "ag10 - abort".
-
-	run abort.
-	
+	PRINT "ag10 - deorbit".
+	set prog_mode to 10.
+	run deorbit.
 }
 
 ON Abort {
-
-	preserve.
-
 	PRINT "abort - abort".
-
+	set prog_mode to 11.
 	run abort.
-	
 }
 
 
