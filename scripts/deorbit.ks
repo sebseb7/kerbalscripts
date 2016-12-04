@@ -18,8 +18,8 @@ set STEERINGMANAGER:ROLLCONTROLANGLERANGE to 30.
 set deorbitstarttime to missiontime.
 
 //set deorbit_height to -1000.
-//set deorbit_height to 59000.//minimal & safe
-set deorbit_height to -1000.//faster, may not work from High ApA
+set deorbit_height to 59000.//minimal & safe
+//set deorbit_height to -1000.//faster, may not work from High ApA
 
 function logev {
 	parameter text.
@@ -36,7 +36,7 @@ function set_partmodule_field {
 
 	for parapart IN SHIP:PARTSDUBBED(part_name)  {
 		if parapart:allmodules:contains(module_name) {
-			if parapart:allmodules:contains(module_name) {
+			if parapart:getmodule(module_name):allfieldnames:contains(field_name) {
 				parapart:getmodule(module_name):setfield(field_name,field_value).
 			}
 		}
@@ -197,6 +197,7 @@ function do_deorbit {
 			unlock steering.
 			sas on.
 		}
+
 	}
 }
 
@@ -208,6 +209,21 @@ else
 {
 	logev("- deorbit good").
 	check_for_sm_sep().
+}
+
+on round(time:seconds,1) {
+
+	if ship:velocity:surface:mag < 1 {
+		return false.
+	}
+
+	SET g TO KERBIN:MU / KERBIN:RADIUS^2.
+	LOCK accvec TO SHIP:SENSORS:ACC - SHIP:SENSORS:GRAV.
+	LOCK gforce TO accvec:MAG / g.
+
+	log round(missiontime,2)+" "+round(ship:velocity:surface:mag,2)+" "+round(gforce,2)+" "+(round(radar_alt,2)/10000)+" " to "profile.txt".
+
+	return true.
 }
 
 WHEN ship:velocity:surface:mag < 1500 then {
