@@ -4,6 +4,8 @@ SET CONFIG:TELNET TO TRUE.
 PRINT "telnet: ok".
 SWITCH TO 0.
 
+cd("/scripts").
+
 SET SHIP:CONTROL:PILOTMAINTHROTTLE TO 0.
 
 run globals.
