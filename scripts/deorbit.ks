@@ -126,10 +126,12 @@ function do_sm_sep {
 
 			if SHIP:ALTITUDE < 65000{
 				logev("- steer RG (2)").
+				set g_roll_correction to -140.
 				LOCK STEERING TO SHIP:SRFRETROGRADE + correctRoll. 
 			}else{
 				when SHIP:ALTITUDE < 65000 then {
 					logev("- steer RG (3)").
+					set g_roll_correction to -140.
 					LOCK STEERING TO SHIP:SRFRETROGRADE + correctRoll. 
 				}
 			}
@@ -160,6 +162,7 @@ function check_for_sm_sep {
 		
 	when SHIP:ALTITUDE < 63000 then {
 		logev("- steer RG (4)").
+		set g_roll_correction to -140.
 		sas off.
 		LOCK STEERING TO SHIP:SRFRETROGRADE + correctRoll. 
 	}	

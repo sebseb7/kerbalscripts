@@ -9,16 +9,16 @@ if body:name = "Kerbin" {
 	set gt0a to 210.
 	set gt0 to -20000.
 //	set gt0 to -15000.
-	set gt1 to 53000.
+	set gt1 to 46000.
 //	set gt1 to 48000.
 	set gtx0 to 600.
 	//set gtx1 to 3300.
-	set gtx1 to 2800.
+	set gtx1 to 3500.
 	set pitch0 to 0.
 	set pitch1 to 90.
 	// velocity parameters
 //	set maxq to 19500.
-	set maxq to 12500.
+	set maxq to 9000.
 
 }
 
