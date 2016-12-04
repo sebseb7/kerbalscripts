@@ -2122,11 +2122,11 @@ PART
 	link = linearRcs_4293954100
 	link = km.smart.radio_4287704694
 	link = dockingPort2_4294185612
-	link = radialDrogue_4294268712
-	link = radialDrogue_4294267696
 	link = mumech.MJ2.AR202_4294267444
 	link = KAL9000_4294267794
 	link = KAL9000_4294268552
+	link = radialDrogue_4294267696
+	link = radialDrogue_4293092954
 	attN = bottom,HeatShield2_4293280642
 	attN = top,dockingPort2_4294185612
 	EVENTS
@@ -5797,7 +5797,7 @@ PART
 {
 	part = RCSBlock_4287736308
 	partName = Part
-	pos = -2.98690939,43.6670532,-0.0905544162
+	pos = -2.98690939,43.6670532,-0.0905542821
 	attPos = 0,0,0
 	attPos0 = -0.00271677878,0.166515291,0.000179290932
 	rot = 1.00000012,0,0,0
@@ -6003,7 +6003,7 @@ PART
 {
 	part = RCSBlock_4287736180
 	partName = Part
-	pos = -0.89700532,43.6670532,-0.0851222128
+	pos = -0.89700532,43.6670532,-0.0851220787
 	attPos = 0,0,0
 	attPos0 = -0.00271682348,0.166515172,0.000179290466
 	rot = 0,0,-1.00000012,0
@@ -7799,7 +7799,7 @@ PART
 	istg = 0
 	resPri = 0
 	dstg = 0
-	sidx = 2
+	sidx = 1
 	sqor = 0
 	sepI = 0
 	attm = 0
@@ -7972,296 +7972,6 @@ PART
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-}
-PART
-{
-	part = radialDrogue_4294268712
-	partName = Part
-	pos = -1.37440538,45.5494041,0.239836395
-	attPos = 0,0,0
-	attPos0 = 0.567551851,0.94436264,0.327676207
-	rot = -0.0989027023,0.848913848,-0.171304509,-0.490120679
-	attRot = 0,0,0,1
-	attRot0 = -0.0989027023,0.848913848,-0.171304509,-0.490120679
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Heaviest
-	rigidAttachment = False
-	istg = 0
-	resPri = 0
-	dstg = 0
-	sidx = 1
-	sqor = 0
-	sepI = -1
-	attm = 1
-	modCost = -72.2399902
-	modMass = -0.0361200012
-	modSize = 0,0,0
-	sym = radialDrogue_4294267696
-	srfN = srfAttach,Mark1-2Pod_4294107090
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleParachute
-		isEnabled = True
-		persistentState = STOWED
-		animTime = 0
-		minAirPressureToOpen = 0.0199999996
-		deployAltitude = 2500
-		spreadAngle = 7
-		automateSafeDeploy = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			DeployAction
-			{
-				actionGroup = None
-			}
-			CutAction
-			{
-				actionGroup = None
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleTestSubject
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleDragModifier
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleDragModifier
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 72
-		defaultScale = 100
-		defaultTransformScale = (0.5, 0.5, 0.5)
-		DryCost = 77.7600098
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = KOSNameTag
-		isEnabled = True
-		nameTag = PARA_D1
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-}
-PART
-{
-	part = radialDrogue_4294267696
-	partName = Part
-	pos = -2.50950909,45.5494041,-0.415515959
-	attPos = 0,0,0
-	attPos0 = -0.567551851,0.94436264,-0.327676147
-	rot = -0.171304509,-0.490120709,0.0989027098,-0.848913848
-	attRot = 0,0,0,1
-	attRot0 = -0.171304509,-0.490120709,0.0989027098,-0.848913848
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Heaviest
-	rigidAttachment = False
-	istg = 0
-	resPri = 0
-	dstg = 0
-	sidx = 1
-	sqor = 0
-	sepI = -1
-	attm = 1
-	modCost = -72.2399902
-	modMass = -0.0361200012
-	modSize = 0,0,0
-	sym = radialDrogue_4294268712
-	srfN = srfAttach,Mark1-2Pod_4294107090
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleParachute
-		isEnabled = True
-		persistentState = STOWED
-		animTime = 0
-		minAirPressureToOpen = 0.0199999996
-		deployAltitude = 2500
-		spreadAngle = 7
-		automateSafeDeploy = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			DeployAction
-			{
-				actionGroup = None
-			}
-			CutAction
-			{
-				actionGroup = None
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleTestSubject
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleDragModifier
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleDragModifier
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 72
-		defaultScale = 100
-		defaultTransformScale = (0.5, 0.5, 0.5)
-		DryCost = 77.7600098
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = KOSNameTag
-		isEnabled = True
-		nameTag = PARA_D2
 		stagingEnabled = True
 		EVENTS
 		{
@@ -9345,7 +9055,7 @@ PART
 	pos = -1.86415732,49.8190117,-0.0100398213
 	attPos = 0,0,0
 	attPos0 = 0.0777999163,2.36535263,0.0777999908
-	rot = 0.591174901,0.294081688,-0.244872689,0.709975719
+	rot = 0.591174901,0.294081688,-0.2448726,0.709975719
 	attRot = 0,0,0,1
 	attRot0 = 0.591174901,0.294081688,-0.244872719,0.709975719
 	mir = 1,1,1
@@ -10452,6 +10162,296 @@ PART
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = radialDrogue_4294267696
+	partName = Part
+	pos = -2.49650335,45.5749855,-0.408007175
+	attPos = 0,0,0
+	attPos0 = -0.554546118,0.969944,-0.320167363
+	rot = -0.171304315,-0.490120649,0.0989025757,-0.848913908
+	attRot = 0,0,0,1
+	attRot0 = -0.171304315,-0.490120649,0.0989025757,-0.848913908
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Heaviest
+	rigidAttachment = False
+	istg = 0
+	resPri = 0
+	dstg = 0
+	sidx = 2
+	sqor = 0
+	sepI = -1
+	attm = 1
+	modCost = -86.6249847
+	modMass = -0.0433125049
+	modSize = 0,0,0
+	sym = radialDrogue_4293092954
+	srfN = srfAttach,Mark1-2Pod_4294107090
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleParachute
+		isEnabled = True
+		persistentState = STOWED
+		animTime = 0
+		minAirPressureToOpen = 0.0199999996
+		deployAltitude = 2500
+		spreadAngle = 7
+		automateSafeDeploy = 0
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			DeployAction
+			{
+				actionGroup = None
+			}
+			CutAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleTestSubject
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleDragModifier
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleDragModifier
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		currentScale = 65
+		defaultScale = 100
+		defaultTransformScale = (0.5, 0.5, 0.5)
+		DryCost = 63.3750153
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = KOSNameTag
+		isEnabled = True
+		nameTag = PARA_D2
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = radialDrogue_4293092954
+	partName = Part
+	pos = -1.38741112,45.5749855,0.232327491
+	attPos = 0,0,0
+	attPos0 = 0.554546118,0.969944,0.320167303
+	rot = 0.0989025831,-0.848913908,0.171304315,0.490120679
+	attRot = 0,0,0,1
+	attRot0 = 0.0989025831,-0.848913908,0.171304315,0.490120679
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Heaviest
+	rigidAttachment = False
+	istg = 0
+	resPri = 0
+	dstg = 0
+	sidx = 2
+	sqor = 0
+	sepI = -1
+	attm = 1
+	modCost = -86.6249847
+	modMass = -0.0433125049
+	modSize = 0,0,0
+	sym = radialDrogue_4294267696
+	srfN = srfAttach,Mark1-2Pod_4294107090
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleParachute
+		isEnabled = True
+		persistentState = STOWED
+		animTime = 0
+		minAirPressureToOpen = 0.0199999996
+		deployAltitude = 2500
+		spreadAngle = 7
+		automateSafeDeploy = 0
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			DeployAction
+			{
+				actionGroup = None
+			}
+			CutAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleTestSubject
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleDragModifier
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleDragModifier
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		currentScale = 65
+		defaultScale = 100
+		defaultTransformScale = (0.5, 0.5, 0.5)
+		DryCost = 63.3750153
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = KOSNameTag
+		isEnabled = True
+		nameTag = PARA_D1
 		stagingEnabled = True
 		EVENTS
 		{

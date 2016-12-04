@@ -7,16 +7,18 @@ if body:name = "Kerbin" {
 
 	// trajectory parameters
 	set gt0a to 210.
-	set gt0 to -5000.
+	set gt0 to -20000.
 //	set gt0 to -15000.
-	set gt1 to 50000.
+	set gt1 to 53000.
 //	set gt1 to 48000.
 	set gtx0 to 600.
-	set gtx1 to 3300.
+	//set gtx1 to 3300.
+	set gtx1 to 2800.
 	set pitch0 to 0.
 	set pitch1 to 90.
 	// velocity parameters
-	set maxq to 19500.
+//	set maxq to 19500.
+	set maxq to 12500.
 
 }
 
@@ -92,6 +94,19 @@ on round(time:seconds,1) {
 	return true.
 }
 
+when altitude > 49000 then {
+
+	print "fairing deploy".
+	FOR mypart IN SHIP:PARTS {
+		if mypart:allmodules:contains("ModuleProceduralFairing") {
+			local mymod to mypart:getmodule("ModuleProceduralFairing").
+			if mymod:hasevent("deploy") {
+				print "deploy "+mypart:title+" "+mypart:stage.
+				mymod:doevent("deploy").
+			}
+		}
+	}
+}
 
 when (altitude > ha or apoapsis > lorb) or not (prog_mode = 1) then {
 

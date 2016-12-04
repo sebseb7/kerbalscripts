@@ -31,6 +31,18 @@ ON AG3 {
 	run deploy.
 }
 
+ON AG4 {
+	preserve.
+	PRINT "ag4".
+	run ag4.
+}
+
+ON AG5 {
+	preserve.
+	PRINT "ag5".
+	run ag5.
+}
+
 ON AG6 {
 	preserve.
 	print "ag6 - up".
