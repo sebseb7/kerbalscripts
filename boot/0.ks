@@ -4,6 +4,7 @@ SET CONFIG:TELNET TO TRUE.
 PRINT "telnet: ok".
 SWITCH TO 0.
 
+SET SHIP:CONTROL:PILOTMAINTHROTTLE TO 0.
 
 run globals.
 
@@ -55,7 +56,6 @@ ON AG9 {
 }
 
 ON AG10 {
-	preserve.
 	PRINT "ag10 - deorbit".
 	set prog_mode to 10.
 	run deorbit.
