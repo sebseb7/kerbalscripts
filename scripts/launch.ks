@@ -6,19 +6,19 @@ if body:name = "Kerbin" {
 	set ha to 59000.
 
 	// trajectory parameters
-	set gt0a to 210.
-	set gt0 to -20000.
-//	set gt0 to -15000.
-	set gt1 to 46000.
-//	set gt1 to 48000.
+	set gt0a to 1210.
+//	set gt0 to -20000.
+	set gt0 to -15000.
+//	set gt1 to 46000.
+	set gt1 to 48000.
 	set gtx0 to 600.
-	//set gtx1 to 3300.
-	set gtx1 to 3500.
+	set gtx1 to 4000.
+	//set gtx1 to 3500.
 	set pitch0 to 0.
 	set pitch1 to 90.
 	// velocity parameters
-//	set maxq to 19500.
-	set maxq to 9000.
+	set maxq to 12500.
+//	set maxq to 9000.
 
 }
 
@@ -40,7 +40,19 @@ when radar_alt > gt0a then {
 }
 
 set pitch to 0.
+on round(time:seconds,1) {
 
+	if altitude > ha {
+		return false.
+	}
+
+
+
+	log round(missiontime,2)+" "+round(radar_alt,2)+" "+round(altitude,2)+" "+round(velocity:surface:mag,2)+" " to "launchlog.txt".
+
+
+	return true.
+}
 on round(time:seconds,1) {
 	
 	if not ( prog_mode = 1) {
@@ -54,7 +66,6 @@ on round(time:seconds,1) {
 	set ar to radar_alt.
 	// control attitude
 	if ar > gt0a and ar < gt1 {
-		//set warp to 4.
 		set arr to (ar - gt0) / (gt1 - gt0).
 		set pda to (cos(arr * 180) + 1) / 2.
 		set pitch to min(-5.1,pitch1 * ( pda - 1 )).
@@ -71,6 +82,8 @@ on round(time:seconds,1) {
 	if ar > gt1 {
 		lock steering to up + R(0, pitch, 0)+correctRoll.
 	}
+	set angle to VECTORANGLE(SHIP:UP:VECTOR,SHIP:FACING:VECTOR).
+	log round(missiontime,2)+" "+round(pitch*-1,2)+" "+round(angle,2) to "pitchlog.txt".
 	// dynamic pressure q
 	set vsm to velocity:surface:mag.
 	set exp to -altitude/5000.
@@ -142,7 +155,7 @@ when (altitude > ha or apoapsis > lorb) or not (prog_mode = 1) then {
 	}
 }
 
-when (altitude > ha) or not ( prog_mode = 1) then {
+when (altitude > 70001) or not ( prog_mode = 1) then {
 
 	if not ( prog_mode = 1) {
 		print "launch abort detected".
@@ -154,8 +167,10 @@ when (altitude > ha) or not ( prog_mode = 1) then {
 	SET WARP TO 0.
 	set tset to 0.
 	lock throttle to 0.
-	run aponode(lorb).
 	
+	run aponode(lorb).
+//	run exenode.
+
 	SET SHIP:CONTROL:PILOTMAINTHROTTLE TO 0.
 	unlock throttle.
 	

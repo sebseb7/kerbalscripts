@@ -1,8 +1,11 @@
 //DEORBIT
 //@LAZYGLOBAL OFF.
 
-// 2* Mk12-R @65% sa:7 PARA_D*
-// 4* Mk2-R @62% sa:7 PARA_M*
+// 1* Mk12-R sa7 @68% PARA_D1
+// 1* Mk12-R sa7 @124% PARA_D2
+// 4* symetric Mk2-R sa7 @55% PARA_M*
+// Heatshild "HS"
+// SM Decoupler : "SMJET_DEC"
 
 
 //todo: activate engines/stage
@@ -13,7 +16,7 @@ print "------------------------".
 print "-- Deorbit Initialted --".
 print "------------------------".
 
-set STEERINGMANAGER:ROLLCONTROLANGLERANGE to 30.
+//set STEERINGMANAGER:ROLLCONTROLANGLERANGE to 1i0.
 
 set deorbitstarttime to missiontime.
 
@@ -193,6 +196,10 @@ function do_deorbit {
 		when periapsis < deorbit_height then {
 
 			logev("- deorbit done").
+			set kuniverse:timewarp:warp	to 4.
+			when ship:altitude < 70000 and kuniverse:timewarp:mode = "PHYSICS" then {
+				set kuniverse:timewarp:warp	to 4.
+			}
 			check_for_sm_sep().
 			unlock steering.
 			sas on.
@@ -218,11 +225,11 @@ on round(time:seconds,1) {
 	}
 
 	SET g TO KERBIN:MU / KERBIN:RADIUS^2.
-	LOCK accvec TO SHIP:SENSORS:ACC - SHIP:SENSORS:GRAV.
+	LOCK accvec TO SHIP:SENSORS:ACC - SHIP:SENSORS:GRAV.//needs Double-C & GRAVMAX Instruments
 	LOCK gforce TO accvec:MAG / g.
 
 	log round(missiontime,2)+" "+round(ship:velocity:surface:mag,2)+" "+round(gforce,2)+" "+(round(radar_alt,2)/10000)+" " to "profile.txt".
-
+	//tail -1000 -f profile.txt | feedgnuplot --domain --terminal 'x11' -y2 1 --xlen 300 --stream 1 -ylabel speed -y2label g/alt*10k -y2 2
 	return true.
 }
 
@@ -232,37 +239,37 @@ WHEN ship:velocity:surface:mag < 1500 then {
 	arm_parachute("PARA_D1").
 	arm_parachute("PARA_D2").
 
-	WHEN radar_alt < 5500 then {
+	WHEN radar_alt < 6550 then {
+		set kuniverse:timewarp:warp	to 1.
 		logev("steer unlock").
 		unlock steering.
 		sas off.
 	}
 
-	WHEN radar_alt < 5000 and ship:velocity:surface:mag < 700 then {
+	WHEN radar_alt < 6500 and ship:velocity:surface:mag < 700 then {
 		
 		logev("Pre D").
 		set_parachute_pressure("PARA_D1",0).
 		set_parachute_pressure("PARA_D2",0).
 
-		WHEN RADAR_alt < 4000  and ship:velocity:surface:mag < 500 then {
+		WHEN RADAR_alt < 3500  and ship:velocity:surface:mag < 500 then {
 			logev("full d1").
 			set_parachute_alt("PARA_D1",5000).
 		}
-		WHEN RADAR_alt < 2000  and ship:velocity:surface:mag < 500 then {
-			logev("full d2").
+		WHEN RADAR_alt < 1500  and ship:velocity:surface:mag < 500 then {
+			logev("full d2 & cut D1").
+				cut_parachute("PARA_D1").
 			set_parachute_alt("PARA_D2",5000).
 		}
 			
-		WHEN ship:velocity:surface:mag < 100 and  RADAR_alt < 1800 then {
+		WHEN ship:velocity:surface:mag < 80 and  RADAR_alt < 1800 then {
 			logev("HS Jet").
 			do_partmodule_event("HS","ModuleDecouple","jettison heat shield").
 		}
 	
-		WHEN radar_alt < 600 and ship:velocity:surface:mag < 300 then {
+		WHEN radar_alt < 1000 and ship:velocity:surface:mag < 300 then {
 			
-			logev("Cut D & Arm Main & Pre Main").
-			cut_parachute("PARA_D1").
-			cut_parachute("PARA_D2").
+			logev("Arm Main & Pre Main").
 			arm_parachute("PARA_M1").
 			arm_parachute("PARA_M2").
 			arm_parachute("PARA_M3").
@@ -272,15 +279,16 @@ WHEN ship:velocity:surface:mag < 1500 then {
 			set_parachute_pressure("PARA_M3",0).
 			set_parachute_pressure("PARA_M4",0).
 
-			WHEN RADAR_alt < 590  and ship:velocity:surface:mag < 250 then {
-				logev("Full 1").
+			WHEN RADAR_alt < 300  and ship:velocity:surface:mag < 250 then {
+				logev("Cut D2 & Full 1").
+				cut_parachute("PARA_D2").
 				set_parachute_alt("PARA_M1",5000).
 			}
-			WHEN RADAR_alt < 200  and ship:velocity:surface:mag < 250 then {
+			WHEN RADAR_alt < 100  and ship:velocity:surface:mag < 250 then {
 				logev("Full 2").
 				set_parachute_alt("PARA_M2",5000).
 			}
-			WHEN RADAR_alt < 100  and ship:velocity:surface:mag < 250 then {
+			WHEN RADAR_alt < 80  and ship:velocity:surface:mag < 250 then {
 				logev("Full 3").
 				set_parachute_alt("PARA_M3",5000).
 			}
