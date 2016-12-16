@@ -10,7 +10,10 @@ FOR eng IN myVariable {
 FOR I IN RANGE(stage:number, 1) {
 
 	print i.
-	
+
+
+	//this list changes after decouple!!
+
 	FOR mypart IN SHIP:PARTS {
 
 		if mypart:stage = i {

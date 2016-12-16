@@ -21,7 +21,8 @@ print "------------------------".
 set deorbitstarttime to missiontime.
 
 //set deorbit_height to -1000.
-set deorbit_height to 59000.//minimal & safe
+//set deorbit_height to 59000.//minimal & safe
+set deorbit_height to 30000.//faster
 //set deorbit_height to -1000.//faster, may not work from High ApA
 
 function logev {
@@ -193,7 +194,7 @@ function do_deorbit {
 			}
 		}
 		
-		when periapsis < deorbit_height then {
+		when (periapsis < deorbit_height) and (tset = 0) then {
 
 			logev("- deorbit done").
 			set kuniverse:timewarp:warp	to 4.
