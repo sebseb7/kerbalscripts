@@ -219,20 +219,20 @@ else
 	check_for_sm_sep().
 }
 
-on round(time:seconds,1) {
+//SET g TO KERBIN:MU / KERBIN:RADIUS^2.
+//LOCK accvec TO SHIP:SENSORS:ACC - SHIP:SENSORS:GRAV.//needs Double-C & GRAVMAX Instruments
+//LOCK gforce TO accvec:MAG / g.
 
-	if ship:velocity:surface:mag < 1 {
-		return false.
-	}
-
-	SET g TO KERBIN:MU / KERBIN:RADIUS^2.
-	LOCK accvec TO SHIP:SENSORS:ACC - SHIP:SENSORS:GRAV.//needs Double-C & GRAVMAX Instruments
-	LOCK gforce TO accvec:MAG / g.
-
-	log round(missiontime,2)+" "+round(ship:velocity:surface:mag,2)+" "+round(gforce,2)+" "+(round(radar_alt,2)/10000)+" " to "profile.txt".
-	//tail -1000 -f profile.txt | feedgnuplot --domain --terminal 'x11' -y2 1 --xlen 300 --stream 1 -ylabel speed -y2label g/alt*10k -y2 2
-	return true.
-}
+//on round(time:seconds,1) {
+//
+//	if (ship:velocity:surface:mag < 1)or(ship:electriccharge < 3) {
+//		return false.
+//	}
+//
+//	log round(missiontime,2)+" "+round(ship:velocity:surface:mag,2)+" "+round(gforce,2)+" "+(round(radar_alt,2)/10000)+" " to "profile.txt".
+//	//tail -1000 -f profile.txt | feedgnuplot --domain --terminal 'x11' -y2 1 --xlen 300 --stream 1 -ylabel speed -y2label g/alt*10k -y2 2
+//	return true.
+//}
 
 WHEN ship:velocity:surface:mag < 1500 then {
 
@@ -240,7 +240,7 @@ WHEN ship:velocity:surface:mag < 1500 then {
 	arm_parachute("PARA_D1").
 	arm_parachute("PARA_D2").
 
-	WHEN radar_alt < 6550 then {
+	WHEN (radar_alt < 6550) or (ship:electriccharge < 20) then {
 		set kuniverse:timewarp:warp	to 1.
 		logev("steer unlock").
 		unlock steering.

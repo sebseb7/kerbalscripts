@@ -2,20 +2,35 @@
 
 set prog_mode to 4.
 
+set maxa to maxthrust/mass.
+//set dob to NEXTNODE:deltav:mag/maxa.     // incorrect: should use tsiolkovsky formula
+local g_isp is 0.
+local g_maxthr is 0.
+list engines in eng_list.
+local m is 0.
+local t is 0.
+for e in eng_list
+	if e:ignition {
+		local th is e:maxthrust*e:thrustlimit/100.
+		set t to t + th.
+		if e:visp = 0
+			set m to 1.
+		else
+			set m to m+th/e:visp.
+	}
+if not(m = 0) {
+	set g_isp to t/m.
+	set g_maxthr to t.
+}
+
+set ve to g_isp * 9.8.
+set dob to ((mass*ve)/g_maxthr)*(1-constant:e^(-nextnode:deltav:mag/ve)).
+
 print "T+" + round(missiontime) + " Node apoapsis: " + round(NEXTNODE:orbit:apoapsis/1000,2) + "km, periapsis: " + round(NEXTNODE:orbit:periapsis/1000,2) + "km".
 print "T+" + round(missiontime) + " Node in: " + round(NEXTNODE:eta) + ", DeltaV: " + round(NEXTNODE:deltav:mag).
-set maxa to maxthrust/mass.
-set dob to NEXTNODE:deltav:mag/maxa.     // incorrect: should use tsiolkovsky formula
-print "T+" + round(missiontime) + " Max acc: " + round(maxa) + "m/s^2, Burn duration: " + round(dob) + "s".
+print "T+" + round(missiontime) + " Max acc: " + round(maxa) + "m/s^2, Burn duration: " + round(dob,2) + "s".
 sas off.
 
-
-//function burntime {
-//parameter deltav.
-//set res to engine_isp_thrust_sum().
-//set ve to g_isp * 9.8.
-//return ((mass*ve)/g_maxthr)*(1-constant:e^(-deltav/ve)).
-//}
 
 FUNCTION calcAverage {
 	PARAMETER inputList.
@@ -46,7 +61,7 @@ when (avglist:length > 10 and calcAverage(avglist) < 0.4) or ( not ( prog_mode =
 	SET SASMODE TO "STABILITY".
 	sas on.
 	
-	run warpfor(NEXTNODE:eta - dob/2 - 2).
+	run warpfor(NEXTNODE:eta - dob/2 - 4).
 
 	when warping = 0 then {
 
@@ -54,10 +69,12 @@ when (avglist:length > 10 and calcAverage(avglist) < 0.4) or ( not ( prog_mode =
 		if not(prog_mode = 4) {
 			return false.
 		}
+		
 		lock steering to lookdirup(nextnode:deltav, ship:facing:topvector).
+				
 		avglist:clear().
 
-		when (avglist:length > 10 and calcAverage(avglist) < 1.5) or ( not ( prog_mode = 4))  then {
+		when (avglist:length > 10 and calcAverage(avglist) < 3.5) or ( not ( prog_mode = 4))  then {
 
 			if not(prog_mode = 4) {
 				unlock steering.
@@ -66,8 +83,10 @@ when (avglist:length > 10 and calcAverage(avglist) < 0.4) or ( not ( prog_mode =
 
 			print "aligned for burn".
 			
-			when ((nextnode:eta - dob/2) < 1) or ( not ( prog_mode = 4)) then {
+			when ((nextnode:eta - dob/2) < (dob/50)) or ( not ( prog_mode = 4)) then {
 				
+				print (nextnode:eta - dob/2).
+
 				if not(prog_mode = 4) {
 					unlock steering.
 					return false.
@@ -75,30 +94,23 @@ when (avglist:length > 10 and calcAverage(avglist) < 0.4) or ( not ( prog_mode =
 				
 				print "burn".
 
-				lock throttle to (nextnode:burnvector:mag*mass)/(maxthrust+0.01).
+				lock throttle to (nextnode:burnvector:mag*mass)/(maxthrust+0.01)*1.5.
 
-				when (nextnode:burnvector:mag < 3) or ( not ( prog_mode = 4)) then {
-					
-					if not(prog_mode = 4) {
-						return false.
-					}
-					print "fix steer".
-					set np to lookdirup(nextnode:deltav, ship:facing:topvector).
-					lock steering to np.
-				}
-				
-				
-				when (nextnode:burnvector:mag < .05) or ( not ( prog_mode = 4)) then {
+				when (VECTORANGLE(nextnode:deltav,ship:facing:vector) > 50) or (nextnode:burnvector:mag < .05) or ( not ( prog_mode = 4)) then {
 
 					unlock throttle.
 					unlock steering.
 
-					if not(prog_mode = 4) {
-						return false.
+					if not(prog_mode = 4) return false.
+					
+					if nextnode:burnvector:mag > .05 {
+						print "burn aborted early".
+						set burn_done to 2.
+					}else{
+						set burn_done to 1.
 					}
 
 					set prog_mode to 0.
-					set burn_done to 1.
 				}
 			}
 		}
@@ -108,10 +120,15 @@ when (avglist:length > 10 and calcAverage(avglist) < 0.4) or ( not ( prog_mode =
 on round(time:seconds,1) {
 
 	if not (prog_mode = 4) {
+		print "T+" + round(missiontime) + " Apoapsis: " + round(apoapsis/1000,2) + "km, periapsis: " + round(periapsis/1000,2) + "km".
+		print "T+" + round(missiontime) + " Fuel after burn: " + round(stage:liquidfuel).
+		
 		if burn_done = 1 {
-			print "T+" + round(missiontime) + " Apoapsis: " + round(apoapsis/1000,2) + "km, periapsis: " + round(periapsis/1000,2) + "km".
-			print "T+" + round(missiontime) + " Fuel after burn: " + round(stage:liquidfuel).
 			remove nextnode.
+			sas on.
+			set sasmode to "STABILITY".
+		}
+		if burn_done = 2 {
 			sas on.
 			set sasmode to "STABILITY".
 		}

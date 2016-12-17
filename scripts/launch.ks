@@ -6,13 +6,13 @@ if body:name = "Kerbin" {
 	set ha to 59000.
 	set vac to 70000.
 
-	set angle to 18.
+	set angle to 14.
 
 	// trajectory parameters
-	set gt0 to 80.
+	set gt0 to 60.
 	set gt1 to 45000.//48
 	// velocity parameters
-	set maxq to 7000.
+	set maxq to 6000.
 //	set maxq to 9000.
 
 }
@@ -35,7 +35,7 @@ when radar_alt > gt0 or not (prog_mode = 1) then {
 //	SET WARP TO 4.
 	if not ( prog_mode = 1) {return false.}
 	print "T+" + round(missiontime) + " begin turn.". 
-	lock pitch to max(-90,min(-angle,(altitude*19.9/body:atm:height)^0.5*-25)).
+	lock pitch to max(-90,min(-angle,(altitude*19.9/body:atm:height)^0.55*-23)).
 
 	when radar_alt > gt1 or altitude > ha or apoapsis > lorb or not (prog_mode = 1) then {
 		if not ( prog_mode = 1) {return false.}
@@ -76,8 +76,11 @@ on round(time:seconds,1) {
 	set vh to maxq*1.1.
 	if q < vl { set tset to 1. }
 	if q > vl and q < vh { set tset to (vh-q)/(vh-vl). }
-	if tset < 0.4 { set tset to 0.4. } //only in lower atmo
-	if q > vh { set tset to 0.4. }
+	if q > vh { set tset to 0.25. }
+	
+	if abs(STEERINGMANAGER:ANGLEERROR) > 1 {set tset to tset*abs(STEERINGMANAGER:ANGLEERROR). }
+	if tset < 0.25 { set tset to 0.25. } //only in lower atmo
+
 	if ship:velocity:surface:mag < 520 { set tset to 1. }
 
 	print "pitch: " + round(pitch,2) + "  " at (0,25).
