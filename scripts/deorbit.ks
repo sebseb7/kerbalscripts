@@ -185,15 +185,16 @@ function do_deorbit {
 		logev("- fire")..
 		set tset to 1.
 		
-		when VECTORANGLE(SHIP:RETROGRADE:VECTOR,SHIP:FACING:VECTOR) > 6 or periapsis < deorbit_height then {
+		when VECTORANGLE(SHIP:RETROGRADE:VECTOR,SHIP:FACING:VECTOR) > 6 or periapsis < deorbit_height or (ship:altitude < 65000 and periapsis < 60000) then {
 			
 			logev("- stop firing").
 			set tset to 0.
-			if periapsis > deorbit_height {
+			if (periapsis > deorbit_height)and((ship:altitude > 65000)or(periapsis > 60000)) {
 				do_deorbit().
 			}
 		}
 		
+
 		when (periapsis < deorbit_height) and (throttle = 0) then {
 
 			logev("- deorbit done").
@@ -206,6 +207,13 @@ function do_deorbit {
 			sas on.
 		}
 
+	}
+	
+	when (ship:altitude < 65000) and (periapsis < 60000) then {
+		set tset to 0.
+		check_for_sm_sep().
+		unlock steering.
+		sas on.
 	}
 }
 

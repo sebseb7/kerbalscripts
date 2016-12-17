@@ -105,9 +105,13 @@ when (avglist:length > 10 and calcAverage(avglist) < 0.4) or ( not ( prog_mode =
 
 				lock throttle to (nextnode:burnvector:mag*mass)/(maxthrust+0.01)*1.5.
 
-				when not((eng_out = 0)) or ( not ( prog_mode = 4)) then {
+				when not((eng_out() = 0)) or ( not ( prog_mode = 4)) then {
 					if not(prog_mode = 4) return false.
-					stage.
+			
+					if not((eng_out() = 0)) {
+						print eng_out().
+						stage.
+					}
 				}
 
 				when (VECTORANGLE(nextnode:deltav,ship:facing:vector) > 50) or (nextnode:burnvector:mag < .05) or ( not ( prog_mode = 4)) then {

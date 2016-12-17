@@ -1309,7 +1309,7 @@ PART
 	dstg = 1
 	sidx = -1
 	sqor = -1
-	sepI = 1
+	sepI = -1
 	attm = 0
 	modCost = -120.800003
 	modMass = -0.0359999947
@@ -1579,7 +1579,7 @@ PART
 {
 	part = batteryBank_4294210008
 	partName = Part
-	pos = -1.37803161,11.0366564,-0.115117416
+	pos = -1.37803161,11.0433083,-0.115117416
 	attPos = 0,0,0
 	attPos0 = 0,-0.121416092,0
 	rot = 0,0,0,1
@@ -1596,8 +1596,8 @@ PART
 	sqor = -1
 	sepI = 0
 	attm = 0
-	modCost = -670.271057
-	modMass = -0.0380836017
+	modCost = -725.457642
+	modMass = -0.0412192009
 	modSize = 0,0,0
 	link = fuelTankSmall_4293532924
 	attN = top,KW1mDecoupler_4293136694
@@ -1615,10 +1615,10 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
-		currentScale = 0.774999976
+		currentScale = 0.699999988
 		defaultScale = 1.25
 		defaultTransformScale = (1, 1, 1)
-		DryCost = 209.728928
+		DryCost = 154.542328
 		stagingEnabled = True
 		EVENTS
 		{
@@ -1649,8 +1649,8 @@ PART
 	RESOURCE
 	{
 		name = ElectricCharge
-		amount = 238.32828870307259
-		maxAmount = 238.32828870307259
+		amount = 175.61627726551771
+		maxAmount = 175.61627726551771
 		flowState = True
 		isTweakable = True
 		hideFlow = False
@@ -2370,7 +2370,7 @@ PART
 {
 	part = fuelTankSmall_4293532924
 	partName = Part
-	pos = -1.37803161,10.6014624,-0.115117416
+	pos = -1.37803161,10.5481377,-0.115117416
 	attPos = 0,0,0
 	attPos0 = 0,-0.626197815,0
 	rot = 0,0,0,1
@@ -2387,8 +2387,8 @@ PART
 	sqor = -1
 	sepI = 0
 	attm = 0
-	modCost = -195.938477
-	modMass = -0.0890630037
+	modCost = -144.497971
+	modMass = -0.0656809956
 	modSize = 0,0,0
 	link = liquidEngineMini_4293575630
 	link = solarPanels4_4292204842
@@ -2410,10 +2410,10 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
-		currentScale = 0.824999988
+		currentScale = 0.975000024
 		defaultScale = 1.25
 		defaultTransformScale = (1.25, 1.25, 1.25)
-		DryCost = 52.6693497
+		DryCost = 86.9380722
 		stagingEnabled = True
 		EVENTS
 		{
@@ -2471,8 +2471,8 @@ PART
 	RESOURCE
 	{
 		name = LiquidFuel
-		amount = 25.874683656879093
-		maxAmount = 25.874683656879093
+		amount = 42.70975709468425
+		maxAmount = 42.70975709468425
 		flowState = True
 		isTweakable = True
 		hideFlow = False
@@ -2482,8 +2482,8 @@ PART
 	RESOURCE
 	{
 		name = Oxidizer
-		amount = 31.624613358407782
-		maxAmount = 31.624613358407782
+		amount = 52.2008142268363
+		maxAmount = 52.2008142268363
 		flowState = True
 		isTweakable = True
 		hideFlow = False
@@ -2495,7 +2495,7 @@ PART
 {
 	part = liquidEngineMini_4293575630
 	partName = Part
-	pos = -1.37803161,10.2349987,-0.115117416
+	pos = -1.37803161,10.1150455,-0.115117416
 	attPos = 0,0,0
 	attPos0 = 0,-0.555250168,0
 	rot = 0,0,0,1
@@ -2703,7 +2703,7 @@ PART
 {
 	part = KW1mDecoupler_4294073920
 	partName = Part
-	pos = -1.37803161,9.82099915,-0.115117416
+	pos = -1.37803161,9.70104599,-0.115117416
 	attPos = 0,-0.102374308,0
 	attPos0 = 0,-0.413999557,0
 	rot = 0,0,0,1
@@ -2796,7 +2796,7 @@ PART
 {
 	part = fairingSize1_4290506036
 	partName = Part
-	pos = -1.37803161,9.56199837,-0.115117416
+	pos = -1.37803161,9.44204521,-0.115117416
 	attPos = 0,0,0
 	attPos0 = 0,-0.259000778,0
 	rot = 0,0,0,1
@@ -3144,7 +3144,7 @@ PART
 {
 	part = solarPanels4_4292204842
 	partName = Part
-	pos = -1.74913335,10.6211319,-0.115117401
+	pos = -1.81660628,10.5713835,-0.115117401
 	attPos = 0,0,0
 	attPos0 = -0.562275052,0.0298023224,2.98023224E-08
 	rot = -7.48678476E-23,8.42937027E-08,-1.77635684E-15,1
@@ -3161,8 +3161,8 @@ PART
 	sqor = -1
 	sepI = 0
 	attm = 1
-	modCost = -148.807831
-	modMass = -0.00685300119
+	modCost = -243.199921
+	modMass = -0.0111999996
 	modSize = 0,0,0
 	sym = solarPanels4_4293531200
 	sym = solarPanels4_4293531086
@@ -3180,7 +3180,7 @@ PART
 	{
 		name = ModuleDeployableSolarPanel
 		isEnabled = True
-		efficiencyMult = 0.608399928
+		efficiencyMult = 0.360000014
 		launchUT = -1
 		currentRotation = (-0.5, -0.5, -0.5, 0.5)
 		storedAnimationTime = 0
@@ -3215,10 +3215,10 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
-		currentScale = 78
+		currentScale = 60
 		defaultScale = 100
 		defaultTransformScale = (1, 1, 1)
-		DryCost = 231.192169
+		DryCost = 136.800079
 		stagingEnabled = True
 		EVENTS
 		{
@@ -3267,7 +3267,7 @@ PART
 {
 	part = solarPanels4_4293531200
 	partName = Part
-	pos = -1.19248056,10.6211319,0.206266209
+	pos = -1.1587441,10.5713835,0.264699519
 	attPos = 0,0,0
 	attPos0 = 0.281137586,0.0298023224,0.486944497
 	rot = -1.53837023E-15,0.866025507,-8.88178314E-16,0.499999911
@@ -3284,8 +3284,8 @@ PART
 	sqor = -1
 	sepI = 0
 	attm = 1
-	modCost = -148.807831
-	modMass = -0.00685300119
+	modCost = -243.199921
+	modMass = -0.0111999996
 	modSize = 0,0,0
 	sym = solarPanels4_4292204842
 	sym = solarPanels4_4293531086
@@ -3303,7 +3303,7 @@ PART
 	{
 		name = ModuleDeployableSolarPanel
 		isEnabled = True
-		efficiencyMult = 0.608399928
+		efficiencyMult = 0.360000014
 		launchUT = -1
 		currentRotation = (-0.5, -0.5, -0.5, 0.5)
 		storedAnimationTime = 0
@@ -3338,10 +3338,10 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
-		currentScale = 78
+		currentScale = 60
 		defaultScale = 100
 		defaultTransformScale = (1, 1, 1)
-		DryCost = 231.192169
+		DryCost = 136.800079
 		stagingEnabled = True
 		EVENTS
 		{
@@ -3390,7 +3390,7 @@ PART
 {
 	part = solarPanels4_4293531086
 	partName = Part
-	pos = -1.19248092,10.6211319,-0.436501443
+	pos = -1.15874445,10.5713835,-0.494934976
 	attPos = 0,0,0
 	attPos0 = 0.281137466,0.0298023224,-0.486944556
 	rot = -1.53837012E-15,0.866025329,8.88178631E-16,-0.500000119
@@ -3407,8 +3407,8 @@ PART
 	sqor = -1
 	sepI = 0
 	attm = 1
-	modCost = -148.807831
-	modMass = -0.00685300119
+	modCost = -243.199921
+	modMass = -0.0111999996
 	modSize = 0,0,0
 	sym = solarPanels4_4292204842
 	sym = solarPanels4_4293531200
@@ -3426,7 +3426,7 @@ PART
 	{
 		name = ModuleDeployableSolarPanel
 		isEnabled = True
-		efficiencyMult = 0.608399928
+		efficiencyMult = 0.360000014
 		launchUT = -1
 		currentRotation = (-0.5, -0.5, -0.5, 0.5)
 		storedAnimationTime = 0
@@ -3461,10 +3461,10 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
-		currentScale = 78
+		currentScale = 60
 		defaultScale = 100
 		defaultTransformScale = (1, 1, 1)
-		DryCost = 231.192169
+		DryCost = 136.800079
 		stagingEnabled = True
 		EVENTS
 		{
@@ -3513,7 +3513,7 @@ PART
 {
 	part = SurfAntenna_4293353724
 	partName = Part
-	pos = -1.57305741,10.5683289,-0.452912569
+	pos = -1.60674393,10.5089798,-0.511259377
 	attPos = 0,0,0
 	attPos0 = -0.215890288,-0.0341377258,-0.373932958
 	rot = -0.612372458,0.612372458,-0.353553385,0.353553385
@@ -3603,7 +3603,7 @@ PART
 {
 	part = fuelTankSmall_4293092368
 	partName = Part
-	pos = -1.37803161,8.80674839,-0.115117416
+	pos = -1.37803161,8.68679523,-0.115117416
 	attPos = 0,0,0
 	attPos0 = 0,-0.755249977,0
 	rot = 0,0,0,1
@@ -3724,7 +3724,7 @@ PART
 {
 	part = liquidEngine3_4292745770
 	partName = Part
-	pos = -1.37803161,7.98087597,-0.115117416
+	pos = -1.37803161,7.86092281,-0.115117416
 	attPos = 0,0,0
 	attPos0 = 0,-0.825872421,0
 	rot = 0,0,0,1
@@ -3963,7 +3963,7 @@ PART
 {
 	part = KW1mDecoupler_4292731036
 	partName = Part
-	pos = -1.37803161,7.44306278,-0.115117416
+	pos = -1.37803161,7.32310963,-0.115117416
 	attPos = 0,0,0
 	attPos0 = 0,-0.537813663,0
 	rot = 0,0,0,1
@@ -4056,7 +4056,7 @@ PART
 {
 	part = fuelTank_4289448138
 	partName = Part
-	pos = -1.37803161,6.41237211,-0.115117416
+	pos = -1.37803161,6.29241896,-0.115117416
 	attPos = 0,0,0
 	attPos0 = 0,-1.03069067,0
 	rot = 0,0,0,1
@@ -4177,7 +4177,7 @@ PART
 {
 	part = fuelTank_4293998930
 	partName = Part
-	pos = -1.37803161,4.53418207,-0.115117416
+	pos = -1.37803161,4.41422892,-0.115117416
 	attPos = 0,0,0
 	attPos0 = 0,-1.87819004,0
 	rot = 0,0,0,1
@@ -4301,7 +4301,7 @@ PART
 {
 	part = SSME_4293795470
 	partName = Part
-	pos = -1.37803161,3.62168264,-0.115117416
+	pos = -1.37803161,3.50172949,-0.115117416
 	attPos = 0,0,0
 	attPos0 = 0,-0.912499428,0
 	rot = 0,0,0,1
@@ -4553,7 +4553,7 @@ PART
 {
 	part = launchClamp1_4293795358
 	partName = Part
-	pos = -2.80402899,2.96867085,-0.115117177
+	pos = -2.80402899,2.84871769,-0.115117177
 	attPos = 0,0,0
 	attPos0 = -1.42599761,-1.56551075,1.78813934E-07
 	rot = 1.25607384E-15,0.707106829,-1.25607395E-15,0.707106709
@@ -4589,8 +4589,8 @@ PART
 	{
 		name = LaunchClamp
 		isEnabled = True
-		scaleFactor = 1.43818414
-		height = 3.62882185
+		scaleFactor = 1.39064395
+		height = 3.50886869
 		stagingEnabled = True
 		towerRot = -1.25607384E-15,-0.707106829,1.25607395E-15,0.707106709
 		EVENTS
@@ -4675,7 +4675,7 @@ PART
 {
 	part = launchClamp1_4293993406
 	partName = Part
-	pos = -0.665032506,2.96867085,1.11983263
+	pos = -0.665032506,2.84871769,1.11983263
 	attPos = 0,0,0
 	attPos0 = 0.712999105,-1.56551075,1.23495007
 	rot = -4.59755137E-16,0.965925813,-1.71582882E-15,-0.258819163
@@ -4711,8 +4711,8 @@ PART
 	{
 		name = LaunchClamp
 		isEnabled = True
-		scaleFactor = 1.43818414
-		height = 3.62882185
+		scaleFactor = 1.39064395
+		height = 3.50886869
 		stagingEnabled = True
 		towerRot = 4.59755137E-16,-0.965925813,1.71582882E-15,-0.258819163
 		EVENTS
@@ -4797,7 +4797,7 @@ PART
 {
 	part = launchClamp1_4293993284
 	partName = Part
-	pos = -0.665032983,2.96867085,-1.35006785
+	pos = -0.665032983,2.84871769,-1.35006785
 	attPos = 0,0,0
 	attPos0 = 0.712998629,-1.56551075,-1.23495042
 	rot = -1.71582892E-15,0.258818895,-4.59754767E-16,-0.965925872
@@ -4833,8 +4833,8 @@ PART
 	{
 		name = LaunchClamp
 		isEnabled = True
-		scaleFactor = 1.43818414
-		height = 3.62882185
+		scaleFactor = 1.39064395
+		height = 3.50886869
 		stagingEnabled = True
 		towerRot = 1.71582892E-15,-0.258818895,4.59754767E-16,-0.965925872
 		EVENTS
