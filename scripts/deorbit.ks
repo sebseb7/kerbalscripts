@@ -113,7 +113,7 @@ function do_sm_sep {
 		RCS ON.
 		set side to R(10,10,0). 
 		sas off.
-		LOCK STEERING TO SHIP:UP + correctRoll + side.
+		lock steering to lookdirup(ship:up:vector + side, ship:facing:topvector).
 	}
 	
 	when VECTORANGLE(SHIP:UP:VECTOR,SHIP:FACING:VECTOR) < 20 or SHIP:ALTITUDE < 65000 then {
@@ -178,7 +178,7 @@ function do_deorbit {
 	logev("- steer RG (for burn)").
 
 	sas off.
-	LOCK STEERING TO SHIP:RETROGRADE + correctRoll. 
+	lock steering to lookdirup(ship:retrograde:vector, ship:facing:topvector).
 	
 	when VECTORANGLE(SHIP:RETROGRADE:VECTOR,SHIP:FACING:VECTOR) < 5 then {
 	
@@ -194,7 +194,7 @@ function do_deorbit {
 			}
 		}
 		
-		when (periapsis < deorbit_height) and (tset = 0) then {
+		when (periapsis < deorbit_height) and (throttle = 0) then {
 
 			logev("- deorbit done").
 			set kuniverse:timewarp:warp	to 4.

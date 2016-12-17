@@ -6,11 +6,11 @@ if body:name = "Kerbin" {
 	set ha to 59000.
 	set vac to 70000.
 
-	set angle to 6.
+	set angle to 18.
 
 	// trajectory parameters
 	set gt0 to 80.
-	set gt1 to 53000.//48
+	set gt1 to 45000.//48
 	// velocity parameters
 	set maxq to 7000.
 //	set maxq to 9000.
@@ -78,7 +78,8 @@ on round(time:seconds,1) {
 	if q > vl and q < vh { set tset to (vh-q)/(vh-vl). }
 	if tset < 0.4 { set tset to 0.4. } //only in lower atmo
 	if q > vh { set tset to 0.4. }
-	
+	if ship:velocity:surface:mag < 520 { set tset to 1. }
+
 	print "pitch: " + round(pitch,2) + "  " at (0,25).
 	print "alt:radar: " + round(radar_alt) + "  " at (0,26). 
 	print "q: " + round(q) + "  " at (0,27). 
@@ -99,7 +100,7 @@ when altitude > 26000 or not (prog_mode = 1) then {
 
 }
 
-when altitude > 49000 or not (prog_mode = 1) then {
+when altitude > 53000 or not (prog_mode = 1) then {
 	
 	if not ( prog_mode = 1) {return false.}
 
@@ -139,10 +140,10 @@ when (altitude > ha or apoapsis > lorb) or not (prog_mode = 1) then {
 			{ 
 				set tset to 0. 
 			}
-	set vsm to velocity:surface:mag.
-	set exp to -altitude/5000.
-	set ad to 1.2230948554874 * 2.718281828^exp.    // atmospheric density
-	set q to 0.5 * ad * vsm^2.
+			set vsm to velocity:surface:mag.
+			set exp to -altitude/5000.
+			set ad to 1.2230948554874 * 2.718281828^exp.    // atmospheric density
+			set q to 0.5 * ad * vsm^2.
 			print "pitch: " + round(pitch,2) + "  " at (0,25).
 			print "alt:radar: " + round(radar_alt) + "  " at (0,26). 
 			print "q: " + round(q) + "  " at (0,27). 

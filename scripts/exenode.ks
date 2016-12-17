@@ -28,7 +28,7 @@ FUNCTION calcAverage {
 
 global avglist to list().
 	
-lock steering to nextnode:deltav.
+lock steering to lookdirup(nextnode:deltav, ship:facing:topvector).
 
 avglist:clear().
 
@@ -54,7 +54,7 @@ when (avglist:length > 10 and calcAverage(avglist) < 0.4) or ( not ( prog_mode =
 		if not(prog_mode = 4) {
 			return false.
 		}
-		lock steering to nextnode:deltav.
+		lock steering to lookdirup(nextnode:deltav, ship:facing:topvector).
 		avglist:clear().
 
 		when (avglist:length > 10 and calcAverage(avglist) < 1.5) or ( not ( prog_mode = 4))  then {
@@ -75,16 +75,16 @@ when (avglist:length > 10 and calcAverage(avglist) < 0.4) or ( not ( prog_mode =
 				
 				print "burn".
 
-				lock throttle to (nextnode:burnvector:mag*mass)/maxthrust.
+				lock throttle to (nextnode:burnvector:mag*mass)/(maxthrust+0.01).
 
-				when (nextnode:burnvector:mag < 1) or ( not ( prog_mode = 4)) then {
+				when (nextnode:burnvector:mag < 3) or ( not ( prog_mode = 4)) then {
 					
 					if not(prog_mode = 4) {
 						return false.
 					}
 					print "fix steer".
-					set np to R(0,0,0) * nextnode:deltav.
-					set steering to np.
+					set np to lookdirup(nextnode:deltav, ship:facing:topvector).
+					lock steering to np.
 				}
 				
 				
