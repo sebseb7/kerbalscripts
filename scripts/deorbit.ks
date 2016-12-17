@@ -233,18 +233,35 @@ else
 //	//tail -1000 -f profile.txt | feedgnuplot --domain --terminal 'x11' -y2 1 --xlen 300 --stream 1 -ylabel speed -y2label g/alt*10k -y2 2
 //	return true.
 //}
+		
+when (radar_alt < 50000) and (ship:electriccharge < 15) then {
 
-WHEN ship:velocity:surface:mag < 1500 then {
+	local l_mod is "ModuleCommand".
+	local l_field is "hibernation".
+	FOR mypart IN SHIP:PARTS {
+		if mypart:allmodules:contains(l_mod) {
+			local mymod to mypart:getmodule(l_mod).
+			if mymod:hasfield(l_field) {
+				mymod:setfield(l_field,true).
+			}
+		}
+	}
+}
+
+//todo: if electric charge < 2 : shut down everything (incl. kos) and arm chutes with safe parameters
+
+WHEN (ship:velocity:surface:mag < 1900 ) and (radar_alt < 40000) then {
 
 	logev("Arm D").
 	arm_parachute("PARA_D1").
 	arm_parachute("PARA_D2").
 
-	WHEN (radar_alt < 6550) or (ship:electriccharge < 20) then {
+	WHEN (radar_alt < 6550) or (ship:electriccharge < 10) then {
 		set kuniverse:timewarp:warp	to 1.
 		logev("steer unlock").
 		unlock steering.
 		sas off.
+		
 	}
 
 	WHEN radar_alt < 6500 and ship:velocity:surface:mag < 700 then {

@@ -171,6 +171,7 @@ when (altitude > vac) or not ( prog_mode = 1) then {
 	SET SHIP:CONTROL:PILOTMAINTHROTTLE TO 0.
 	unlock throttle.
 	
+	run deploy.
 	run aponode(lorb).
 	run exenode.
 
