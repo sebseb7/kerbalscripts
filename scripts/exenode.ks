@@ -31,6 +31,15 @@ print "T+" + round(missiontime) + " Node in: " + round(NEXTNODE:eta) + ", DeltaV
 print "T+" + round(missiontime) + " Max acc: " + round(maxa) + "m/s^2, Burn duration: " + round(dob,2) + "s".
 sas off.
 
+FUNCTION eng_out {
+
+	local numOut to 0.
+	LIST ENGINES IN eng_list.
+	FOR eng IN eng_list
+		IF eng:FLAMEOUT
+			SET numOut TO numOut + 1.
+	return numOut.
+}
 
 FUNCTION calcAverage {
 	PARAMETER inputList.
@@ -95,6 +104,11 @@ when (avglist:length > 10 and calcAverage(avglist) < 0.4) or ( not ( prog_mode =
 				print "burn".
 
 				lock throttle to (nextnode:burnvector:mag*mass)/(maxthrust+0.01)*1.5.
+
+				when not((eng_out = 0)) or ( not ( prog_mode = 4)) then {
+					if not(prog_mode = 4) return false.
+					stage.
+				}
 
 				when (VECTORANGLE(nextnode:deltav,ship:facing:vector) > 50) or (nextnode:burnvector:mag < .05) or ( not ( prog_mode = 4)) then {
 
