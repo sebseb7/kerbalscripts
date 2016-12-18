@@ -1506,8 +1506,8 @@ PART
 	modCost = -26.3932037
 	modMass = -0.0899999887
 	modSize = 0,0,0
-	link = batteryBank_4294210008
-	attN = bottom,batteryBank_4294210008
+	link = fuelTankSmall_4293532924
+	attN = bottom,fuelTankSmall_4293532924
 	attN = top,HeatShield1_4293119168
 	EVENTS
 	{
@@ -1573,89 +1573,6 @@ PART
 		UPGRADESAPPLIED
 		{
 		}
-	}
-}
-PART
-{
-	part = batteryBank_4294210008
-	partName = Part
-	pos = -1.37803161,11.0433083,-0.115117416
-	attPos = 0,0,0
-	attPos0 = 0,-0.121416092,0
-	rot = 0,0,0,1
-	attRot = 0,0,0,1
-	attRot0 = 0,0,0,1
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Grandparent
-	rigidAttachment = True
-	istg = 0
-	resPri = 0
-	dstg = 4
-	sidx = -1
-	sqor = -1
-	sepI = 0
-	attm = 0
-	modCost = -725.457642
-	modMass = -0.0412192009
-	modSize = 0,0,0
-	link = fuelTankSmall_4293532924
-	attN = top,KW1mDecoupler_4293136694
-	attN = bottom,fuelTankSmall_4293532924
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 0.699999988
-		defaultScale = 1.25
-		defaultTransformScale = (1, 1, 1)
-		DryCost = 154.542328
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = KOSNameTag
-		isEnabled = True
-		nameTag = 
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	RESOURCE
-	{
-		name = ElectricCharge
-		amount = 175.61627726551771
-		maxAmount = 175.61627726551771
-		flowState = True
-		isTweakable = True
-		hideFlow = False
-		isVisible = True
-		flowMode = Both
 	}
 }
 PART
@@ -2370,9 +2287,9 @@ PART
 {
 	part = fuelTankSmall_4293532924
 	partName = Part
-	pos = -1.37803161,10.5481377,-0.115117416
+	pos = -1.37803161,10.6722898,-0.115117416
 	attPos = 0,0,0
-	attPos0 = 0,-0.626197815,0
+	attPos0 = 0,-0.485095024,0
 	rot = 0,0,0,1
 	attRot = 0,0,0,1
 	attRot0 = 0,0,0,1
@@ -2390,13 +2307,13 @@ PART
 	modCost = -144.497971
 	modMass = -0.0656809956
 	modSize = 0,0,0
-	link = liquidEngineMini_4293575630
 	link = solarPanels4_4292204842
 	link = solarPanels4_4293531200
 	link = solarPanels4_4293531086
 	link = SurfAntenna_4293353724
-	attN = top,batteryBank_4294210008
-	attN = bottom,liquidEngineMini_4293575630
+	link = batteryBank_4294210008
+	attN = top,KW1mDecoupler_4293136694
+	attN = bottom,batteryBank_4294210008
 	EVENTS
 	{
 	}
@@ -2493,11 +2410,553 @@ PART
 }
 PART
 {
+	part = solarPanels4_4292204842
+	partName = Part
+	pos = -1.81165993,10.6955357,-0.115117401
+	attPos = 0.128646731,-0.00655651093,-1.49011612E-08
+	attPos0 = -0.562275052,0.0298023224,2.98023224E-08
+	rot = -7.48678476E-23,8.42937027E-08,-1.77635684E-15,1
+	attRot = 0,0,0,1
+	attRot0 = -7.48678476E-23,8.42937027E-08,-1.77635684E-15,1
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Heaviest
+	rigidAttachment = True
+	istg = 0
+	resPri = 0
+	dstg = 4
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = -319.199951
+	modMass = -0.0147000002
+	modSize = 0,0,0
+	sym = solarPanels4_4293531200
+	sym = solarPanels4_4293531086
+	srfN = srfAttach,fuelTankSmall_4293532924
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleDeployableSolarPanel
+		isEnabled = True
+		efficiencyMult = 0.160000011
+		launchUT = -1
+		currentRotation = (-0.5, -0.5, -0.5, 0.5)
+		storedAnimationTime = 0
+		storedAnimationSpeed = 1
+		deployState = RETRACTED
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ExtendPanelsAction
+			{
+				actionGroup = None
+				active = False
+			}
+			ExtendAction
+			{
+				actionGroup = None
+			}
+			RetractAction
+			{
+				actionGroup = None
+				active = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		currentScale = 40
+		defaultScale = 100
+		defaultTransformScale = (1, 1, 1)
+		DryCost = 60.8000641
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = KOSNameTag
+		isEnabled = True
+		nameTag = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleTweakableDeployablePanel
+		isEnabled = True
+		sunTrackingEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = solarPanels4_4293531200
+	partName = Part
+	pos = -1.16121745,10.6955357,0.260415733
+	attPos = -0.0643234253,-0.00655651093,-0.111411333
+	attPos0 = 0.281137586,0.0298023224,0.486944497
+	rot = -1.53837023E-15,0.866025507,-8.88178314E-16,0.499999911
+	attRot = 0,0,0,1
+	attRot0 = -1.53837023E-15,0.866025507,-8.88178314E-16,0.499999911
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Heaviest
+	rigidAttachment = True
+	istg = 0
+	resPri = 0
+	dstg = 4
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = -319.199951
+	modMass = -0.0147000002
+	modSize = 0,0,0
+	sym = solarPanels4_4292204842
+	sym = solarPanels4_4293531086
+	srfN = srfAttach,fuelTankSmall_4293532924
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleDeployableSolarPanel
+		isEnabled = True
+		efficiencyMult = 0.160000011
+		launchUT = -1
+		currentRotation = (-0.5, -0.5, -0.5, 0.5)
+		storedAnimationTime = 0
+		storedAnimationSpeed = 1
+		deployState = RETRACTED
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ExtendPanelsAction
+			{
+				actionGroup = None
+				active = False
+			}
+			ExtendAction
+			{
+				actionGroup = None
+			}
+			RetractAction
+			{
+				actionGroup = None
+				active = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		currentScale = 40
+		defaultScale = 100
+		defaultTransformScale = (1, 1, 1)
+		DryCost = 60.8000641
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = KOSNameTag
+		isEnabled = True
+		nameTag = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleTweakableDeployablePanel
+		isEnabled = True
+		sunTrackingEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = solarPanels4_4293531086
+	partName = Part
+	pos = -1.16121745,10.6955357,-0.490650594
+	attPos = -0.0643233061,-0.00655651093,0.111411393
+	attPos0 = 0.281137466,0.0298023224,-0.486944556
+	rot = -1.53837012E-15,0.866025329,8.88178631E-16,-0.500000119
+	attRot = 0,0,0,1
+	attRot0 = -1.53837012E-15,0.866025329,8.88178631E-16,-0.500000119
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Grandparent
+	rigidAttachment = True
+	istg = 0
+	resPri = 0
+	dstg = 4
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = -319.199951
+	modMass = -0.0147000002
+	modSize = 0,0,0
+	sym = solarPanels4_4292204842
+	sym = solarPanels4_4293531200
+	srfN = srfAttach,fuelTankSmall_4293532924
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleDeployableSolarPanel
+		isEnabled = True
+		efficiencyMult = 0.160000011
+		launchUT = -1
+		currentRotation = (-0.5, -0.5, -0.5, 0.5)
+		storedAnimationTime = 0
+		storedAnimationSpeed = 1
+		deployState = RETRACTED
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ExtendPanelsAction
+			{
+				actionGroup = None
+				active = False
+			}
+			ExtendAction
+			{
+				actionGroup = None
+			}
+			RetractAction
+			{
+				actionGroup = None
+				active = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		currentScale = 40
+		defaultScale = 100
+		defaultTransformScale = (1, 1, 1)
+		DryCost = 60.8000641
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = KOSNameTag
+		isEnabled = True
+		nameTag = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleTweakableDeployablePanel
+		isEnabled = True
+		sunTrackingEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = SurfAntenna_4293353724
+	partName = Part
+	pos = -1.60674393,10.633132,-0.511259377
+	attPos = 0,0,0
+	attPos0 = -0.215890288,-0.0341377258,-0.373932958
+	rot = -0.612372458,0.612372458,-0.353553385,0.353553385
+	attRot = 0,-0.707106769,0,0.707106769
+	attRot0 = -0.612372458,0.612372458,-0.353553385,0.353553385
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 0
+	resPri = 0
+	dstg = 4
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = -254.369995
+	modMass = -0.0127184996
+	modSize = 0,0,0
+	srfN = srfAttach,fuelTankSmall_4293532924
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleDataTransmitter
+		isEnabled = True
+		xmitIncomplete = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			StartTransmissionAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		currentScale = 39
+		defaultScale = 100
+		defaultTransformScale = (1, 1, 1)
+		DryCost = 45.6300049
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = KOSNameTag
+		isEnabled = True
+		nameTag = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = batteryBank_4294210008
+	partName = Part
+	pos = -1.37803161,10.1882019,-0.115117416
+	attPos = 0,0,0
+	attPos0 = 0,-0.484087944,0
+	rot = 0,0,0,1
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Grandparent
+	rigidAttachment = True
+	istg = 0
+	resPri = 0
+	dstg = 4
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = -794.344177
+	modMass = -0.0451331995
+	modSize = 0,0,0
+	link = liquidEngineMini_4293575630
+	attN = top,fuelTankSmall_4293532924
+	attN = bottom,liquidEngineMini_4293575630
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = TweakScale
+		isEnabled = True
+		currentScale = 0.574999988
+		defaultScale = 1.25
+		defaultTransformScale = (1, 1, 1)
+		DryCost = 85.6557999
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = KOSNameTag
+		isEnabled = True
+		nameTag = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 97.336140652017932
+		maxAmount = 97.336140652017932
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
 	part = liquidEngineMini_4293575630
 	partName = Part
-	pos = -1.37803161,10.1150455,-0.115117416
+	pos = -1.37803161,10.1372089,-0.115117416
 	attPos = 0,0,0
-	attPos0 = 0,-0.555250168,0
+	attPos0 = 0,-0.0509929657,0
 	rot = 0,0,0,1
 	attRot = 0,0,0,1
 	attRot0 = 0,0,0,1
@@ -2516,7 +2975,7 @@ PART
 	modMass = 0
 	modSize = 0,0,0
 	link = KW1mDecoupler_4294073920
-	attN = top,fuelTankSmall_4293532924
+	attN = top,batteryBank_4294210008
 	attN = bottom,KW1mDecoupler_4294073920
 	EVENTS
 	{
@@ -2703,7 +3162,7 @@ PART
 {
 	part = KW1mDecoupler_4294073920
 	partName = Part
-	pos = -1.37803161,9.70104599,-0.115117416
+	pos = -1.37803161,9.72320938,-0.115117416
 	attPos = 0,-0.102374308,0
 	attPos0 = 0,-0.413999557,0
 	rot = 0,0,0,1
@@ -2796,7 +3255,7 @@ PART
 {
 	part = fairingSize1_4290506036
 	partName = Part
-	pos = -1.37803161,9.44204521,-0.115117416
+	pos = -1.37803161,9.4642086,-0.115117416
 	attPos = 0,0,0
 	attPos0 = 0,-0.259000778,0
 	rot = 0,0,0,1
@@ -3142,468 +3601,9 @@ PART
 }
 PART
 {
-	part = solarPanels4_4292204842
-	partName = Part
-	pos = -1.81660628,10.5713835,-0.115117401
-	attPos = 0,0,0
-	attPos0 = -0.562275052,0.0298023224,2.98023224E-08
-	rot = -7.48678476E-23,8.42937027E-08,-1.77635684E-15,1
-	attRot = 0,0,0,1
-	attRot0 = -7.48678476E-23,8.42937027E-08,-1.77635684E-15,1
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Heaviest
-	rigidAttachment = True
-	istg = 0
-	resPri = 0
-	dstg = 4
-	sidx = -1
-	sqor = -1
-	sepI = 0
-	attm = 1
-	modCost = -243.199921
-	modMass = -0.0111999996
-	modSize = 0,0,0
-	sym = solarPanels4_4293531200
-	sym = solarPanels4_4293531086
-	srfN = srfAttach,fuelTankSmall_4293532924
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleDeployableSolarPanel
-		isEnabled = True
-		efficiencyMult = 0.360000014
-		launchUT = -1
-		currentRotation = (-0.5, -0.5, -0.5, 0.5)
-		storedAnimationTime = 0
-		storedAnimationSpeed = 1
-		deployState = RETRACTED
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			ExtendPanelsAction
-			{
-				actionGroup = None
-				active = False
-			}
-			ExtendAction
-			{
-				actionGroup = None
-			}
-			RetractAction
-			{
-				actionGroup = None
-				active = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 60
-		defaultScale = 100
-		defaultTransformScale = (1, 1, 1)
-		DryCost = 136.800079
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = KOSNameTag
-		isEnabled = True
-		nameTag = 
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleTweakableDeployablePanel
-		isEnabled = True
-		sunTrackingEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-}
-PART
-{
-	part = solarPanels4_4293531200
-	partName = Part
-	pos = -1.1587441,10.5713835,0.264699519
-	attPos = 0,0,0
-	attPos0 = 0.281137586,0.0298023224,0.486944497
-	rot = -1.53837023E-15,0.866025507,-8.88178314E-16,0.499999911
-	attRot = 0,0,0,1
-	attRot0 = -1.53837023E-15,0.866025507,-8.88178314E-16,0.499999911
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Heaviest
-	rigidAttachment = True
-	istg = 0
-	resPri = 0
-	dstg = 4
-	sidx = -1
-	sqor = -1
-	sepI = 0
-	attm = 1
-	modCost = -243.199921
-	modMass = -0.0111999996
-	modSize = 0,0,0
-	sym = solarPanels4_4292204842
-	sym = solarPanels4_4293531086
-	srfN = srfAttach,fuelTankSmall_4293532924
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleDeployableSolarPanel
-		isEnabled = True
-		efficiencyMult = 0.360000014
-		launchUT = -1
-		currentRotation = (-0.5, -0.5, -0.5, 0.5)
-		storedAnimationTime = 0
-		storedAnimationSpeed = 1
-		deployState = RETRACTED
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			ExtendPanelsAction
-			{
-				actionGroup = None
-				active = False
-			}
-			ExtendAction
-			{
-				actionGroup = None
-			}
-			RetractAction
-			{
-				actionGroup = None
-				active = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 60
-		defaultScale = 100
-		defaultTransformScale = (1, 1, 1)
-		DryCost = 136.800079
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = KOSNameTag
-		isEnabled = True
-		nameTag = 
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleTweakableDeployablePanel
-		isEnabled = True
-		sunTrackingEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-}
-PART
-{
-	part = solarPanels4_4293531086
-	partName = Part
-	pos = -1.15874445,10.5713835,-0.494934976
-	attPos = 0,0,0
-	attPos0 = 0.281137466,0.0298023224,-0.486944556
-	rot = -1.53837012E-15,0.866025329,8.88178631E-16,-0.500000119
-	attRot = 0,0,0,1
-	attRot0 = -1.53837012E-15,0.866025329,8.88178631E-16,-0.500000119
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Grandparent
-	rigidAttachment = True
-	istg = 0
-	resPri = 0
-	dstg = 4
-	sidx = -1
-	sqor = -1
-	sepI = 0
-	attm = 1
-	modCost = -243.199921
-	modMass = -0.0111999996
-	modSize = 0,0,0
-	sym = solarPanels4_4292204842
-	sym = solarPanels4_4293531200
-	srfN = srfAttach,fuelTankSmall_4293532924
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleDeployableSolarPanel
-		isEnabled = True
-		efficiencyMult = 0.360000014
-		launchUT = -1
-		currentRotation = (-0.5, -0.5, -0.5, 0.5)
-		storedAnimationTime = 0
-		storedAnimationSpeed = 1
-		deployState = RETRACTED
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			ExtendPanelsAction
-			{
-				actionGroup = None
-				active = False
-			}
-			ExtendAction
-			{
-				actionGroup = None
-			}
-			RetractAction
-			{
-				actionGroup = None
-				active = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 60
-		defaultScale = 100
-		defaultTransformScale = (1, 1, 1)
-		DryCost = 136.800079
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = KOSNameTag
-		isEnabled = True
-		nameTag = 
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleTweakableDeployablePanel
-		isEnabled = True
-		sunTrackingEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-}
-PART
-{
-	part = SurfAntenna_4293353724
-	partName = Part
-	pos = -1.60674393,10.5089798,-0.511259377
-	attPos = 0,0,0
-	attPos0 = -0.215890288,-0.0341377258,-0.373932958
-	rot = -0.612372458,0.612372458,-0.353553385,0.353553385
-	attRot = 0,-0.707106769,0,0.707106769
-	attRot0 = -0.612372458,0.612372458,-0.353553385,0.353553385
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = 0
-	resPri = 0
-	dstg = 4
-	sidx = -1
-	sqor = -1
-	sepI = 0
-	attm = 1
-	modCost = -254.369995
-	modMass = -0.0127184996
-	modSize = 0,0,0
-	srfN = srfAttach,fuelTankSmall_4293532924
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleDataTransmitter
-		isEnabled = True
-		xmitIncomplete = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			StartTransmissionAction
-			{
-				actionGroup = None
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = TweakScale
-		isEnabled = True
-		currentScale = 39
-		defaultScale = 100
-		defaultTransformScale = (1, 1, 1)
-		DryCost = 45.6300049
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = KOSNameTag
-		isEnabled = True
-		nameTag = 
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-}
-PART
-{
 	part = fuelTankSmall_4293092368
 	partName = Part
-	pos = -1.37803161,8.68679523,-0.115117416
+	pos = -1.37803161,8.70895863,-0.115117416
 	attPos = 0,0,0
 	attPos0 = 0,-0.755249977,0
 	rot = 0,0,0,1
@@ -3724,7 +3724,7 @@ PART
 {
 	part = liquidEngine3_4292745770
 	partName = Part
-	pos = -1.37803161,7.86092281,-0.115117416
+	pos = -1.37803161,7.8830862,-0.115117416
 	attPos = 0,0,0
 	attPos0 = 0,-0.825872421,0
 	rot = 0,0,0,1
@@ -3963,7 +3963,7 @@ PART
 {
 	part = KW1mDecoupler_4292731036
 	partName = Part
-	pos = -1.37803161,7.32310963,-0.115117416
+	pos = -1.37803161,7.34527302,-0.115117416
 	attPos = 0,0,0
 	attPos0 = 0,-0.537813663,0
 	rot = 0,0,0,1
@@ -4056,7 +4056,7 @@ PART
 {
 	part = fuelTank_4289448138
 	partName = Part
-	pos = -1.37803161,6.29241896,-0.115117416
+	pos = -1.37803161,6.31458235,-0.115117416
 	attPos = 0,0,0
 	attPos0 = 0,-1.03069067,0
 	rot = 0,0,0,1
@@ -4177,7 +4177,7 @@ PART
 {
 	part = fuelTank_4293998930
 	partName = Part
-	pos = -1.37803161,4.41422892,-0.115117416
+	pos = -1.37803161,4.43639231,-0.115117416
 	attPos = 0,0,0
 	attPos0 = 0,-1.87819004,0
 	rot = 0,0,0,1
@@ -4301,7 +4301,7 @@ PART
 {
 	part = SSME_4293795470
 	partName = Part
-	pos = -1.37803161,3.50172949,-0.115117416
+	pos = -1.37803161,3.52389288,-0.115117416
 	attPos = 0,0,0
 	attPos0 = 0,-0.912499428,0
 	rot = 0,0,0,1
@@ -4553,7 +4553,7 @@ PART
 {
 	part = launchClamp1_4293795358
 	partName = Part
-	pos = -2.80402899,2.84871769,-0.115117177
+	pos = -2.80402899,2.87088108,-0.115117177
 	attPos = 0,0,0
 	attPos0 = -1.42599761,-1.56551075,1.78813934E-07
 	rot = 1.25607384E-15,0.707106829,-1.25607395E-15,0.707106709
@@ -4589,8 +4589,8 @@ PART
 	{
 		name = LaunchClamp
 		isEnabled = True
-		scaleFactor = 1.39064395
-		height = 3.50886869
+		scaleFactor = 1.39942789
+		height = 3.53103209
 		stagingEnabled = True
 		towerRot = -1.25607384E-15,-0.707106829,1.25607395E-15,0.707106709
 		EVENTS
@@ -4675,7 +4675,7 @@ PART
 {
 	part = launchClamp1_4293993406
 	partName = Part
-	pos = -0.665032506,2.84871769,1.11983263
+	pos = -0.665032506,2.87088108,1.11983263
 	attPos = 0,0,0
 	attPos0 = 0.712999105,-1.56551075,1.23495007
 	rot = -4.59755137E-16,0.965925813,-1.71582882E-15,-0.258819163
@@ -4711,8 +4711,8 @@ PART
 	{
 		name = LaunchClamp
 		isEnabled = True
-		scaleFactor = 1.39064395
-		height = 3.50886869
+		scaleFactor = 1.39942789
+		height = 3.53103209
 		stagingEnabled = True
 		towerRot = 4.59755137E-16,-0.965925813,1.71582882E-15,-0.258819163
 		EVENTS
@@ -4797,7 +4797,7 @@ PART
 {
 	part = launchClamp1_4293993284
 	partName = Part
-	pos = -0.665032983,2.84871769,-1.35006785
+	pos = -0.665032983,2.87088108,-1.35006785
 	attPos = 0,0,0
 	attPos0 = 0.712998629,-1.56551075,-1.23495042
 	rot = -1.71582892E-15,0.258818895,-4.59754767E-16,-0.965925872
@@ -4833,8 +4833,8 @@ PART
 	{
 		name = LaunchClamp
 		isEnabled = True
-		scaleFactor = 1.39064395
-		height = 3.50886869
+		scaleFactor = 1.39942789
+		height = 3.53103209
 		stagingEnabled = True
 		towerRot = 1.71582892E-15,-0.258818895,4.59754767E-16,-0.965925872
 		EVENTS

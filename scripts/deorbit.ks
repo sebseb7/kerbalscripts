@@ -321,13 +321,14 @@ WHEN (ship:velocity:surface:mag < 1900 ) and (radar_alt < 40000) then {
 			WHEN RADAR_alt < 50 and ship:velocity:surface:mag < 250 then {
 				logev("Full 4").
 				set_parachute_alt("PARA_M4",5000).
+
+				when ship:velocity:surface:mag < 1 then {
+					logev("Contact").
+					print "------------------------".
+				}
 			}
 		}
 	}
 }
 
-when ship:velocity:surface:mag < 1 then {
-	logev("Contact").
-	print "------------------------".
-}
 

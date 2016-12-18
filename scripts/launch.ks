@@ -26,7 +26,7 @@ print "T-0  All systems GO. Ignition!".
 set arramp to radar_alt + 25.
 
 when radar_alt > arramp or not (prog_mode = 1) then {
-	SET WARP TO 3.
+	SET WARP TO 2.
 	if not ( prog_mode = 1) {return false.}
 	print "T+" + round(missiontime) + " tower clear.".
 }
@@ -45,19 +45,20 @@ when radar_alt > gt0 or not (prog_mode = 1) then {
 
 }
 	
-on round(time:seconds,1) {
+//on round(time:seconds,1) {
+//
+//	if (altitude > vac) or not (prog_mode = 1) {
+//		return false.
+//	}
+//	
+//	local angle to VECTORANGLE(SHIP:UP:VECTOR,SHIP:FACING:VECTOR).
+//
+//	log round(missiontime,2)+" "+round(radar_alt,2)+" "+round(altitude,2)+" "+round(velocity:surface:mag,2)+" " to "launchlog.txt".
+//	log round(missiontime,2)+" "+round(pitch*-1,2)+" "+round(angle,2) to "pitchlog.txt".
+//
+//	return true.
+//}
 
-	if (altitude > vac) or not (prog_mode = 1) {
-		return false.
-	}
-	
-	local angle to VECTORANGLE(SHIP:UP:VECTOR,SHIP:FACING:VECTOR).
-
-	log round(missiontime,2)+" "+round(radar_alt,2)+" "+round(altitude,2)+" "+round(velocity:surface:mag,2)+" " to "launchlog.txt".
-	log round(missiontime,2)+" "+round(pitch*-1,2)+" "+round(angle,2) to "pitchlog.txt".
-
-	return true.
-}
 on round(time:seconds,1) {
 	
 	if not ( prog_mode = 1) {return false.}
@@ -95,12 +96,19 @@ on round(time:seconds,1) {
 	return true.
 }
 
-when altitude > 26000 or not (prog_mode = 1) then {
+when altitude > 16000 or not (prog_mode = 1) then {
 	
 	if not ( prog_mode = 1) {return false.}
 		
-	LOCK STEERING TO SHIP:PROGRADE. 
+	set maxq to 7000.
 
+	when altitude > 26000 or not (prog_mode = 1) then {
+	
+		if not ( prog_mode = 1) {return false.}
+		
+		LOCK STEERING TO SHIP:PROGRADE. 
+
+	}
 }
 
 when altitude > 53000 or not (prog_mode = 1) then {
