@@ -1,8 +1,8 @@
 
 print "deploy".
 
-PANELS ON.
-RADIATORS ON.
+//PANELS ON.
+//RADIATORS ON.
 
 
 FOR mypart IN ship:parts {

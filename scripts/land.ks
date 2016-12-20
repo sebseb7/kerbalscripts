@@ -1,8 +1,9 @@
-local landingheight to 3.5.
+local landingheight to 5.
 
 //wait until ship:longitude > -70.
 //wait until ship:longitude > 12.978.
-wait until ship:longitude < -5.
+
+wait until ship:longitude < -10.69.
 
 set startlong to ship:longitude.
 
