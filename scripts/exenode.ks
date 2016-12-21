@@ -23,6 +23,24 @@ if not(m = 0) {
 	set g_maxthr to t.
 }
 
+print g_maxthr.
+print g_isp.
+
+when altitude > 53000 or not (prog_mode = 1) then {
+	
+	if not ( prog_mode = 1) {return false.}
+
+	print "fairing deploy".
+	FOR mypart IN SHIP:PARTS {
+		if mypart:allmodules:contains("ModuleProceduralFairing") {
+			local mymod to mypart:getmodule("ModuleProceduralFairing").
+			if mymod:hasevent("deploy") {
+				print "deploy "+mypart:title+" "+mypart:stage.
+				mymod:doevent("deploy").
+			}
+		}
+	}
+}
 set ve to g_isp * 9.8.
 set dob to ((mass*ve)/g_maxthr)*(1-constant:e^(-nextnode:deltav:mag/ve)).
 
@@ -140,6 +158,8 @@ on round(time:seconds,1) {
 	if not (prog_mode = 4) {
 		print "T+" + round(missiontime) + " Apoapsis: " + round(apoapsis/1000,2) + "km, periapsis: " + round(periapsis/1000,2) + "km".
 		print "T+" + round(missiontime) + " Fuel after burn: " + round(stage:liquidfuel).
+
+		log "N:"+ship:longitude+" "+time:seconds to "log1.txt".
 		
 		if burn_done = 1 {
 			remove nextnode.
@@ -153,9 +173,9 @@ on round(time:seconds,1) {
 		return false.
 	}
 	
-	//if not(throttle = 0) and maxthrust = 0 {
-	//	stage.
-	//}
+	if not(throttle = 0) and maxthrust = 0 {
+		stage.
+	}
 
 	avglist:add(VECTORANGLE(nextnode:deltav,SHIP:FACING:VECTOR)).
 	if avglist:length > 12 { avglist:remove(0).}

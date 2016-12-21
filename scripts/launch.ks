@@ -16,11 +16,24 @@ if body:name = "Kerbin" {
 //	set maxq to 9000.
 
 }
+set incl to 90.
 
 set tset to 1.
 lock throttle to tset. 
 set pitch to 0.
-lock steering to up + r(0,pitch,0) + correctRoll.
+
+lock steering to lookdirup( HEADING(arcsin(max(-1,min(1,cos(180+incl)/max(0.001,cos(ship:latitude))))), 90-pitch ):vector, ship:facing:topvector).
+
+set angle1 to arcsin(max(-1,min(1,cos(180+incl)/cos(ship:latitude)))).
+print angle1.
+
+//set vel1 to 
+
+//launch azimuth = asin(cos(orbital inclination)/cos(launch lat))
+//launch velocity = [satellite velocity * sin(launch azimuth) - body rotational velocity * cos(launch lat), satellite velocity * cos(launch azimuth)]
+//corrected azimuth = atan(launch velocity[0]/launch velocity[1])
+
+log "L:"+ship:longitude+" "+time:seconds to "log1.txt".
 
 print "T-0  All systems GO. Ignition!". 
 set arramp to radar_alt + 25.
@@ -114,6 +127,8 @@ when altitude > 16000 or not (prog_mode = 1) then {
 when altitude > 53000 or not (prog_mode = 1) then {
 	
 	if not ( prog_mode = 1) {return false.}
+		
+	run las_jet.
 
 	print "fairing deploy".
 	FOR mypart IN SHIP:PARTS {
@@ -137,7 +152,7 @@ when (altitude > ha or apoapsis > lorb) or not (prog_mode = 1) then {
 	if altitude < vac {
 
 		print "T+" + round(missiontime) + " Waiting to leave atmosphere".
-		
+
 		LOCK STEERING TO SHIP:PROGRADE. 
 		
 		on round(time:seconds,1) {
