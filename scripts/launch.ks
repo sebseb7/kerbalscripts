@@ -16,22 +16,19 @@ if body:name = "Kerbin" {
 //	set maxq to 9000.
 
 }
-set incl to 90.
+set incl to 20.
 
 set tset to 1.
 lock throttle to tset. 
 set pitch to 0.
 
-lock steering to lookdirup( HEADING(arcsin(max(-1,min(1,cos(180+incl)/max(0.001,cos(ship:latitude))))), 90-pitch ):vector, ship:facing:topvector).
 
-set angle1 to arcsin(max(-1,min(1,cos(180+incl)/cos(ship:latitude)))).
-print angle1.
+lock angle1 to arcsin(max(-1,min(1,cos(180+incl)/cos(ship:latitude)))).
+lock vlaunchx to (1600 * sin(angle1*-1))-(174.9422*sin(90)). 
+lock vlaunchy to (1600 * cos(angle1*-1))-(174.9422*cos(90)). 
+lock newangle to 90-arctan(vlaunchx/vlaunchy).
+lock steering to lookdirup( HEADING(arcsin(max(-1,min(1,cos(180+newangle)/max(0.001,cos(ship:latitude))))), 90-pitch ):vector, ship:facing:topvector).
 
-//set vel1 to 
-
-//launch azimuth = asin(cos(orbital inclination)/cos(launch lat))
-//launch velocity = [satellite velocity * sin(launch azimuth) - body rotational velocity * cos(launch lat), satellite velocity * cos(launch azimuth)]
-//corrected azimuth = atan(launch velocity[0]/launch velocity[1])
 
 log "L:"+ship:longitude+" "+time:seconds to "log1.txt".
 
@@ -119,7 +116,8 @@ when altitude > 16000 or not (prog_mode = 1) then {
 	
 		if not ( prog_mode = 1) {return false.}
 		
-		LOCK STEERING TO SHIP:PROGRADE. 
+		//lock steering to lookdirup( HEADING(arcsin(max(-1,min(1,cos(180+newangle)/max(0.001,cos(ship:latitude))))), 90 ):vector, ship:prograde:vector).
+		lock steering to lookdirup(ship:srfprograde:vector, ship:facing:topvector).
 
 	}
 }
