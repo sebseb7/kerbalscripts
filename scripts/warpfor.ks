@@ -15,8 +15,6 @@ else
 
 	set warping to 1.
 
-	print "here"+ kuniverse:timewarp:mode.
-
 	when kuniverse:timewarp:mode = "RAILS" then {
 
 		on time:seconds {

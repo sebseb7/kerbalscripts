@@ -3,7 +3,7 @@ local landingheight to 5.
 //wait until ship:longitude > -70.
 //wait until ship:longitude > 12.978.
 
-wait until ship:longitude < -10.69.
+wait until ship:longitude < 48.82. //target 35 from 15x15
 
 set startlong to ship:longitude.
 
@@ -11,6 +11,12 @@ set startlong to ship:longitude.
 set rb to 200000.//mun
 set mu to 6.5138398*10^10.
 set lorb to 14000.
+//set mu to 1.7658000*10^9.//minmus
+//set rb to 60000.
+//set lorb to 10000.
+//set mu to 3.0136321*10^11.//duna
+//set rb to 320000.
+//set lorb to 50000.
 sas off.
 lock steering to lookdirup(ship:retrograde:vector, ship:facing:topvector).
 	

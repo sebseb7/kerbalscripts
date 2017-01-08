@@ -6,53 +6,76 @@ if body:name = "Kerbin" {
 	set ha to 59000.
 	set vac to 70000.
 
-	set angle to 14.
+	set angle to 12.
 
 	// trajectory parameters
-	set gt0 to 60.
-	set gt1 to 45000.//48
+	set gt0 to 200.
+	set gt1 to 40000.//48
 	// velocity parameters
-	set maxq to 6000.
+	set maxq to 7000.
 //	set maxq to 9000.
 
 }
-set incl to 20.
+set incl to 0.
 
 set tset to 1.
 lock throttle to tset. 
 set pitch to 0.
 
+FUNCTION eng_out {
+
+	local numOut to 0.
+	LIST ENGINES IN eng_list.
+	FOR eng IN eng_list
+		IF eng:FLAMEOUT
+			SET numOut TO numOut + 1.
+	return numOut.
+}
 
 lock angle1 to arcsin(max(-1,min(1,cos(180+incl)/cos(ship:latitude)))).
 lock vlaunchx to (1600 * sin(angle1*-1))-(174.9422*sin(90)). 
 lock vlaunchy to (1600 * cos(angle1*-1))-(174.9422*cos(90)). 
 lock newangle to 90-arctan(vlaunchx/vlaunchy).
-lock steering to lookdirup( HEADING(arcsin(max(-1,min(1,cos(180+newangle)/max(0.001,cos(ship:latitude))))), 90-pitch ):vector, ship:facing:topvector).
-
+lock steering to HEADING(arcsin(max(-1,min(1,cos(180+newangle)/max(0.001,cos(ship:latitude))))), 90-pitch ) + R(0,0,-180)+ correctRoll.
+//lock steering to lookdirup( HEADING(arcsin(max(-1,min(1,cos(180+newangle)/max(0.001,cos(ship:latitude))))), 90-pitch ):vector, ship:facing:topvector).
+//lock steering to up + r(0,pitch,0) + correctRoll.
 
 log "L:"+ship:longitude+" "+time:seconds to "log1.txt".
 
-print "T-0  All systems GO. Ignition!". 
+if not((eng_out() = 0)) or (maxthrust=0) {
+	logev("Ignition"). 
+	stage.
+}
 set arramp to radar_alt + 25.
 
 when radar_alt > arramp or not (prog_mode = 1) then {
 	SET WARP TO 2.
 	if not ( prog_mode = 1) {return false.}
-	print "T+" + round(missiontime) + " tower clear.".
+	logev("tower clear.").
 }
 
 when radar_alt > gt0 or not (prog_mode = 1) then {
 //	SET WARP TO 4.
 	if not ( prog_mode = 1) {return false.}
-	print "T+" + round(missiontime) + " begin turn.". 
-	lock pitch to max(-90,min(-angle,(altitude*19.9/body:atm:height)^0.55*-23)).
+	logev(" begin turn."). 
+	lock pitch to max(-90,min(-angle,(((radar_alt+50)-gt0)*19.9/body:atm:height)^0.55*-23)).
 
 	when radar_alt > gt1 or altitude > ha or apoapsis > lorb or not (prog_mode = 1) then {
 		if not ( prog_mode = 1) {return false.}
-		print "T+" + round(missiontime) + " end turn.". 
+		logev(round(missiontime) + " end turn."). 
 		set pitch to -90.
 	}
 
+}
+	
+when not((eng_out() = 0)) or ( not ( prog_mode = 1)) then {
+	if not(prog_mode = 1) return false.
+			
+	if not((eng_out() = 0)) {
+		logev("stage out:"+eng_out()).
+		stage.
+	}
+	return true.
 }
 	
 //on round(time:seconds,1) {
@@ -87,12 +110,12 @@ on round(time:seconds,1) {
 	set vh to maxq*1.1.
 	if q < vl { set tset to 1. }
 	if q > vl and q < vh { set tset to (vh-q)/(vh-vl). }
-	if q > vh { set tset to 0.25. }
+	if q > vh { set tset to 0.35. }
 	
-	if abs(STEERINGMANAGER:ANGLEERROR) > 1 {set tset to tset*abs(STEERINGMANAGER:ANGLEERROR). }
-	if tset < 0.25 { set tset to 0.25. } //only in lower atmo
+	if abs(STEERINGMANAGER:ANGLEERROR) > 1 {set tset_a to tset. lock tset to tset_a+abs(STEERINGMANAGER:ANGLEERROR)/30. }
+	if tset < 0.25 { set tset to 0.35. } //only in lower atmo
 
-	if ship:velocity:surface:mag < 520 { set tset to 1. }
+	if ship:velocity:surface:mag < 450 { set tset to 1. }
 
 	print "pitch: " + round(pitch,2) + "  " at (0,25).
 	print "alt:radar: " + round(radar_alt) + "  " at (0,26). 
@@ -100,10 +123,17 @@ on round(time:seconds,1) {
 	print "throttle: " + round(tset,2) + "   " at (0,28).
 	print "apoapis: " + round(apoapsis/1000,2) at (0,29).
 	print "periapis: " + round(periapsis/1000,2) at (0,30).
-	if maxthrust = 0 {
-		stage.
-	}
+	
+	
 	return true.
+}
+	
+when altitude > 10000 or not (prog_mode = 1) then {
+	
+	if not ( prog_mode = 1) {return false.}
+		
+	//lock steering to lookdirup( HEADING(arcsin(max(-1,min(1,cos(180+newangle)/max(0.001,cos(ship:latitude))))), 90 ):vector, ship:prograde:vector).
+	lock steering to lookdirup(ship:srfprograde:vector, ship:facing:topvector).
 }
 
 when altitude > 16000 or not (prog_mode = 1) then {
@@ -111,15 +141,6 @@ when altitude > 16000 or not (prog_mode = 1) then {
 	if not ( prog_mode = 1) {return false.}
 		
 	set maxq to 7000.
-
-	when altitude > 26000 or not (prog_mode = 1) then {
-	
-		if not ( prog_mode = 1) {return false.}
-		
-		//lock steering to lookdirup( HEADING(arcsin(max(-1,min(1,cos(180+newangle)/max(0.001,cos(ship:latitude))))), 90 ):vector, ship:prograde:vector).
-		lock steering to lookdirup(ship:srfprograde:vector, ship:facing:topvector).
-
-	}
 }
 
 when altitude > 53000 or not (prog_mode = 1) then {
@@ -128,12 +149,12 @@ when altitude > 53000 or not (prog_mode = 1) then {
 		
 	run las_jet.
 
-	print "fairing deploy".
+	logev("fairing deploy").
 	FOR mypart IN SHIP:PARTS {
-		if mypart:allmodules:contains("ModuleProceduralFairing") {
+		if not(mypart:tag = "INH") and mypart:allmodules:contains("ModuleProceduralFairing") {
 			local mymod to mypart:getmodule("ModuleProceduralFairing").
 			if mymod:hasevent("deploy") {
-				print "deploy "+mypart:title+" "+mypart:stage.
+				logev("deploy "+mypart:title+" "+mypart:stage).
 				mymod:doevent("deploy").
 			}
 		}
@@ -144,14 +165,14 @@ when (altitude > ha or apoapsis > lorb) or not (prog_mode = 1) then {
 
 	if not ( prog_mode = 1) {return false.}
 	
-	print "stage2-part".
+	logev("stage2-part").
 	set tset to 0.
 
 	if altitude < vac {
 
-		print "T+" + round(missiontime) + " Waiting to leave atmosphere".
+		logev("Waiting to leave atmosphere").
 
-		LOCK STEERING TO SHIP:PROGRADE. 
+		lock steering to lookdirup(ship:prograde:vector, ship:facing:topvector).
 		
 		on round(time:seconds,1) {
 		
@@ -184,7 +205,7 @@ when (altitude > vac) or not ( prog_mode = 1) then {
 
 	if not ( prog_mode = 1) {return false.}
 	
-	print "stage3-part".
+	logev("stage3-part").
 	
 	unlock steering.
 	SET WARP TO 0.

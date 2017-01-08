@@ -1,29 +1,19 @@
+function do_partmodule_event {
+	parameter part_name.
+	parameter module_name.
+	parameter event_name.
 
-if SHIP:PARTSDUBBED("LASJET_NODE"):LENGTH = 1 {
-
-	print "node there".
-
-	if SHIP:PARTSDUBBED("LASJET_NODE")[0]:getmodule("ModuleDockingNode"):ALLEVENTNAMES:CONTAINS("decouple node") {
-	
-		print "decouple possible".
-
-		if SHIP:PARTSDUBBED("LAS"):LENGTH = 1 {
-			
-			print "LAS there".
-
-
-			if SHIP:PARTSDUBBED("LAS")[0]:getmodule("ModuleEnginesFX"):hasevent("activate engine") {
-
-				print "fire".
-				SHIP:PARTSDUBBED("LAS")[0]:getmodule("ModuleEnginesFX"):doevent("activate engine").
-
+	for parapart IN SHIP:PARTSDUBBED(part_name)  {
+		if parapart:allmodules:contains(module_name) {
+			if parapart:getmodule(module_name):hasevent(event_name) {
+				parapart:getmodule(module_name):DOEVENT(event_name).
 			}
 		}
-
-		print "sep".
-
-
-		SHIP:PARTSDUBBED("LASJET_NODE")[0]:getmodule("ModuleDockingNode"):DOEVENT("decouple node").
 	}
 }
+
+do_partmodule_event("LAS","ModuleEnginesFX","activate engine").
+do_partmodule_event("LASJET_NODE","ModuleDockingNode","decouple node").
+do_partmodule_event("LASJET_NODE","ModuleAnimatedDecoupler","decouple").
+
 

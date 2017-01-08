@@ -25,12 +25,6 @@ set deorbitstarttime to missiontime.
 set deorbit_height to 30000.//faster
 //set deorbit_height to -1000.//faster, may not work from High ApA
 
-function logev {
-	parameter text.
-
-	print "T+"+round(missiontime-deorbitstarttime) +": "+text+" (sAlt:"+round(radar_alt) + ") (sSpd:" + round(ship:velocity:surface:mag,1)+")".
-	log "T+"+round(missiontime-deorbitstarttime) +": "+text+" (sAlt:"+round(radar_alt) + ") (sSpd:" + round(ship:velocity:surface:mag,1)+")" to "log.txt".
-}
 
 function set_partmodule_field {
 	parameter part_name.
@@ -125,6 +119,8 @@ function do_sm_sep {
 		{
 			logev("- SMjet").
 			do_partmodule_event("SMJET_DEC","ModuleDecouple","decouple").
+			do_partmodule_event("SMJET_DEC","ModuleAnimatedDecoupler","decouple").
+			do_partmodule_event("SMJET_DEC","ModuleDockingNode","decouple node").
 			RCS OFF.
 			sas off.
 
