@@ -1,21 +1,45 @@
+//@LAZYGLOBAL OFF.
 wait until ship:unpacked.
 CLEARSCREEN.
 PRINT "boot "+core:tag.
+SET CONFIG:IPU TO 550.
+SET CONFIG:UCP TO FALSE.
 SET CONFIG:STAT TO TRUE.
 SET SHIP:CONTROL:PILOTMAINTHROTTLE TO 0.
 SET CONFIG:TELNET TO TRUE.
 PRINT "telnet: ok".
-//SWITCH TO 0.
-//PRINT "archive: ok".
+
 if homeconnection:isconnected {
 	if not (open("0:/boot/0.ks"):readall:string = open("/boot/0.ks"):readall:string ) {
 		print "updateting boot and reboot".
 		copypath("0:/boot/0.ks","/boot/0.ks").
+		wait 2.
 		reboot.
 	}
 	
-	copypath("0:/scripts","/").
-	PRINT "copy: ok".
+	for file in open("0:/scripts"):list:values {
+	
+		if file:isfile and ( not( EXISTS("/scripts/"+file:name) ) or ( not (file:readall:string = open("/scripts/"+file:name):readall:string )) ) {
+			copypath("0:/scripts/"+file:name,"/scripts/"+file:name).
+			PRINT "copy: "+file:name.
+		}
+	}
+
+	for file in open("0:/scripts/tasks"):list:values {
+	
+		if file:isfile and ( not( EXISTS("/scripts/tasks/"+file:name) ) or ( not (file:readall:string = open("/scripts/tasks/"+file:name):readall:string )) ) {
+			copypath("0:/scripts/tasks/"+file:name,"/scripts/tasks/"+file:name).
+			PRINT "copy task: "+file:name.
+		}
+	}
+	for file in open("/scripts/tasks"):list:values {
+		
+		if file:isfile and ( not( EXISTS("0:/scripts/tasks/"+file:name))) {
+			PRINT "delete task: "+file:name.
+			deletepath("/scripts/tasks/"+file:name).
+		}
+
+	}
 
 } else {
 	print "no copy".
@@ -79,23 +103,23 @@ if core:tag = "AGC" {
 
 	run globals.
 
-	local ag1_o to ag1.
-	local ag2_o to ag2.
-	local ag3_o to ag3.
-	local ag4_o to ag4.
-	local ag5_o to ag5.
-	local ag6_o to ag6.
-	local ag8_o to ag8.
-	local ag9_o to ag9.
-	local ag10_o to ag10.
-	local abort_o to abort.
-	local seconds_o to sessiontime.
+	global ag1_o to ag1.
+	global ag2_o to ag2.
+	global ag3_o to ag3.
+	global ag4_o to ag4.
+	global ag5_o to ag5.
+	global ag6_o to ag6.
+	global ag8_o to ag8.
+	global ag9_o to ag9.
+	global ag10_o to ag10.
+	global abort_o to abort.
+	global seconds_o to sessiontime+0.25.
 
-	when true then {
+	logev("ready").
 
-		if seconds_o+0.25 > sessiontime return true.
-	
-		if ship:electriccharge < 10 return false.
+	until false {
+
+		//if ship:electriccharge < 10 return false.
 
 		if not(ag1_o=ag1) {
 			logev("ag1 - launch").
@@ -114,31 +138,26 @@ if core:tag = "AGC" {
 		}
 
 		if not(ag4_o=ag4) {
-			preserve.
 			logev("ag4").
 			run ag4.
 		}
 
 		if not(ag5_o=ag5) {
-			preserve.
 			logev("ag5").
 			run ag5.
 		}
 
 		if not(ag6_o=ag6) {
-			preserve.
 			logev("ag6 - up").
 			run ag6_up.
 		}
 
 		if not(ag8_o=ag8) {
-			preserve.
 			logev("ag8 - right").
 			run ag8_right.
 		}
 
 		if not(ag9_o=ag9) {
-			preserve.
 			logev("ag9 - left").
 			run ag9_left.
 		}
@@ -165,13 +184,11 @@ if core:tag = "AGC" {
 		set ag9_o to ag9.
 		set ag10_o to ag10.
 		set abort_o to abort.
-		set seconds_o to sessiontime.
+		set seconds_o to sessiontime+0.25.
 	
-		return true.
+		wait 0.25.
 
 	}
-	logev("ready").
 
-	WAIT UNTIL FALSE.
 }
 
