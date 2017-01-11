@@ -16,6 +16,8 @@ if body:name = "Kerbin" {
 //	set maxq to 9000.
 
 }
+
+//minmus 5.9
 set incl to 0.
 
 set tset to 1.
@@ -36,14 +38,14 @@ lock angle1 to arcsin(max(-1,min(1,cos(180+incl)/cos(ship:latitude)))).
 lock vlaunchx to (1600 * sin(angle1*-1))-(174.9422*sin(90)). 
 lock vlaunchy to (1600 * cos(angle1*-1))-(174.9422*cos(90)). 
 lock newangle to 90-arctan(vlaunchx/vlaunchy).
-lock steering to HEADING(arcsin(max(-1,min(1,cos(180+newangle)/max(0.001,cos(ship:latitude))))), 90-pitch ) + R(0,0,-180)+ correctRoll.
+lock steering to HEADING(arcsin(max(-1,min(1,cos(180+newangle)/cos(ship:latitude)))), 90-pitch ) + R(0,0,-180)+ correctRoll.
 //lock steering to lookdirup( HEADING(arcsin(max(-1,min(1,cos(180+newangle)/max(0.001,cos(ship:latitude))))), 90-pitch ):vector, ship:facing:topvector).
 //lock steering to up + r(0,pitch,0) + correctRoll.
 
 log "L:"+ship:longitude+" "+time:seconds to "log1.txt".
 
 if not((eng_out() = 0)) or (maxthrust=0) {
-	logev("Ignition"). 
+	logev("Ignition (incl:"+incl+")"). 
 	stage.
 }
 set arramp to radar_alt + 25.
