@@ -2,6 +2,7 @@
 function task_sm_free
 {
 	unlock steering.
+	steeringmanager:resetpids().
 	sas on.
 }
 

@@ -1,3 +1,4 @@
+run statwin.
 
 global g_roll_correction to -90.
 global correctRoll to R(0,0,g_roll_correction).
@@ -80,9 +81,9 @@ for file in open("/scripts/tasks"):list:values {
 
 function show_gui {
 
+	local count to 0.
+	
 	if homeconnection:isconnected {
-
-		local count to 0.
 
 		for file in open("0:/scripts/tasks"):list:values {
 	
@@ -119,36 +120,54 @@ function show_gui {
 
 	}
 
-	gui:clear().
-	set gui:x to 50.
-	set gui:y to 170.
-	for group in groups:keys {
-		local grouplayout to gui:addvlayout().
-		grouplayout:addlabel(group).
+	if not(count=0) or gui:widgets:length=0 {
 
-		for task in tasks {
-			if task["group"]=group {
-				if task["type"]=0 {
-					set task["button"] to grouplayout:ADDBUTTON(task["name"]).
-				}
-				if task["type"]=1 {
-					local hbox1 to grouplayout:ADDHLAYOUT().
-					set task["button"] to hbox1:ADDBUTTON(task["name"]).
-					set task["led"] to hbox1:ADDRADIOBUTTON("",false).
-					set task["led"]:enabled to false.
-					if task:haskey("state") and task["state"]=1 {
-						set task["led"]:pressed to true.
+		print "rebuild task list".
+
+		gui:clear().
+		set gui:x to 50.
+		set gui:y to 170.
+		for group in groups:keys {
+			local grouplayout to gui:addvlayout().
+			grouplayout:addlabel(group).
+
+			for task in tasks {
+				if task["group"]=group {
+					if task["type"]=0 {
+						set task["button"] to grouplayout:ADDBUTTON(task["name"]).
+					}
+					if task["type"]=1 {
+						local hbox1 to grouplayout:ADDHLAYOUT().
+						set task["button"] to hbox1:ADDBUTTON(task["name"]).
+						set task["led"] to hbox1:ADDRADIOBUTTON("",false).
+						set task["led"]:enabled to false.
+						if task:haskey("state") and task["state"]=1 {
+							set task["led"]:pressed to true.
+						}
+					}
+					if task["type"]=2 {
+						local vbox1 to grouplayout:ADDVLAYOUT().
+						local label1 to vbox1:addlabel(task["name"]).
+						local slider1 to vbox1:addhslider(1,10).
+						set task["slider"] to slider1.
+						if task:haskey("value") {
+							set slider1:value to task["value"].
+						}
 					}
 				}
 			}
 		}
+	
+		gui:ADDSPACING(10).
+		global close TO gui:ADDBUTTON("Close").
+	
 	}
 	
-	gui:ADDSPACING(10).
-	global close TO gui:ADDBUTTON("Close").
-	
-	global seconds_g to sessiontime+0.25.
+	gui:show().
 
+	
+	global seconds_g to sessiontime+0.1.
+	
 	when seconds_g < sessiontime then {
 
 		if not(gui:visible) return false.
@@ -156,10 +175,13 @@ function show_gui {
 		if close:pressed gui:hide().
 			
 		for task in tasks {
+					
+			if task["type"]<2 {
 
-			if task["button"]:pressed {
+				if task["button"]:pressed {
 
-				task["callback"]().
+					task["callback"]().
+				}
 			}
 
 		}
@@ -169,7 +191,6 @@ function show_gui {
 		return true.
 	}
 
-	gui:show().
 }
 
 

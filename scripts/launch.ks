@@ -51,6 +51,7 @@ if not((eng_out() = 0)) or (maxthrust=0) {
 set arramp to radar_alt + 25.
 
 when radar_alt > arramp or not (prog_mode = 1) then {
+	gear off.
 	SET WARP TO 2.
 	if not ( prog_mode = 1) {return false.}
 	logev("tower clear.").
@@ -114,10 +115,12 @@ on round(time:seconds,1) {
 	if q > vl and q < vh { set tset to (vh-q)/(vh-vl). }
 	if q > vh { set tset to 0.35. }
 	
+	if altitude < 10000 and tset < 0.8 { set tset to 0.8. }
+	
 	if abs(STEERINGMANAGER:ANGLEERROR) > 1 {set tset_a to tset. lock tset to tset_a+abs(STEERINGMANAGER:ANGLEERROR)/30. }
 	if tset < 0.25 { set tset to 0.35. } //only in lower atmo
 
-	if ship:velocity:surface:mag < 450 { set tset to 1. }
+	if ship:velocity:surface:mag < 350 { set tset to 1. }
 
 	print "pitch: " + round(pitch,2) + "  " at (0,25).
 	print "alt:radar: " + round(radar_alt) + "  " at (0,26). 
@@ -214,7 +217,8 @@ when (altitude > vac) or not ( prog_mode = 1) then {
 	set tset to 0.
 	SET SHIP:CONTROL:PILOTMAINTHROTTLE TO 0.
 	unlock throttle.
-	
+
+	rcs on.
 	run deploy.
 	run aponode(lorb).
 	run exenode.
