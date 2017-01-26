@@ -5,6 +5,7 @@ PRINT "boot "+core:tag.
 SET CONFIG:IPU TO 550.
 SET CONFIG:UCP TO FALSE.
 SET CONFIG:STAT TO TRUE.
+set config:debugeachopcode to false.
 SET SHIP:CONTROL:PILOTMAINTHROTTLE TO 0.
 SET CONFIG:TELNET TO TRUE.
 PRINT "telnet: ok".
@@ -47,6 +48,11 @@ if homeconnection:isconnected {
 
 cd("/scripts").
 
+
+if core:tag = "AGC_HOV" {
+	run hover.
+	WAIT UNTIL FALSE.
+}
 
 if core:tag = "DSKY" {
 	
@@ -104,6 +110,7 @@ if core:tag = "AGC" {
 	run globals.
 
 	global ag1_o to ag1.
+	global ag2_o to ag2.
 	global abort_o to abort.
 	global seconds_o to sessiontime+0.25.
 
@@ -114,6 +121,13 @@ if core:tag = "AGC" {
 		if not(ag1_o=ag1) {
 			show_gui().
 		}
+		
+		if not(ag2_o=ag2) {
+			if prog_mode=0 {
+				set prog_mode to 1.
+				run launch.
+			}
+		}
 
 		if not(abort_o=abort) {
 			logev("abort - abort").
@@ -122,7 +136,7 @@ if core:tag = "AGC" {
 		}
 
 		set ag1_o to ag1.
-		set ag10_o to ag10.
+		set ag2_o to ag2.
 		set abort_o to abort.
 		set seconds_o to sessiontime+0.25.
 	
