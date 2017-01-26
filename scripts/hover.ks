@@ -1,3 +1,6 @@
+set initial_height to 12.2.
+
+
 SET Kp TO 0.8.
 SET Ki TO 0.003.
 SET Kd TO 0.002.
@@ -10,7 +13,7 @@ SET Kp2 TO 1.0.
 SET Ki2 TO 0.2.
 SET Kd2 TO 0.006.
 SET PID2 TO PIDLOOP(Kp2, Ki2, Kd2).
-SET PID2:SETPOINT TO 1.
+SET PID2:SETPOINT TO initial_height.
 SET PID2:maxoutput TO 6.
 SET PID2:minoutput TO -3.
 
@@ -19,16 +22,16 @@ SET Ki_pitch TO 0.02.
 SET Kd_pitch TO 0.000.
 SET PID_pitch TO PIDLOOP(Kp_pitch, Ki_pitch, Kd_pitch).
 SET PID_pitch:SETPOINT TO 0.
-SET PID_pitch:maxoutput TO 45.
-SET PID_pitch:minoutput TO -45.
+SET PID_pitch:maxoutput TO 2.
+SET PID_pitch:minoutput TO -2.
 
 SET Kp_roll TO 15.0.
 SET Ki_roll TO 0.02.
 SET Kd_roll TO 0.000.
 SET PID_roll TO PIDLOOP(Kp_roll, Ki_roll, Kd_roll).
 SET PID_roll:SETPOINT TO 0.
-SET PID_roll:maxoutput TO 45.
-SET PID_roll:minoutput TO -45.
+SET PID_roll:maxoutput TO 2.
+SET PID_roll:minoutput TO -2.
 
 SET thrott TO 0.
 LOCK THROTTLE TO thrott.
@@ -37,7 +40,6 @@ set pitch to 0.
 set roll to 0.
 set yaw to 0.
 
-LOCK STEERING TO Up + R(pitch,roll,yaw).
 sas off.
 
 
@@ -90,13 +92,15 @@ when downbutton:pressed then {
 }
 when zerobutton:pressed then {
 	
-	SET PID2:SETPOINT TO 1.
+	SET PID2:SETPOINT TO initial_height.
 	return true.
 }
 when onbutton:pressed then {
 	
+	sas off.
+	LOCK STEERING TO Up + R(pitch,roll,yaw).
 	SET PID:maxoutput TO 1.
-	SET PID2:SETPOINT TO 1.
+	SET PID2:SETPOINT TO initial_height.
 	lights on.
 	gear off.
 	return true.
@@ -116,9 +120,13 @@ when offbutton:pressed then {
 			when testpart:getmodule("ModuleWheelDeployment"):getfield("state") = "Deployed" then {
 				SET PID:maxoutput TO 0.
 				lights off.
+				unlock steering.
+				sas off.
 			}
 		}
 	}
+	
+	LOCK STEERING TO Up.
 
 	gear on.
 	return true.

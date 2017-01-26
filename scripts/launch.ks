@@ -6,23 +6,16 @@ if body:name = "Kerbin" {
 	set ha to 59000.
 	set vac to 70000.
 
-	set angle to 12.
-
-	// trajectory parameters
-	set gt0 to 200.
-	set gt1 to 40000.//48
-	// velocity parameters
-	set maxq to 7000.
-//	set maxq to 9000.
+	set angle to 7. //twr 1.4
+//	set angle to 7. //twr 1.4
+//	set angle to 9.5. //twr 1.8
+//	set angle to 8.5. // twr 2.2
+//	set angle to 17. // twr 3
+	set maxq to 9000.
 
 }
 
-//minmus 5.9
-set incl to 0.
 
-set tset to 1.
-lock throttle to tset. 
-set pitch to 0.
 
 FUNCTION eng_out {
 
@@ -34,14 +27,19 @@ FUNCTION eng_out {
 	return numOut.
 }
 
+set tset to 1.
+lock throttle to tset. 
+
+//minmus 5.9
+set incl to 0.
+set pitch to 0.
 lock angle1 to arcsin(max(-1,min(1,cos(180+incl)/cos(ship:latitude)))).
 lock vlaunchx to (1600 * sin(angle1*-1))-(174.9422*sin(90)). 
 lock vlaunchy to (1600 * cos(angle1*-1))-(174.9422*cos(90)). 
 lock newangle to 90-arctan(vlaunchx/vlaunchy).
 lock steering to HEADING(arcsin(max(-1,min(1,cos(180+newangle)/cos(ship:latitude)))), 90-pitch ) + R(0,0,-180)+ correctRoll.
 //lock steering to lookdirup( HEADING(arcsin(max(-1,min(1,cos(180+newangle)/max(0.001,cos(ship:latitude))))), 90-pitch ):vector, ship:facing:topvector).
-//lock steering to up + r(0,pitch,0) + correctRoll.
-
+clearscreen.
 log "L:"+ship:longitude+" "+time:seconds to "log1.txt".
 
 if not((eng_out() = 0)) or (maxthrust=0) {
@@ -52,23 +50,29 @@ set arramp to radar_alt + 25.
 
 when radar_alt > arramp or not (prog_mode = 1) then {
 	gear off.
-	SET WARP TO 2.
+//	SET WARP TO 2.
 	if not ( prog_mode = 1) {return false.}
 	logev("tower clear.").
 }
 
-when radar_alt > gt0 or not (prog_mode = 1) then {
-//	SET WARP TO 4.
+when ship:velocity:surface:mag > 20 or not (prog_mode = 1) then {
+	
 	if not ( prog_mode = 1) {return false.}
-	logev(" begin turn."). 
-	lock pitch to max(-90,min(-angle,(((radar_alt+50)-gt0)*19.9/body:atm:height)^0.55*-23)).
+	lock pitch to -1*(VECTORANGLE(SHIP:UP:VECTOR,SHIP:srfprograde:VECTOR)+5).
 
-	when radar_alt > gt1 or altitude > ha or apoapsis > lorb or not (prog_mode = 1) then {
+	logev("begin turn").
+
+	when abs( VECTORANGLE(SHIP:UP:VECTOR,SHIP:FACING:VECTOR)) > angle or not (prog_mode = 1) then {
 		if not ( prog_mode = 1) {return false.}
-		logev(round(missiontime) + " end turn."). 
-		set pitch to -90.
+		logev("follow srfpg").
+		lock steering to lookdirup(ship:srfprograde:vector, ship:facing:topvector).
+	
+		when altitude > ha or apoapsis > lorb or not (prog_mode = 1) then {
+			if not ( prog_mode = 1) {return false.}
+			logev(round(missiontime) + "end turn."). 
+			lock steering to lookdirup(ship:prograde:vector, ship:facing:topvector).
+		}
 	}
-
 }
 	
 when not((eng_out() = 0)) or ( not ( prog_mode = 1)) then {
@@ -81,25 +85,10 @@ when not((eng_out() = 0)) or ( not ( prog_mode = 1)) then {
 	return true.
 }
 	
-//on round(time:seconds,1) {
-//
-//	if (altitude > vac) or not (prog_mode = 1) {
-//		return false.
-//	}
-//	
-//	local angle to VECTORANGLE(SHIP:UP:VECTOR,SHIP:FACING:VECTOR).
-//
-//	log round(missiontime,2)+" "+round(radar_alt,2)+" "+round(altitude,2)+" "+round(velocity:surface:mag,2)+" " to "launchlog.txt".
-//	log round(missiontime,2)+" "+round(pitch*-1,2)+" "+round(angle,2) to "pitchlog.txt".
-//
-//	return true.
-//}
-
 on round(time:seconds,1) {
 	
-	if not ( prog_mode = 1) {return false.}
-
-	if altitude > ha or apoapsis > lorb {
+	if altitude > ha or apoapsis > lorb or not (prog_mode = 1) {
+		set tset to 0.
 		return false.
 	}
 	
@@ -115,10 +104,10 @@ on round(time:seconds,1) {
 	if q > vl and q < vh { set tset to (vh-q)/(vh-vl). }
 	if q > vh { set tset to 0.35. }
 	
-	if altitude < 10000 and tset < 0.8 { set tset to 0.8. }
+	if altitude < 10000 and tset < 0.5 { set tset to 0.5. }
 	
 	if abs(STEERINGMANAGER:ANGLEERROR) > 1 {set tset_a to tset. lock tset to tset_a+abs(STEERINGMANAGER:ANGLEERROR)/30. }
-	if tset < 0.25 { set tset to 0.35. } //only in lower atmo
+	if tset < 0.25 { set tset to 0.25. } //only in lower atmo
 
 	if ship:velocity:surface:mag < 350 { set tset to 1. }
 
@@ -133,21 +122,6 @@ on round(time:seconds,1) {
 	return true.
 }
 	
-when altitude > 10000 or not (prog_mode = 1) then {
-	
-	if not ( prog_mode = 1) {return false.}
-		
-	//lock steering to lookdirup( HEADING(arcsin(max(-1,min(1,cos(180+newangle)/max(0.001,cos(ship:latitude))))), 90 ):vector, ship:prograde:vector).
-	lock steering to lookdirup(ship:srfprograde:vector, ship:facing:topvector).
-}
-
-when altitude > 16000 or not (prog_mode = 1) then {
-	
-	if not ( prog_mode = 1) {return false.}
-		
-	set maxq to 7000.
-}
-
 when altitude > 53000 or not (prog_mode = 1) then {
 	
 	if not ( prog_mode = 1) {return false.}
@@ -170,12 +144,15 @@ when (altitude > ha or apoapsis > lorb) or not (prog_mode = 1) then {
 
 	if not ( prog_mode = 1) {return false.}
 	
+//	SET WARP TO 3.
+	
 	logev("stage2-part").
 	set tset to 0.
 
 	if altitude < vac {
 
 		logev("Waiting to leave atmosphere").
+//		SET WARP TO 3.
 
 		lock steering to lookdirup(ship:prograde:vector, ship:facing:topvector).
 		
@@ -221,6 +198,7 @@ when (altitude > vac) or not ( prog_mode = 1) then {
 	rcs on.
 	run deploy.
 	run aponode(lorb).
+	set prog_mode to 4.
 	run exenode.
 
 

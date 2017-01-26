@@ -36,8 +36,9 @@ function logev {
 global tasks to list().
 global groups to lexicon().
 global gui to gui(200).
-set gui:skin:label:fontsize to 18.
+set gui:skin:label:fontsize to 15.
 set gui:skin:button:fontsize to 10.
+set gui:skin:button:height to 15.
 
 function register_task {
 	parameter group.
@@ -78,6 +79,19 @@ for file in open("/scripts/tasks"):list:values {
 
 }
 
+function do_partmodule_event {
+	parameter part_name.
+	parameter module_name.
+	parameter event_name.
+
+	for parapart IN SHIP:PARTSDUBBED(part_name)  {
+		if parapart:allmodules:contains(module_name) {
+			if parapart:getmodule(module_name):hasevent(event_name) {
+				parapart:getmodule(module_name):DOEVENT(event_name).
+			}
+		}
+	}
+}
 
 function show_gui {
 
@@ -126,7 +140,7 @@ function show_gui {
 
 		gui:clear().
 		set gui:x to 50.
-		set gui:y to 170.
+		set gui:y to 30.//von oben
 		for group in groups:keys {
 			local grouplayout to gui:addvlayout().
 			grouplayout:addlabel(group).
@@ -141,6 +155,8 @@ function show_gui {
 						set task["button"] to hbox1:ADDBUTTON(task["name"]).
 						set task["led"] to hbox1:ADDRADIOBUTTON("",false).
 						set task["led"]:enabled to false.
+						set task["led"]:style:height to 15.
+						set task["led"]:style:margin:top to 4.
 						if task:haskey("state") and task["state"]=1 {
 							set task["led"]:pressed to true.
 						}

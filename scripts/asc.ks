@@ -8,15 +8,20 @@ set ov to sqrt(mu/rb).           // orbital velocity for circular orbit
 print "Mission start at: " + time:calendar + ", " + time:clock.
 print "Orbit v: " + round(ov) + " for low " + body:name + " orbit in " + round(lorb/1000) + "km".
 print "T+" + round(missiontime) + " All systems GO!".
-wait 1.
+wait 0.1.
 print "T+" + round(missiontime) + " Ignition.".
+
+sas off.
+
+stage.
+wait 0.1.
 
 //lauch 9deg phase angle
 
 
 set pitch to 0.
-set incl to 0.099.
-//set incl to 179.388.
+//set incl to 0.099.
+set incl to 178.833.
 //print target:orbit:inclination.
 //set incl to target:orbit:inclination.
 lock angle1 to arcsin(max(-1,min(1,cos(180+incl)/cos(ship:latitude)))).

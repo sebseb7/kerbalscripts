@@ -41,19 +41,6 @@ function set_partmodule_field {
 	}
 }
 
-function do_partmodule_event {
-	parameter part_name.
-	parameter module_name.
-	parameter event_name.
-
-	for parapart IN SHIP:PARTSDUBBED(part_name)  {
-		if parapart:allmodules:contains(module_name) {
-			if parapart:getmodule(module_name):hasevent(event_name) {
-				parapart:getmodule(module_name):DOEVENT(event_name).
-			}
-		}
-	}
-}
 
 function set_parachute_pressure {
 	parameter para_name.
@@ -275,16 +262,18 @@ WHEN (ship:velocity:surface:mag < 1900 ) and (radar_alt < 40000) then {
 		set_parachute_pressure("PARA_D2",0).
 
 		WHEN RADAR_alt < 3500  and ship:velocity:surface:mag < 500 then {
+			SET WARP TO 2.
 			logev("full d1").
 			set_parachute_alt("PARA_D1",5000).
 		}
 		WHEN RADAR_alt < 1500  and ship:velocity:surface:mag < 500 then {
+			SET WARP TO 1.
 			logev("full d2 & cut D1").
-				cut_parachute("PARA_D1").
+			cut_parachute("PARA_D1").
 			set_parachute_alt("PARA_D2",5000).
 		}
 			
-		WHEN ship:velocity:surface:mag < 80 and  RADAR_alt < 1800 then {
+		WHEN ship:velocity:surface:mag < 60 and  RADAR_alt < 1800 then {
 			logev("HS Jet").
 			do_partmodule_event("HS","ModuleDecouple","jettison heat shield").
 		}
@@ -301,26 +290,28 @@ WHEN (ship:velocity:surface:mag < 1900 ) and (radar_alt < 40000) then {
 			set_parachute_pressure("PARA_M3",0).
 			set_parachute_pressure("PARA_M4",0).
 
-			WHEN RADAR_alt < 300  and ship:velocity:surface:mag < 250 then {
+			WHEN RADAR_alt < 900  and ship:velocity:surface:mag < 250 then {
+				SET WARP TO 0.
 				logev("Cut D2 & Full 1").
 				cut_parachute("PARA_D2").
 				set_parachute_alt("PARA_M1",5000).
 			}
-			WHEN RADAR_alt < 100  and ship:velocity:surface:mag < 250 then {
+			WHEN RADAR_alt < 600  and ship:velocity:surface:mag < 250 then {
 				logev("Full 2").
 				set_parachute_alt("PARA_M2",5000).
 			}
-			WHEN RADAR_alt < 80  and ship:velocity:surface:mag < 250 then {
+			WHEN RADAR_alt < 400  and ship:velocity:surface:mag < 250 then {
 				logev("Full 3").
 				set_parachute_alt("PARA_M3",5000).
 			}
-			WHEN RADAR_alt < 50 and ship:velocity:surface:mag < 250 then {
+			WHEN RADAR_alt < 100 and ship:velocity:surface:mag < 250 then {
 				logev("Full 4").
 				set_parachute_alt("PARA_M4",5000).
 
 				when ship:velocity:surface:mag < 1 then {
 					logev("Contact").
 					print "------------------------".
+					set prog_mode to 0.
 				}
 			}
 		}

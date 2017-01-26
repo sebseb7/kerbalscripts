@@ -2,8 +2,12 @@ local landingheight to 5.
 
 //wait until ship:longitude > -70.
 //wait until ship:longitude > 12.978.
-
-wait until ship:longitude < 48.82. //target 35 from 15x15
+if altitude > 6000 {
+	set warp to 4.
+	wait until ship:longitude > 19.16. //target 35 from 15x15
+	wait until ship:longitude < 19.16. //target 35 from 15x15
+	set warp to 0.
+}
 
 set startlong to ship:longitude.
 
@@ -20,6 +24,7 @@ set lorb to 14000.
 sas off.
 lock steering to lookdirup(ship:retrograde:vector, ship:facing:topvector).
 	
+print "wait for align".
 wait until VECTORANGLE(SHIP:RETROGRADE:VECTOR,SHIP:FACING:VECTOR) < 5.
 set tset to 0.
 lock throttle to tset.
@@ -43,7 +48,7 @@ print "T+" + round(missiontime) + " Radar active, ar: " + round(alt:radar) + ", 
 // emulate retrograde:surface
 lock steering to ship:SRFRETROGRADE.
 set alt1 to alt:radar.
-set alt0 to 250.
+set alt0 to 150.
 set dalt to alt1 - alt0.
 set vstart to velocity:surface:mag.
 set vend to 30.
