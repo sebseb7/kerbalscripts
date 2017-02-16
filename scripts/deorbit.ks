@@ -211,6 +211,9 @@ else
 }
 
 //SET g TO KERBIN:MU / KERBIN:RADIUS^2.
+//function getLocalG {
+//    return ship:body:mu / ship:body:position:mag ^ 2.
+//	}
 //LOCK accvec TO SHIP:SENSORS:ACC - SHIP:SENSORS:GRAV.//needs Double-C & GRAVMAX Instruments
 //LOCK gforce TO accvec:MAG / g.
 

@@ -17,6 +17,7 @@ function task_misc_payload
 
 		do_partmodule_event("PAYLOAD_DEC","ModuleDockingNode","decouple node").
 		do_partmodule_event("PAYLOAD_DEC","ModuleAnimatedDecoupler","decouple").
+		do_partmodule_event("PAYLOAD_DEC","ModuleDecouple","decouple").
 
 		//wait 4
 		set seconds_g to sessiontime+4.

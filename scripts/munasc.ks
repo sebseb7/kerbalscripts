@@ -1,3 +1,19 @@
+function do_partmodule_event {
+	parameter part_name.
+	parameter module_name.
+	parameter event_name.
+
+	for parapart IN SHIP:PARTSDUBBED(part_name)  {
+		if parapart:allmodules:contains(module_name) {
+			if parapart:getmodule(module_name):hasevent(event_name) {
+				parapart:getmodule(module_name):DOEVENT(event_name).
+			}
+		}
+	}
+}
+do_partmodule_event("LM_ASC","ModuleEnginesFX","activate engine").
+do_partmodule_event("LMSEP","ModuleDecouple","decouple").
+
 // launch to orbit in vacuum (no atmosphere)
 set rb to 200000.//mun
 set mu to 6.5138398*10^10.
@@ -13,7 +29,6 @@ print "T+" + round(missiontime) + " Ignition.".
 
 sas off.
 
-stage.
 wait 0.1.
 
 //lauch 9deg phase angle

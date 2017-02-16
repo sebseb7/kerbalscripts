@@ -6,12 +6,16 @@ if body:name = "Kerbin" {
 	set ha to 59000.
 	set vac to 70000.
 
-	set angle to 7. //twr 1.4
+//	set angle to 7. //twr 1.4
 //	set angle to 7. //twr 1.4
 //	set angle to 9.5. //twr 1.8
+	set angle to 5.6. // twr 2.0
+//	set angle to 6.1. // twr 2.1
+//	set angle to 6.8. // twr 2.2
 //	set angle to 8.5. // twr 2.2
+//	set angle to 9.5. // twr 2.2
 //	set angle to 17. // twr 3
-	set maxq to 9000.
+	set maxq to 15000.
 
 }
 
@@ -50,7 +54,7 @@ set arramp to radar_alt + 25.
 
 when radar_alt > arramp or not (prog_mode = 1) then {
 	gear off.
-//	SET WARP TO 2.
+	SET WARP TO 1.
 	if not ( prog_mode = 1) {return false.}
 	logev("tower clear.").
 }
@@ -60,11 +64,12 @@ when ship:velocity:surface:mag > 20 or not (prog_mode = 1) then {
 	if not ( prog_mode = 1) {return false.}
 	lock pitch to -1*(VECTORANGLE(SHIP:UP:VECTOR,SHIP:srfprograde:VECTOR)+5).
 
-	logev("begin turn").
+	logev("begin turn: "+angle).
 
 	when abs( VECTORANGLE(SHIP:UP:VECTOR,SHIP:FACING:VECTOR)) > angle or not (prog_mode = 1) then {
 		if not ( prog_mode = 1) {return false.}
 		logev("follow srfpg").
+		SET WARP TO 2.
 		lock steering to lookdirup(ship:srfprograde:vector, ship:facing:topvector).
 	
 		when altitude > ha or apoapsis > lorb or not (prog_mode = 1) then {
@@ -122,12 +127,18 @@ on round(time:seconds,1) {
 	return true.
 }
 	
-when altitude > 53000 or not (prog_mode = 1) then {
+when altitude > 48000 or not (prog_mode = 1) then {
 	
 	if not ( prog_mode = 1) {return false.}
 		
 	run las_jet.
 
+}
+
+when altitude > 53000 or not (prog_mode = 1) then {
+	
+	if not ( prog_mode = 1) {return false.}
+		
 	logev("fairing deploy").
 	FOR mypart IN SHIP:PARTS {
 		if not(mypart:tag = "INH") and mypart:allmodules:contains("ModuleProceduralFairing") {
