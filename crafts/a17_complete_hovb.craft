@@ -5,7 +5,7 @@ type = VAB
 size = 3.9949491,29.9130516,3.99494839
 PART
 {
-	part = RCSTank1-2_4292850238
+	part = RCSTank1-2_4288887854
 	partName = Part
 	pos = -1.20492554,18.6100521,0.610367775
 	attPos = 0,-15.2760677,0
@@ -17,39 +17,39 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 0
+	istg = 3
 	resPri = 0
 	dstg = 4
 	sidx = -1
 	sqor = -1
-	sepI = 1
+	sepI = 0
 	attm = 0
 	modCost = -352.940369
 	modMass = -0.35294041
 	modSize = 0,0,0
-	link = solarPanels5_4292850190
-	link = solarPanels5_4292850142
-	link = solarPanels5_4292850094
-	link = solarPanels5_4292850046
-	link = strutCube_4292849998
-	link = strutCube_4292849852
-	link = strutCube_4292849706
-	link = strutCube_4292849560
-	link = landingLeg1_4292849414
-	link = landingLeg1_4292849284
-	link = landingLeg1_4292849154
-	link = landingLeg1_4292849024
-	link = landingLeg1_4292848894
-	link = landingLeg1_4292848764
-	link = RLA.mp.small.fuelcell_4292848634
-	link = KAL9000_4292848600
-	link = seatExternalCmd_4292848538
-	link = seatExternalCmd_4292848458
-	link = RLA.tiny.torque.radial_4292848378
-	link = RLA.tiny.torque.radial_4292848346
-	link = probeCoreOcto2_4292848314
-	attN = top,probeCoreOcto2_4292848314
-	attN = bottom,KW3mPetalAdapter_4292850426
+	link = solarPanels5_4288887808
+	link = solarPanels5_4288887762
+	link = solarPanels5_4288887716
+	link = solarPanels5_4288887670
+	link = strutCube_4288887624
+	link = strutCube_4288887484
+	link = strutCube_4288887344
+	link = strutCube_4288887204
+	link = landingLeg1_4288887064
+	link = landingLeg1_4288886936
+	link = landingLeg1_4288886808
+	link = landingLeg1_4288886680
+	link = landingLeg1_4288886552
+	link = landingLeg1_4288886424
+	link = RLA.mp.small.fuelcell_4288886296
+	link = KAL9000_4288886264
+	link = seatExternalCmd_4288886204
+	link = seatExternalCmd_4288886142
+	link = RLA.tiny.torque.radial_4288886080
+	link = RLA.tiny.torque.radial_4288886050
+	link = probeCoreOcto2_4288886020
+	attN = top,probeCoreOcto2_4288886020
+	attN = bottom,KW3mPetalAdapter_4288882400
 	EVENTS
 	{
 	}
@@ -67,21 +67,6 @@ PART
 		defaultScale = 2.5
 		defaultTransformScale = (1, 1, 1)
 		DryCost = 47.059597
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -152,7 +137,7 @@ PART
 }
 PART
 {
-	part = solarPanels5_4292850190
+	part = solarPanels5_4288887808
 	partName = Part
 	pos = -0.842138648,18.8321686,0.742411494
 	attPos = 0,0,0
@@ -164,20 +149,20 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 0
+	istg = 3
 	resPri = 0
 	dstg = 4
 	sidx = -1
 	sqor = -1
-	sepI = 1
+	sepI = 0
 	attm = 1
 	modCost = -40.3199997
 	modMass = -0.00268799975
 	modSize = 0,0,0
-	sym = solarPanels5_4292850142
-	sym = solarPanels5_4292850094
-	sym = solarPanels5_4292850046
-	srfN = srfAttach,RCSTank1-2_4292850238
+	sym = solarPanels5_4288887762
+	sym = solarPanels5_4288887716
+	sym = solarPanels5_4288887670
+	srfN = srfAttach,RCSTank1-2_4288887854
 	EVENTS
 	{
 	}
@@ -244,21 +229,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -292,32 +262,32 @@ PART
 }
 PART
 {
-	part = solarPanels5_4292850142
+	part = solarPanels5_4288887762
 	partName = Part
 	pos = -1.07288194,18.8321686,0.247580975
 	attPos = 0,0,0
 	attPos0 = 0,0.226650238,-0.393948406
-	rot = -0.696364284,-0.122787923,-0.122787975,0.696364284
+	rot = -0.696364284,-0.122787945,-0.122787975,0.696364284
 	attRot = 0,0,-0.707106709,0.707106709
 	attRot0 = -0.707106829,6.3220277E-08,-6.3220277E-08,0.707106829
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 0
+	istg = 3
 	resPri = 0
 	dstg = 4
 	sidx = -1
 	sqor = -1
-	sepI = 1
+	sepI = 0
 	attm = 1
 	modCost = -40.3199997
 	modMass = -0.00268799975
 	modSize = 0,0,0
-	sym = solarPanels5_4292850190
-	sym = solarPanels5_4292850094
-	sym = solarPanels5_4292850046
-	srfN = srfAttach,RCSTank1-2_4292850238
+	sym = solarPanels5_4288887808
+	sym = solarPanels5_4288887716
+	sym = solarPanels5_4288887670
+	srfN = srfAttach,RCSTank1-2_4288887854
 	EVENTS
 	{
 	}
@@ -384,21 +354,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -432,32 +387,32 @@ PART
 }
 PART
 {
-	part = solarPanels5_4292850094
+	part = solarPanels5_4288887716
 	partName = Part
 	pos = -1.56771255,18.8321686,0.478324175
 	attPos = 0,0,0
 	attPos0 = -0.393948436,0.226650238,0
-	rot = -0.57922858,0.405579656,0.40557915,0.579228044
+	rot = -0.57922858,0.405579567,0.40557915,0.579228103
 	attRot = 0,0,-0.707106709,0.707106709
 	attRot0 = -0.50000006,0.50000006,0.5,0.49999994
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 0
+	istg = 3
 	resPri = 0
 	dstg = 4
 	sidx = -1
 	sqor = -1
-	sepI = 1
+	sepI = 0
 	attm = 1
 	modCost = -40.3199997
 	modMass = -0.00268799975
 	modSize = 0,0,0
-	sym = solarPanels5_4292850190
-	sym = solarPanels5_4292850142
-	sym = solarPanels5_4292850046
-	srfN = srfAttach,RCSTank1-2_4292850238
+	sym = solarPanels5_4288887808
+	sym = solarPanels5_4288887762
+	sym = solarPanels5_4288887670
+	srfN = srfAttach,RCSTank1-2_4288887854
 	EVENTS
 	{
 	}
@@ -524,21 +479,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -572,32 +512,32 @@ PART
 }
 PART
 {
-	part = solarPanels5_4292850046
+	part = solarPanels5_4288887670
 	partName = Part
 	pos = -1.33696914,18.8321686,0.973154545
 	attPos = 0,0,0
 	attPos0 = 0,0.226650238,0.393948376
-	rot = -0.122787975,0.696364284,0.696364284,0.122787923
+	rot = -0.122787975,0.696364284,0.696364284,0.122787945
 	attRot = 0,0,-0.707106709,0.707106709
 	attRot0 = -6.3220277E-08,0.707106829,0.707106829,-6.3220277E-08
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 0
+	istg = 3
 	resPri = 0
 	dstg = 4
 	sidx = -1
 	sqor = -1
-	sepI = 1
+	sepI = 0
 	attm = 1
 	modCost = -40.3199997
 	modMass = -0.00268799975
 	modSize = 0,0,0
-	sym = solarPanels5_4292850190
-	sym = solarPanels5_4292850142
-	sym = solarPanels5_4292850094
-	srfN = srfAttach,RCSTank1-2_4292850238
+	sym = solarPanels5_4288887808
+	sym = solarPanels5_4288887762
+	sym = solarPanels5_4288887716
+	srfN = srfAttach,RCSTank1-2_4288887854
 	EVENTS
 	{
 	}
@@ -664,21 +604,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -712,34 +637,34 @@ PART
 }
 PART
 {
-	part = strutCube_4292849998
+	part = strutCube_4288887624
 	partName = Part
 	pos = -0.902527809,18.7693577,1.25886142
 	attPos = 0,0,0
 	attPos0 = 0.514909565,0.162555695,0.514909446
-	rot = 0.690345645,0.153045386,-0.15304555,0.690345824
+	rot = 0.690345526,0.153045356,-0.153045505,0.690345883
 	attRot = 0,0,0,1
 	attRot0 = 0.65328151,0.270598054,-0.270598084,0.65328145
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 0
+	istg = 3
 	resPri = 0
 	dstg = 4
 	sidx = -1
 	sqor = -1
-	sepI = 1
+	sepI = 0
 	attm = 1
 	modCost = -9.51641655
 	modMass = -0.000594776007
 	modSize = 0,0,0
-	link = RLA.mp.small.radial_4292849962
-	link = W485.SurfaceOmniLight_4292849890
-	sym = strutCube_4292849852
-	sym = strutCube_4292849706
-	sym = strutCube_4292849560
-	srfN = srfAttach,RCSTank1-2_4292850238
+	link = RLA.mp.small.radial_4288887590
+	link = W485.SurfaceOmniLight_4288887520
+	sym = strutCube_4288887484
+	sym = strutCube_4288887344
+	sym = strutCube_4288887204
+	srfN = srfAttach,RCSTank1-2_4288887854
 	EVENTS
 	{
 	}
@@ -770,21 +695,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -802,32 +712,32 @@ PART
 }
 PART
 {
-	part = RLA.mp.small.radial_4292849962
+	part = RLA.mp.small.radial_4288887590
 	partName = Part
-	pos = -0.847933292,18.6356239,1.4188844
+	pos = -0.847933352,18.6356239,1.41888452
 	attPos = 0,0,0
 	attPos0 = -0.0181490704,0.178302467,0.142734513
-	rot = 1.16567001E-07,-0.216439411,2.54146553E-08,-0.976296186
+	rot = 3.25884706E-08,-0.216439381,-1.31936559E-08,-0.976296186
 	attRot = 0,0,0,1
 	attRot0 = 0.707106888,0,0,-0.707106709
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 0
+	istg = 3
 	resPri = 0
 	dstg = 4
 	sidx = 0
 	sqor = 1
-	sepI = 1
+	sepI = 0
 	attm = 1
 	modCost = -87.1580276
 	modMass = -0.0348632112
 	modSize = 0,0,0
-	sym = RLA.mp.small.radial_4292849524
-	sym = RLA.mp.small.radial_4292849816
-	sym = RLA.mp.small.radial_4292849670
-	srfN = srfAttach,strutCube_4292849998
+	sym = RLA.mp.small.radial_4288887170
+	sym = RLA.mp.small.radial_4288887450
+	sym = RLA.mp.small.radial_4288887310
+	srfN = srfAttach,strutCube_4288887624
 	EVENTS
 	{
 	}
@@ -984,21 +894,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = False
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -1036,29 +931,29 @@ PART
 }
 PART
 {
-	part = W485.SurfaceOmniLight_4292849890
+	part = W485.SurfaceOmniLight_4288887520
 	partName = Part
 	pos = -0.885549784,18.8467789,1.29527164
 	attPos = 0,0,0
 	attPos0 = -1.86264515E-09,0.0401742011,-0.0774211884
-	rot = 1.66835274E-08,0.976296127,1.23990048E-07,-0.216439664
+	rot = 1.74752302E-09,0.976296127,2.12142638E-07,-0.216439724
 	attRot = 0,0,0,1
 	attRot0 = 2.98023224E-08,0.707106829,-0.707106829,-2.98023224E-08
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 0
+	istg = 3
 	resPri = 0
 	dstg = 4
 	sidx = -1
 	sqor = -1
-	sepI = 1
+	sepI = 0
 	attm = 1
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	srfN = srfAttach,strutCube_4292849998
+	srfN = srfAttach,strutCube_4288887624
 	EVENTS
 	{
 	}
@@ -1103,21 +998,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = ModuleLightEVAToggle
 		isEnabled = True
 		stagingEnabled = True
@@ -1150,7 +1030,7 @@ PART
 }
 PART
 {
-	part = strutCube_4292849852
+	part = strutCube_4288887484
 	partName = Part
 	pos = -0.556431949,18.7693577,0.307970524
 	attPos = 0,0,0
@@ -1162,22 +1042,22 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 0
+	istg = 3
 	resPri = 0
 	dstg = 4
 	sidx = -1
 	sqor = -1
-	sepI = 1
+	sepI = 0
 	attm = 1
 	modCost = -9.51641655
 	modMass = -0.000594776007
 	modSize = 0,0,0
-	link = RLA.mp.small.radial_4292849816
-	link = W485.SurfaceOmniLight_4292849744
-	sym = strutCube_4292849998
-	sym = strutCube_4292849706
-	sym = strutCube_4292849560
-	srfN = srfAttach,RCSTank1-2_4292850238
+	link = RLA.mp.small.radial_4288887450
+	link = W485.SurfaceOmniLight_4288887380
+	sym = strutCube_4288887624
+	sym = strutCube_4288887344
+	sym = strutCube_4288887204
+	srfN = srfAttach,RCSTank1-2_4288887854
 	EVENTS
 	{
 	}
@@ -1208,21 +1088,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -1240,7 +1105,7 @@ PART
 }
 PART
 {
-	part = RLA.mp.small.radial_4292849816
+	part = RLA.mp.small.radial_4288887450
 	partName = Part
 	pos = -0.396408021,18.6356239,0.253375351
 	attPos = 0,0,0
@@ -1252,20 +1117,20 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 0
+	istg = 3
 	resPri = 0
 	dstg = 4
 	sidx = 0
 	sqor = 1
-	sepI = 1
+	sepI = 0
 	attm = 1
 	modCost = -87.1580276
 	modMass = -0.0348632112
 	modSize = 0,0,0
-	sym = RLA.mp.small.radial_4292849524
-	sym = RLA.mp.small.radial_4292849962
-	sym = RLA.mp.small.radial_4292849670
-	srfN = srfAttach,strutCube_4292849852
+	sym = RLA.mp.small.radial_4288887170
+	sym = RLA.mp.small.radial_4288887590
+	sym = RLA.mp.small.radial_4288887310
+	srfN = srfAttach,strutCube_4288887484
 	EVENTS
 	{
 	}
@@ -1422,21 +1287,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = False
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -1474,7 +1324,7 @@ PART
 }
 PART
 {
-	part = W485.SurfaceOmniLight_4292849744
+	part = W485.SurfaceOmniLight_4288887380
 	partName = Part
 	pos = -0.527091801,18.846777,0.294288814
 	attPos = 0,0,0
@@ -1486,17 +1336,17 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 0
+	istg = 3
 	resPri = 0
 	dstg = 4
 	sidx = -1
 	sqor = -1
-	sepI = 1
+	sepI = 0
 	attm = 1
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	srfN = srfAttach,strutCube_4292849852
+	srfN = srfAttach,strutCube_4288887484
 	EVENTS
 	{
 	}
@@ -1541,21 +1391,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = ModuleLightEVAToggle
 		isEnabled = True
 		stagingEnabled = True
@@ -1588,34 +1423,34 @@ PART
 }
 PART
 {
-	part = strutCube_4292849706
+	part = strutCube_4288887344
 	partName = Part
 	pos = -1.50732303,18.7693577,-0.0381256938
 	attPos = 0,0,0
 	attPos0 = -0.514909625,0.162555695,-0.514909387
-	rot = -0.15304558,0.690345824,-0.690345645,-0.153045416
+	rot = -0.15304552,0.690345883,-0.690345585,-0.153045356
 	attRot = 0,0,0,1
 	attRot0 = -0.270598114,0.65328145,-0.65328151,-0.270598084
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 0
+	istg = 3
 	resPri = 0
 	dstg = 4
 	sidx = -1
 	sqor = -1
-	sepI = 1
+	sepI = 0
 	attm = 1
 	modCost = -9.51641655
 	modMass = -0.000594776007
 	modSize = 0,0,0
-	link = RLA.mp.small.radial_4292849670
-	link = W485.SurfaceOmniLight_4292849598
-	sym = strutCube_4292849998
-	sym = strutCube_4292849852
-	sym = strutCube_4292849560
-	srfN = srfAttach,RCSTank1-2_4292850238
+	link = RLA.mp.small.radial_4288887310
+	link = W485.SurfaceOmniLight_4288887240
+	sym = strutCube_4288887624
+	sym = strutCube_4288887484
+	sym = strutCube_4288887204
+	srfN = srfAttach,RCSTank1-2_4288887854
 	EVENTS
 	{
 	}
@@ -1646,21 +1481,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -1678,32 +1498,32 @@ PART
 }
 PART
 {
-	part = RLA.mp.small.radial_4292849670
+	part = RLA.mp.small.radial_4288887310
 	partName = Part
 	pos = -1.56191766,18.6356239,-0.198149562
 	attPos = 0,0,0
 	attPos0 = -0.0181491897,0.178302497,0.142734528
-	rot = -3.83577543E-08,-0.976296186,2.1753759E-07,0.21643962
+	rot = -5.05347408E-08,-0.976296186,2.86596702E-07,0.216439679
 	attRot = 0,0,0,1
 	attRot0 = 0.707106888,0,0,-0.707106709
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 0
+	istg = 3
 	resPri = 0
 	dstg = 4
 	sidx = 0
 	sqor = 1
-	sepI = 1
+	sepI = 0
 	attm = 1
 	modCost = -87.1580276
 	modMass = -0.0348632112
 	modSize = 0,0,0
-	sym = RLA.mp.small.radial_4292849524
-	sym = RLA.mp.small.radial_4292849962
-	sym = RLA.mp.small.radial_4292849816
-	srfN = srfAttach,strutCube_4292849706
+	sym = RLA.mp.small.radial_4288887170
+	sym = RLA.mp.small.radial_4288887590
+	sym = RLA.mp.small.radial_4288887450
+	srfN = srfAttach,strutCube_4288887344
 	EVENTS
 	{
 	}
@@ -1860,21 +1680,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = False
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -1912,29 +1717,29 @@ PART
 }
 PART
 {
-	part = W485.SurfaceOmniLight_4292849598
+	part = W485.SurfaceOmniLight_4288887240
 	partName = Part
 	pos = -1.52526355,18.8468456,-0.0765997171
 	attPos = 0,0,0
 	attPos0 = -1.86264437E-09,0.0424511395,-0.0774879456
-	rot = -1.81958612E-07,0.216439679,4.35709637E-08,0.976296186
+	rot = -1.88696319E-07,0.216439605,1.21208501E-08,0.976296127
 	attRot = 0,0,0,1
 	attRot0 = 0,-0.707106829,0.707106829,0
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 0
+	istg = 3
 	resPri = 0
 	dstg = 4
 	sidx = -1
 	sqor = -1
-	sepI = 1
+	sepI = 0
 	attm = 1
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	srfN = srfAttach,strutCube_4292849706
+	srfN = srfAttach,strutCube_4288887344
 	EVENTS
 	{
 	}
@@ -1979,21 +1784,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = ModuleLightEVAToggle
 		isEnabled = True
 		stagingEnabled = True
@@ -2026,7 +1816,7 @@ PART
 }
 PART
 {
-	part = strutCube_4292849560
+	part = strutCube_4288887204
 	partName = Part
 	pos = -1.85341907,18.7693577,0.912765026
 	attPos = 0,0,0
@@ -2038,22 +1828,22 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 0
+	istg = 3
 	resPri = 0
 	dstg = 4
 	sidx = -1
 	sqor = -1
-	sepI = 1
+	sepI = 0
 	attm = 1
 	modCost = -9.51641655
 	modMass = -0.000594776007
 	modSize = 0,0,0
-	link = RLA.mp.small.radial_4292849524
-	link = W485.SurfaceOmniLight_4292849452
-	sym = strutCube_4292849998
-	sym = strutCube_4292849852
-	sym = strutCube_4292849706
-	srfN = srfAttach,RCSTank1-2_4292850238
+	link = RLA.mp.small.radial_4288887170
+	link = W485.SurfaceOmniLight_4288887100
+	sym = strutCube_4288887624
+	sym = strutCube_4288887484
+	sym = strutCube_4288887344
+	srfN = srfAttach,RCSTank1-2_4288887854
 	EVENTS
 	{
 	}
@@ -2084,21 +1874,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -2116,7 +1891,7 @@ PART
 }
 PART
 {
-	part = RLA.mp.small.radial_4292849524
+	part = RLA.mp.small.radial_4288887170
 	partName = Part
 	pos = -2.01344204,18.6356239,0.967360139
 	attPos = 0,0,0
@@ -2128,20 +1903,20 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 0
+	istg = 3
 	resPri = 0
 	dstg = 4
 	sidx = 0
 	sqor = 1
-	sepI = 1
+	sepI = 0
 	attm = 1
 	modCost = -87.1580276
 	modMass = -0.0348632112
 	modSize = 0,0,0
-	sym = RLA.mp.small.radial_4292849962
-	sym = RLA.mp.small.radial_4292849816
-	sym = RLA.mp.small.radial_4292849670
-	srfN = srfAttach,strutCube_4292849560
+	sym = RLA.mp.small.radial_4288887590
+	sym = RLA.mp.small.radial_4288887450
+	sym = RLA.mp.small.radial_4288887310
+	srfN = srfAttach,strutCube_4288887204
 	EVENTS
 	{
 	}
@@ -2298,21 +2073,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -2350,7 +2110,7 @@ PART
 }
 PART
 {
-	part = W485.SurfaceOmniLight_4292849452
+	part = W485.SurfaceOmniLight_4288887100
 	partName = Part
 	pos = -1.88478136,18.8467922,0.927389383
 	attPos = 0,0,0
@@ -2362,17 +2122,17 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 0
+	istg = 3
 	resPri = 0
 	dstg = 4
 	sidx = -1
 	sqor = -1
-	sepI = 1
+	sepI = 0
 	attm = 1
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	srfN = srfAttach,strutCube_4292849560
+	srfN = srfAttach,strutCube_4288887204
 	EVENTS
 	{
 	}
@@ -2417,21 +2177,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = ModuleLightEVAToggle
 		isEnabled = True
 		stagingEnabled = True
@@ -2464,7 +2209,7 @@ PART
 }
 PART
 {
-	part = landingLeg1_4292849414
+	part = landingLeg1_4288887064
 	partName = Part
 	pos = -1.66883993,18.7042313,1.00271893
 	attPos = 0,0,0.0048160553
@@ -2476,22 +2221,22 @@ PART
 	symMethod = Radial
 	autostrutMode = ForceHeaviest
 	rigidAttachment = False
-	istg = 0
+	istg = 3
 	resPri = 0
 	dstg = 4
 	sidx = -1
 	sqor = -1
-	sepI = 1
+	sepI = 0
 	attm = 1
 	modCost = -428.119995
 	modMass = -0.0486500002
 	modSize = 0,0,0
-	sym = landingLeg1_4292849284
-	sym = landingLeg1_4292849154
-	sym = landingLeg1_4292849024
-	sym = landingLeg1_4292848894
-	sym = landingLeg1_4292848764
-	srfN = srfAttach,RCSTank1-2_4292850238
+	sym = landingLeg1_4288886936
+	sym = landingLeg1_4288886808
+	sym = landingLeg1_4288886680
+	sym = landingLeg1_4288886552
+	sym = landingLeg1_4288886424
+	srfN = srfAttach,RCSTank1-2_4288887854
 	EVENTS
 	{
 	}
@@ -2632,21 +2377,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = FXModuleLookAtConstraint
 		isEnabled = True
 		stagingEnabled = True
@@ -2679,34 +2409,34 @@ PART
 }
 PART
 {
-	part = landingLeg1_4292849284
+	part = landingLeg1_4288886936
 	partName = Part
 	pos = -1.09709716,18.7042313,1.20830488
 	attPos = 0.00417077541,0,0.00240802765
 	attPos0 = 0.307902932,0.0961017609,0.533303499
-	rot = -0.190648139,0.085543111,0.0166791864,0.977782011
+	rot = -0.190648124,0.0855430961,0.0166791864,0.977781951
 	attRot = 0,0,0,1
 	attRot0 = -0.184855357,0.254033625,0.049531512,0.948072791
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = ForceHeaviest
 	rigidAttachment = False
-	istg = 0
+	istg = 3
 	resPri = 0
 	dstg = 4
 	sidx = -1
 	sqor = -1
-	sepI = 1
+	sepI = 0
 	attm = 1
 	modCost = -428.119995
 	modMass = -0.0486500002
 	modSize = 0,0,0
-	sym = landingLeg1_4292849414
-	sym = landingLeg1_4292849154
-	sym = landingLeg1_4292849024
-	sym = landingLeg1_4292848894
-	sym = landingLeg1_4292848764
-	srfN = srfAttach,RCSTank1-2_4292850238
+	sym = landingLeg1_4288887064
+	sym = landingLeg1_4288886808
+	sym = landingLeg1_4288886680
+	sym = landingLeg1_4288886552
+	sym = landingLeg1_4288886424
+	srfN = srfAttach,RCSTank1-2_4288887854
 	EVENTS
 	{
 	}
@@ -2847,21 +2577,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = FXModuleLookAtConstraint
 		isEnabled = True
 		stagingEnabled = True
@@ -2894,7 +2609,7 @@ PART
 }
 PART
 {
-	part = landingLeg1_4292849154
+	part = landingLeg1_4288886808
 	partName = Part
 	pos = -0.633182585,18.7042313,0.81595397
 	attPos = 0.00417083502,0,-0.00240802765
@@ -2906,22 +2621,22 @@ PART
 	symMethod = Radial
 	autostrutMode = ForceHeaviest
 	rigidAttachment = False
-	istg = 0
+	istg = 3
 	resPri = 0
 	dstg = 4
 	sidx = -1
 	sqor = -1
-	sepI = 1
+	sepI = 0
 	attm = 1
 	modCost = -428.119995
 	modMass = -0.0486500002
 	modSize = 0,0,0
-	sym = landingLeg1_4292849414
-	sym = landingLeg1_4292849284
-	sym = landingLeg1_4292849024
-	sym = landingLeg1_4292848894
-	sym = landingLeg1_4292848764
-	srfN = srfAttach,RCSTank1-2_4292850238
+	sym = landingLeg1_4288887064
+	sym = landingLeg1_4288886936
+	sym = landingLeg1_4288886680
+	sym = landingLeg1_4288886552
+	sym = landingLeg1_4288886424
+	srfN = srfAttach,RCSTank1-2_4288887854
 	EVENTS
 	{
 	}
@@ -3062,21 +2777,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = FXModuleLookAtConstraint
 		isEnabled = True
 		stagingEnabled = True
@@ -3109,7 +2809,7 @@ PART
 }
 PART
 {
-	part = landingLeg1_4292849024
+	part = landingLeg1_4288886680
 	partName = Part
 	pos = -0.741011381,18.7042313,0.218016863
 	attPos = 0,0,-0.0048160553
@@ -3121,22 +2821,22 @@ PART
 	symMethod = Radial
 	autostrutMode = ForceHeaviest
 	rigidAttachment = False
-	istg = 0
+	istg = 3
 	resPri = 0
 	dstg = 4
 	sidx = -1
 	sqor = -1
-	sepI = 1
+	sepI = 0
 	attm = 1
 	modCost = -428.119995
 	modMass = -0.0486500002
 	modSize = 0,0,0
-	sym = landingLeg1_4292849414
-	sym = landingLeg1_4292849284
-	sym = landingLeg1_4292849154
-	sym = landingLeg1_4292848894
-	sym = landingLeg1_4292848764
-	srfN = srfAttach,RCSTank1-2_4292850238
+	sym = landingLeg1_4288887064
+	sym = landingLeg1_4288886936
+	sym = landingLeg1_4288886808
+	sym = landingLeg1_4288886552
+	sym = landingLeg1_4288886424
+	srfN = srfAttach,RCSTank1-2_4288887854
 	EVENTS
 	{
 	}
@@ -3277,21 +2977,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = FXModuleLookAtConstraint
 		isEnabled = True
 		stagingEnabled = True
@@ -3324,34 +3009,34 @@ PART
 }
 PART
 {
-	part = landingLeg1_4292848894
+	part = landingLeg1_4288886552
 	partName = Part
 	pos = -1.31275415,18.7042313,0.0124307275
 	attPos = -0.00417089462,0,-0.00240802765
 	attPos0 = -0.307902932,0.0961017609,-0.533303559
-	rot = 0.0166791901,0.977781951,0.190648049,-0.0855431557
+	rot = 0.0166791864,0.977782011,0.190648079,-0.0855431706
 	attRot = 0,0,0,1
 	attRot0 = 0.0495315231,0.948072851,0.184855357,-0.254033685
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = ForceHeaviest
 	rigidAttachment = False
-	istg = 0
+	istg = 3
 	resPri = 0
 	dstg = 4
 	sidx = -1
 	sqor = -1
-	sepI = 1
+	sepI = 0
 	attm = 1
 	modCost = -428.119995
 	modMass = -0.0486500002
 	modSize = 0,0,0
-	sym = landingLeg1_4292849414
-	sym = landingLeg1_4292849284
-	sym = landingLeg1_4292849154
-	sym = landingLeg1_4292849024
-	sym = landingLeg1_4292848764
-	srfN = srfAttach,RCSTank1-2_4292850238
+	sym = landingLeg1_4288887064
+	sym = landingLeg1_4288886936
+	sym = landingLeg1_4288886808
+	sym = landingLeg1_4288886680
+	sym = landingLeg1_4288886424
+	srfN = srfAttach,RCSTank1-2_4288887854
 	EVENTS
 	{
 	}
@@ -3492,21 +3177,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = FXModuleLookAtConstraint
 		isEnabled = True
 		stagingEnabled = True
@@ -3539,7 +3209,7 @@ PART
 }
 PART
 {
-	part = landingLeg1_4292848764
+	part = landingLeg1_4288886424
 	partName = Part
 	pos = -1.77666855,18.7042313,0.404781342
 	attPos = -0.00417089462,0,0.00240802765
@@ -3551,22 +3221,22 @@ PART
 	symMethod = Radial
 	autostrutMode = ForceHeaviest
 	rigidAttachment = False
-	istg = 0
+	istg = 3
 	resPri = 0
 	dstg = 4
 	sidx = -1
 	sqor = -1
-	sepI = 1
+	sepI = 0
 	attm = 1
 	modCost = -428.119995
 	modMass = -0.0486500002
 	modSize = 0,0,0
-	sym = landingLeg1_4292849414
-	sym = landingLeg1_4292849284
-	sym = landingLeg1_4292849154
-	sym = landingLeg1_4292849024
-	sym = landingLeg1_4292848894
-	srfN = srfAttach,RCSTank1-2_4292850238
+	sym = landingLeg1_4288887064
+	sym = landingLeg1_4288886936
+	sym = landingLeg1_4288886808
+	sym = landingLeg1_4288886680
+	sym = landingLeg1_4288886552
+	srfN = srfAttach,RCSTank1-2_4288887854
 	EVENTS
 	{
 	}
@@ -3707,21 +3377,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = FXModuleLookAtConstraint
 		isEnabled = True
 		stagingEnabled = True
@@ -3754,7 +3409,7 @@ PART
 }
 PART
 {
-	part = RLA.mp.small.fuelcell_4292848634
+	part = RLA.mp.small.fuelcell_4288886296
 	partName = Part
 	pos = -0.556533933,18.6389503,0.610367954
 	attPos = 0,0,0
@@ -3766,17 +3421,17 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 0
+	istg = 3
 	resPri = 0
 	dstg = 4
 	sidx = -1
 	sqor = -1
-	sepI = 1
+	sepI = 0
 	attm = 1
 	modCost = -656.25
 	modMass = -0.0437499993
 	modSize = 0,0,0
-	srfN = srfAttach,RCSTank1-2_4292850238
+	srfN = srfAttach,RCSTank1-2_4288887854
 	EVENTS
 	{
 	}
@@ -3837,21 +3492,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -3880,29 +3520,29 @@ PART
 }
 PART
 {
-	part = KAL9000_4292848600
+	part = KAL9000_4288886264
 	partName = Part
 	pos = -0.747901976,18.6173458,1.02915275
 	attPos = 0,0,0
 	attPos0 = 0.57269454,0.00729370117,0.237217844
-	rot = 3.13060688E-08,0.932007968,1.21742554E-08,0.362438083
+	rot = 3.13060724E-08,0.932007909,1.21742545E-08,0.362438083
 	attRot = 0,0,0,1
 	attRot0 = 3.29444667E-08,0.98078537,6.5530612E-09,0.195090309
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 0
+	istg = 3
 	resPri = 0
 	dstg = 4
 	sidx = -1
 	sqor = -1
-	sepI = 1
+	sepI = 0
 	attm = 1
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	srfN = srfAttach,RCSTank1-2_4292850238
+	srfN = srfAttach,RCSTank1-2_4288887854
 	EVENTS
 	{
 	}
@@ -4005,21 +3645,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = ModuleLightEVAToggle
 		isEnabled = True
 		stagingEnabled = True
@@ -4052,29 +3677,29 @@ PART
 }
 PART
 {
-	part = seatExternalCmd_4292848538
+	part = seatExternalCmd_4288886204
 	partName = Part
 	pos = -0.931309164,18.6100521,-0.141386747
 	attPos = -3.59989164E-21,-0.0149765313,-0.195584714
 	attPos0 = 8.47033351E-22,0.0149765015,-0.604415536
-	rot = -0.122787952,-0.696364284,0.696364284,-0.122787975
+	rot = -0.122787975,-0.696364284,0.696364284,-0.122787975
 	attRot = 0,0.707106709,-0.707106709,0
 	attRot0 = 0,-0.707106829,0.707106709,0
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 0
+	istg = 3
 	resPri = 0
 	dstg = 4
 	sidx = -1
 	sqor = -1
-	sepI = 1
+	sepI = 0
 	attm = 1
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	srfN = srfAttach,RCSTank1-2_4292850238
+	srfN = srfAttach,RCSTank1-2_4288887854
 	EVENTS
 	{
 	}
@@ -4102,21 +3727,6 @@ PART
 	MODULE
 	{
 		name = ModuleLogisticsConsumer
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = USI_ModuleRecycleablePart
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -4199,49 +3809,6 @@ PART
 	}
 	MODULE
 	{
-		name = GroundWorkshop
-		isEnabled = False
-		Working = False
-		LastUpdateTime = -1
-		ETA = -1
-		show_window = False
-		stagingEnabled = True
-		WindowPos = 365,256,550,240
-		Queue
-		{
-		}
-		KitUnderConstruction
-		{
-			vesselID = 00000000000000000000000000000000
-			KitName = 
-		}
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = OneTimeResourceConverter
-		isEnabled = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = ModuleTripLogger
 		isEnabled = True
 		stagingEnabled = True
@@ -4290,29 +3857,29 @@ PART
 }
 PART
 {
-	part = seatExternalCmd_4292848458
+	part = seatExternalCmd_4288886142
 	partName = Part
 	pos = -1.47854185,18.6100521,1.36212206
 	attPos = 0,0.00486755371,0.192643166
 	attPos0 = 1.13686838E-13,-0.00486755371,0.607356906
-	rot = -0.696364284,0.122787952,-0.122787975,-0.696364284
+	rot = -0.696364284,0.122787975,-0.122787975,-0.696364284
 	attRot = 0,0.707106709,-0.707106709,0
 	attRot0 = -0.707106829,0,0,-0.707106709
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 0
+	istg = 3
 	resPri = 0
 	dstg = 4
 	sidx = -1
 	sqor = -1
-	sepI = 1
+	sepI = 0
 	attm = 1
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	srfN = srfAttach,RCSTank1-2_4292850238
+	srfN = srfAttach,RCSTank1-2_4288887854
 	EVENTS
 	{
 	}
@@ -4340,21 +3907,6 @@ PART
 	MODULE
 	{
 		name = ModuleLogisticsConsumer
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = USI_ModuleRecycleablePart
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -4437,49 +3989,6 @@ PART
 	}
 	MODULE
 	{
-		name = GroundWorkshop
-		isEnabled = False
-		Working = False
-		LastUpdateTime = -1
-		ETA = -1
-		show_window = False
-		stagingEnabled = True
-		WindowPos = 365,256,550,240
-		Queue
-		{
-		}
-		KitUnderConstruction
-		{
-			vesselID = 00000000000000000000000000000000
-			KitName = 
-		}
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = OneTimeResourceConverter
-		isEnabled = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = ModuleTripLogger
 		isEnabled = True
 		stagingEnabled = True
@@ -4528,7 +4037,7 @@ PART
 }
 PART
 {
-	part = RLA.tiny.torque.radial_4292848378
+	part = RLA.tiny.torque.radial_4288886080
 	partName = Part
 	pos = -1.8149817,18.5551395,0.894841552
 	attPos = 0,0,0
@@ -4540,18 +4049,18 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 0
+	istg = 3
 	resPri = 0
 	dstg = 4
 	sidx = -1
 	sqor = -1
-	sepI = 1
+	sepI = 0
 	attm = 1
 	modCost = -56.2464752
 	modMass = -0.00374976499
 	modSize = 0,0,0
-	sym = RLA.tiny.torque.radial_4292848346
-	srfN = srfAttach,RCSTank1-2_4292850238
+	sym = RLA.tiny.torque.radial_4288886050
+	srfN = srfAttach,RCSTank1-2_4288887854
 	EVENTS
 	{
 	}
@@ -4617,21 +4126,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -4668,7 +4162,7 @@ PART
 }
 PART
 {
-	part = RLA.tiny.torque.radial_4292848346
+	part = RLA.tiny.torque.radial_4288886050
 	partName = Part
 	pos = -0.594869375,18.5551395,0.325894058
 	attPos = 0,0,0
@@ -4680,18 +4174,18 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 0
+	istg = 3
 	resPri = 0
 	dstg = 4
 	sidx = -1
 	sqor = -1
-	sepI = 1
+	sepI = 0
 	attm = 1
 	modCost = -56.2464752
 	modMass = -0.00374976499
 	modSize = 0,0,0
-	sym = RLA.tiny.torque.radial_4292848378
-	srfN = srfAttach,RCSTank1-2_4292850238
+	sym = RLA.tiny.torque.radial_4288886080
+	srfN = srfAttach,RCSTank1-2_4288887854
 	EVENTS
 	{
 	}
@@ -4757,21 +4251,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -4808,7 +4287,7 @@ PART
 }
 PART
 {
-	part = probeCoreOcto2_4292848314
+	part = probeCoreOcto2_4288886020
 	partName = Part
 	pos = -1.20492554,18.8947411,0.610367775
 	attPos = 0,0,0
@@ -4820,19 +4299,19 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 0
+	istg = 3
 	resPri = 0
 	dstg = 4
 	sidx = -1
 	sqor = -1
-	sepI = 1
+	sepI = 0
 	attm = 0
 	modCost = 1344.17578
 	modMass = -0.0231000017
 	modSize = 0,0,0
-	link = stackDecouplerMini_4292848258
-	attN = bottom,RCSTank1-2_4292850238
-	attN = top,stackDecouplerMini_4292848258
+	link = stackDecouplerMini_4288885966
+	attN = bottom,RCSTank1-2_4288887854
+	attN = top,stackDecouplerMini_4288885966
 	EVENTS
 	{
 	}
@@ -4942,21 +4421,6 @@ PART
 		defaultScale = 100
 		defaultTransformScale = (1, 1, 1)
 		DryCost = 2824.17578
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -5082,7 +4546,7 @@ PART
 }
 PART
 {
-	part = stackDecouplerMini_4292848258
+	part = stackDecouplerMini_4288885966
 	partName = Part
 	pos = -1.20492554,19.0103416,0.610367775
 	attPos = 0,0.107049227,0
@@ -5094,19 +4558,19 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = True
-	istg = 0
+	istg = 3
 	resPri = 0
 	dstg = 3
 	sidx = 1
 	sqor = 0
-	sepI = 1
+	sepI = 0
 	attm = 0
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	link = fuelTank4-2_4292848214
-	attN = bottom,fuelTank4-2_4292848214
-	attN = top,probeCoreOcto2_4292848314
+	link = fuelTank4-2_4288885924
+	attN = bottom,fuelTank4-2_4288885924
+	attN = top,probeCoreOcto2_4288886020
 	EVENTS
 	{
 	}
@@ -5201,21 +4665,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = PODSEP
@@ -5233,9 +4682,9 @@ PART
 }
 PART
 {
-	part = fuelTank4-2_4292848214
+	part = fuelTank4-2_4288885924
 	partName = Part
-	pos = -1.20492554,19.349514,0.610367775
+	pos = -1.20492554,19.3542023,0.610367775
 	attPos = 0,0.234676361,0
 	attPos0 = -1.20494294,19.3763428,0.61036557
 	rot = 0,0,0,1.00000012
@@ -5245,30 +4694,30 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 0
+	istg = 3
 	resPri = 0
 	dstg = 2
 	sidx = -1
 	sqor = -1
 	sepI = 0
 	attm = 0
-	modCost = -492.993774
-	modMass = -0.253480494
+	modCost = -460.418274
+	modMass = -0.243999988
 	modSize = 0,0,0
-	link = landingLeg1_4292848166
-	link = landingLeg1_4292848036
-	link = landingLeg1_4292847906
-	link = landingLeg1_4292847776
-	link = smallRadialEngine_4292847646
-	link = smallRadialEngine_4292847528
-	link = smallRadialEngine_4292847410
-	link = smallRadialEngine_4292847292
-	link = solarPanels5_4292847174
-	link = solarPanels5_4292847126
-	link = solarPanels5_4292847078
-	link = stackDecouplerMini_4292847030
-	attN = top,stackDecouplerMini_4292847030
-	attN = bottom,stackDecouplerMini_4292848258
+	link = landingLeg1_4288885878
+	link = landingLeg1_4288885750
+	link = landingLeg1_4288885622
+	link = landingLeg1_4288885494
+	link = smallRadialEngine_4288885366
+	link = smallRadialEngine_4288885250
+	link = smallRadialEngine_4288885134
+	link = smallRadialEngine_4288885018
+	link = solarPanels5_4288884902
+	link = solarPanels5_4288884856
+	link = solarPanels5_4288884810
+	link = stackDecouplerMini_4288884764
+	attN = top,stackDecouplerMini_4288884764
+	attN = bottom,stackDecouplerMini_4288885966
 	EVENTS
 	{
 	}
@@ -5282,25 +4731,10 @@ PART
 	{
 		name = TweakScale
 		isEnabled = True
-		currentScale = 1.97500002
+		currentScale = 2
 		defaultScale = 2.5
 		defaultTransformScale = (1, 1, 1)
-		DryCost = 394.431091
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
+		DryCost = 409.599976
 		stagingEnabled = True
 		EVENTS
 		{
@@ -5316,7 +4750,7 @@ PART
 	{
 		name = ModuleTankManager
 		isEnabled = True
-		Volume = 2.43476033
+		Volume = 2.52839541
 		DoCostPatch = False
 		CostPatch = -586.174683
 		DoMassPatch = False
@@ -5346,7 +4780,7 @@ PART
 			BoiloffDisplay = 0
 			CoolingDisplay = 0
 			EcDisplay = 0
-			Volume = 1.09564173
+			Volume = 1.13777721
 			DoCostPatch = False
 			CostPatch = 0
 			DoMassPatch = False
@@ -5375,7 +4809,7 @@ PART
 			BoiloffDisplay = 0
 			CoolingDisplay = 0
 			EcDisplay = 0
-			Volume = 1.33911812
+			Volume = 1.39061737
 			DoCostPatch = False
 			CostPatch = 0
 			DoMassPatch = False
@@ -5424,7 +4858,7 @@ PART
 		BoiloffDisplay = 0
 		CoolingDisplay = 0
 		EcDisplay = 0
-		Volume = 1.09564173
+		Volume = 1.13777721
 		DoCostPatch = False
 		CostPatch = 0
 		DoMassPatch = False
@@ -5453,7 +4887,7 @@ PART
 		BoiloffDisplay = 0
 		CoolingDisplay = 0
 		EcDisplay = 0
-		Volume = 1.33911812
+		Volume = 1.39061737
 		DoCostPatch = False
 		CostPatch = 0
 		DoMassPatch = False
@@ -5472,8 +4906,8 @@ PART
 	RESOURCE
 	{
 		name = LiquidFuel
-		amount = 177.49395751953125
-		maxAmount = 177.49395751953125
+		amount = 184.31991577148438
+		maxAmount = 184.31991577148438
 		flowState = True
 		isTweakable = True
 		hideFlow = False
@@ -5483,8 +4917,8 @@ PART
 	RESOURCE
 	{
 		name = Oxidizer
-		amount = 216.9371337890625
-		maxAmount = 216.9371337890625
+		amount = 225.28001403808594
+		maxAmount = 225.28001403808594
 		flowState = True
 		isTweakable = True
 		hideFlow = False
@@ -5494,19 +4928,19 @@ PART
 }
 PART
 {
-	part = landingLeg1_4292848166
+	part = landingLeg1_4288885878
 	partName = Part
-	pos = -1.97565746,19.349514,0.0323165655
+	pos = -1.98541355,19.3542023,0.0249985456
 	attPos = -0.181937039,0.0460262299,0.0180622339
 	attPos0 = -0.618063331,-0.0460262299,-0.618063152
-	rot = 0.0732365996,0.906802893,0.176809028,-0.375610977
+	rot = 0.0732366145,0.906802893,0.176809072,-0.375610977
 	attRot = 0,0,0,1
 	attRot0 = 0.0732365474,0.90680325,0.176808655,-0.375610203
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = ForceHeaviest
 	rigidAttachment = False
-	istg = 0
+	istg = 3
 	resPri = 0
 	dstg = 2
 	sidx = -1
@@ -5516,10 +4950,10 @@ PART
 	modCost = -282.519165
 	modMass = -0.0321044512
 	modSize = 0,0,0
-	sym = landingLeg1_4292848036
-	sym = landingLeg1_4292847906
-	sym = landingLeg1_4292847776
-	srfN = srfAttach,fuelTank4-2_4292848214
+	sym = landingLeg1_4288885750
+	sym = landingLeg1_4288885622
+	sym = landingLeg1_4288885494
+	srfN = srfAttach,fuelTank4-2_4288885924
 	EVENTS
 	{
 	}
@@ -5660,21 +5094,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = FXModuleLookAtConstraint
 		isEnabled = True
 		stagingEnabled = True
@@ -5707,19 +5126,19 @@ PART
 }
 PART
 {
-	part = landingLeg1_4292848036
+	part = landingLeg1_4288885750
 	partName = Part
-	pos = -1.78297496,19.349514,1.38110411
+	pos = -1.7902925,19.3542023,1.3908627
 	attPos = 0.0180627704,0.0460262299,0.181937397
 	attPos0 = -0.618063092,-0.0460262299,0.618063271
-	rot = 0.176809072,0.375610173,0.0732367933,-0.906803191
+	rot = 0.176809072,0.375610262,0.0732367933,-0.906803191
 	attRot = 0,0,0,1
 	attRot0 = 0.176808655,0.375610203,0.07323654,-0.90680325
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = ForceHeaviest
 	rigidAttachment = False
-	istg = 0
+	istg = 3
 	resPri = 0
 	dstg = 2
 	sidx = -1
@@ -5729,10 +5148,10 @@ PART
 	modCost = -282.519165
 	modMass = -0.0321044512
 	modSize = 0,0,0
-	sym = landingLeg1_4292848166
-	sym = landingLeg1_4292847906
-	sym = landingLeg1_4292847776
-	srfN = srfAttach,fuelTank4-2_4292848214
+	sym = landingLeg1_4288885878
+	sym = landingLeg1_4288885622
+	sym = landingLeg1_4288885494
+	srfN = srfAttach,fuelTank4-2_4288885924
 	EVENTS
 	{
 	}
@@ -5873,21 +5292,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = FXModuleLookAtConstraint
 		isEnabled = True
 		stagingEnabled = True
@@ -5920,19 +5324,19 @@ PART
 }
 PART
 {
-	part = landingLeg1_4292847906
+	part = landingLeg1_4288885622
 	partName = Part
-	pos = -0.434193373,19.349514,1.18841755
+	pos = -0.424437463,19.3542023,1.19573629
 	attPos = 0.181937218,0.0460262299,-0.0180620551
 	attPos0 = 0.61806339,-0.0460262299,0.618063092
-	rot = 0.176809102,-0.375610977,-0.0732365996,-0.906802893
+	rot = 0.176809117,-0.375610977,-0.0732366517,-0.906802893
 	attRot = 0,0,0,1
 	attRot0 = 0.176808655,-0.375610232,-0.0732365549,-0.90680325
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = ForceHeaviest
 	rigidAttachment = False
-	istg = 0
+	istg = 3
 	resPri = 0
 	dstg = 2
 	sidx = -1
@@ -5942,10 +5346,10 @@ PART
 	modCost = -282.519165
 	modMass = -0.0321044512
 	modSize = 0,0,0
-	sym = landingLeg1_4292848166
-	sym = landingLeg1_4292848036
-	sym = landingLeg1_4292847776
-	srfN = srfAttach,fuelTank4-2_4292848214
+	sym = landingLeg1_4288885878
+	sym = landingLeg1_4288885750
+	sym = landingLeg1_4288885494
+	srfN = srfAttach,fuelTank4-2_4288885924
 	EVENTS
 	{
 	}
@@ -6086,21 +5490,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = FXModuleLookAtConstraint
 		isEnabled = True
 		stagingEnabled = True
@@ -6133,19 +5522,19 @@ PART
 }
 PART
 {
-	part = landingLeg1_4292847776
+	part = landingLeg1_4288885494
 	partName = Part
-	pos = -0.62687552,19.349514,-0.160368741
+	pos = -0.619558454,19.3542023,-0.170127094
 	attPos = -0.0180627108,0.0460262299,-0.181937456
 	attPos0 = 0.618063092,-0.0460262299,-0.618063331
-	rot = 0.0732367933,-0.906803191,-0.176809072,-0.375610173
+	rot = 0.0732367933,-0.906803191,-0.176809072,-0.375610262
 	attRot = 0,0,0,1
 	attRot0 = 0.07323654,-0.90680325,-0.176808655,-0.375610203
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = ForceHeaviest
 	rigidAttachment = False
-	istg = 0
+	istg = 3
 	resPri = 0
 	dstg = 2
 	sidx = -1
@@ -6155,10 +5544,10 @@ PART
 	modCost = -282.519165
 	modMass = -0.0321044512
 	modSize = 0,0,0
-	sym = landingLeg1_4292848166
-	sym = landingLeg1_4292848036
-	sym = landingLeg1_4292847906
-	srfN = srfAttach,fuelTank4-2_4292848214
+	sym = landingLeg1_4288885878
+	sym = landingLeg1_4288885750
+	sym = landingLeg1_4288885622
+	srfN = srfAttach,fuelTank4-2_4288885924
 	EVENTS
 	{
 	}
@@ -6299,21 +5688,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = FXModuleLookAtConstraint
 		isEnabled = True
 		stagingEnabled = True
@@ -6346,12 +5720,12 @@ PART
 }
 PART
 {
-	part = smallRadialEngine_4292847646
+	part = smallRadialEngine_4288885366
 	partName = Part
-	pos = -1.585554,19.2440968,-0.435409188
+	pos = -1.58973515,19.2474499,-0.44690001
 	attPos = -5.36441803E-07,0.22228241,1.78813934E-07
 	attPos0 = -0.337349534,-0.0947399139,-0.92686069
-	rot = -1.71532299E-09,0.984807849,-9.72811076E-09,-0.173648238
+	rot = -1.71532322E-09,0.984807849,-9.72811343E-09,-0.173648238
 	attRot = 0,0,0,1
 	attRot0 = -1.71532422E-09,0.984807789,-9.72809211E-09,-0.173648089
 	mir = 1,1,1
@@ -6368,10 +5742,10 @@ PART
 	modCost = -117.604218
 	modMass = -0.0264609642
 	modSize = 0,0,0
-	sym = smallRadialEngine_4292847528
-	sym = smallRadialEngine_4292847410
-	sym = smallRadialEngine_4292847292
-	srfN = srfAttach,fuelTank4-2_4292848214
+	sym = smallRadialEngine_4288885250
+	sym = smallRadialEngine_4288885134
+	sym = smallRadialEngine_4288885018
+	srfN = srfAttach,fuelTank4-2_4288885924
 	EVENTS
 	{
 	}
@@ -6497,21 +5871,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = ModuleAnimateHeat
 		isEnabled = True
 		stagingEnabled = True
@@ -6579,9 +5938,9 @@ PART
 }
 PART
 {
-	part = smallRadialEngine_4292847528
+	part = smallRadialEngine_4288885250
 	partName = Part
-	pos = -2.25069904,19.2440968,0.991000772
+	pos = -2.26218748,19.2474499,0.995183825
 	attPos = -5.36441803E-07,0.22228241,1.78813934E-07
 	attPos0 = -0.92686069,-0.0947399139,0.337349415
 	rot = -8.09172729E-09,0.57357657,-5.66587444E-09,-0.819152117
@@ -6601,10 +5960,10 @@ PART
 	modCost = -117.604218
 	modMass = -0.0264609642
 	modSize = 0,0,0
-	sym = smallRadialEngine_4292847646
-	sym = smallRadialEngine_4292847410
-	sym = smallRadialEngine_4292847292
-	srfN = srfAttach,fuelTank4-2_4292848214
+	sym = smallRadialEngine_4288885366
+	sym = smallRadialEngine_4288885134
+	sym = smallRadialEngine_4288885018
+	srfN = srfAttach,fuelTank4-2_4288885924
 	EVENTS
 	{
 	}
@@ -6730,21 +6089,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = ModuleAnimateHeat
 		isEnabled = True
 		stagingEnabled = True
@@ -6812,12 +6156,12 @@ PART
 }
 PART
 {
-	part = smallRadialEngine_4292847410
+	part = smallRadialEngine_4288885134
 	partName = Part
-	pos = -0.824296236,19.2440968,1.65614283
+	pos = -0.820115268,19.2474499,1.66763282
 	attPos = -5.36441803E-07,0.22228241,1.78813934E-07
 	attPos0 = 0.337349653,-0.0947399139,0.92686069
-	rot = -9.72811076E-09,-0.173648238,1.71532299E-09,-0.984807849
+	rot = -9.72811343E-09,-0.173648238,1.71532322E-09,-0.984807849
 	attRot = 0,0,0,1
 	attRot0 = -9.72809211E-09,-0.173648134,1.71532466E-09,-0.984807789
 	mir = 1,1,1
@@ -6834,10 +6178,10 @@ PART
 	modCost = -117.604218
 	modMass = -0.0264609642
 	modSize = 0,0,0
-	sym = smallRadialEngine_4292847646
-	sym = smallRadialEngine_4292847528
-	sym = smallRadialEngine_4292847292
-	srfN = srfAttach,fuelTank4-2_4292848214
+	sym = smallRadialEngine_4288885366
+	sym = smallRadialEngine_4288885250
+	sym = smallRadialEngine_4288885018
+	srfN = srfAttach,fuelTank4-2_4288885924
 	EVENTS
 	{
 	}
@@ -6963,21 +6307,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = ModuleAnimateHeat
 		isEnabled = True
 		stagingEnabled = True
@@ -7045,9 +6374,9 @@ PART
 }
 PART
 {
-	part = smallRadialEngine_4292847292
+	part = smallRadialEngine_4288885018
 	partName = Part
-	pos = -0.159152269,19.2440968,0.229733855
+	pos = -0.147663951,19.2474499,0.22555083
 	attPos = -5.36441803E-07,0.22228241,1.78813934E-07
 	attPos0 = 0.926860631,-0.0947399139,-0.337349564
 	rot = -5.66587444E-09,-0.819152117,8.09172729E-09,-0.57357657
@@ -7067,10 +6396,10 @@ PART
 	modCost = -117.604218
 	modMass = -0.0264609642
 	modSize = 0,0,0
-	sym = smallRadialEngine_4292847646
-	sym = smallRadialEngine_4292847528
-	sym = smallRadialEngine_4292847410
-	srfN = srfAttach,fuelTank4-2_4292848214
+	sym = smallRadialEngine_4288885366
+	sym = smallRadialEngine_4288885250
+	sym = smallRadialEngine_4288885134
+	srfN = srfAttach,fuelTank4-2_4288885924
 	EVENTS
 	{
 	}
@@ -7196,21 +6525,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = ModuleAnimateHeat
 		isEnabled = True
 		stagingEnabled = True
@@ -7278,19 +6592,19 @@ PART
 }
 PART
 {
-	part = solarPanels5_4292847174
+	part = solarPanels5_4288884902
 	partName = Part
-	pos = -2.15564728,19.347887,0.610368669
+	pos = -2.16768169,19.3525543,0.610368729
 	attPos = 0,0,0
 	attPos0 = -0.854446292,-0.00145721436,4.47034836E-08
-	rot = -2.55667043E-09,-0.707106829,-2.55666555E-09,0.707106829
+	rot = -2.55667088E-09,-0.707106829,-2.55666643E-09,0.707106829
 	attRot = 0,0,0,1
 	attRot0 = -2.55666377E-09,-0.70710665,-2.5566631E-09,0.707106888
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = True
-	istg = 0
+	istg = 3
 	resPri = 0
 	dstg = 2
 	sidx = -1
@@ -7300,8 +6614,8 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = solarPanels5_4292847126
-	srfN = srfAttach,fuelTank4-2_4292848214
+	sym = solarPanels5_4288884856
+	srfN = srfAttach,fuelTank4-2_4288885924
 	EVENTS
 	{
 	}
@@ -7368,21 +6682,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -7416,9 +6715,9 @@ PART
 }
 PART
 {
-	part = solarPanels5_4292847126
+	part = solarPanels5_4288884856
 	partName = Part
-	pos = -0.254203379,19.347887,0.610366821
+	pos = -0.242168903,19.3525543,0.610366821
 	attPos = 0,0,0
 	attPos0 = 0.854446292,-0.00145721436,-1.1920929E-07
 	rot = -2.55666333E-09,0.707107008,2.55666421E-09,0.707106769
@@ -7428,7 +6727,7 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = True
-	istg = 0
+	istg = 3
 	resPri = 0
 	dstg = 2
 	sidx = -1
@@ -7438,8 +6737,8 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = solarPanels5_4292847174
-	srfN = srfAttach,fuelTank4-2_4292848214
+	sym = solarPanels5_4288884902
+	srfN = srfAttach,fuelTank4-2_4288885924
 	EVENTS
 	{
 	}
@@ -7506,21 +6805,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -7554,19 +6838,19 @@ PART
 }
 PART
 {
-	part = solarPanels5_4292847078
+	part = solarPanels5_4288884810
 	partName = Part
-	pos = -1.20492733,19.344965,1.56055248
+	pos = -1.20492744,19.349596,1.57258248
 	attPos = 0,0,0
 	attPos0 = 0,-0.00409317017,0.853958845
-	rot = -1.34938558E-08,-4.61935997E-07,-6.66133815E-15,1
+	rot = -1.34938611E-08,-4.61935997E-07,-6.66133815E-15,1
 	attRot = 0,0,0,1
 	attRot0 = -1.34938292E-08,-5.65901814E-07,-7.63618244E-15,1
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = True
-	istg = 0
+	istg = 3
 	resPri = 0
 	dstg = 2
 	sidx = -1
@@ -7576,7 +6860,7 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	srfN = srfAttach,fuelTank4-2_4292848214
+	srfN = srfAttach,fuelTank4-2_4288885924
 	EVENTS
 	{
 	}
@@ -7643,21 +6927,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -7691,9 +6960,9 @@ PART
 }
 PART
 {
-	part = stackDecouplerMini_4292847030
+	part = stackDecouplerMini_4288884764
 	partName = Part
-	pos = -1.20492554,19.687624,0.610367775
+	pos = -1.20492554,19.6970005,0.610367775
 	attPos = 0,0,0
 	attPos0 = 0,-0.263410568,0
 	rot = 0,0,0,1.00000012
@@ -7713,9 +6982,9 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	link = rcsTankMini_4292846986
-	attN = bottom,fuelTank4-2_4292848214
-	attN = top,rcsTankMini_4292846986
+	link = rcsTankMini_4288884722
+	attN = bottom,fuelTank4-2_4288885924
+	attN = top,rcsTankMini_4288884722
 	EVENTS
 	{
 	}
@@ -7729,7 +6998,7 @@ PART
 	{
 		name = ModuleDecouple
 		isEnabled = True
-		ejectionForcePercent = 100
+		ejectionForcePercent = 0
 		isDecoupled = False
 		stagingEnabled = True
 		EVENTS
@@ -7810,24 +7079,9 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
-		nameTag = 
+		nameTag = LMSEP
 		stagingEnabled = True
 		EVENTS
 		{
@@ -7842,9 +7096,9 @@ PART
 }
 PART
 {
-	part = rcsTankMini_4292846986
+	part = rcsTankMini_4288884722
 	partName = Part
-	pos = -1.20492554,19.9510345,0.610367775
+	pos = -1.20492554,19.9604111,0.610367775
 	attPos = 0,0,0
 	attPos0 = 0,0.252500534,0
 	rot = 0,0,0,1.00000012
@@ -7854,24 +7108,24 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = -1
+	istg = 0
 	resPri = 0
 	dstg = 0
 	sidx = -1
 	sqor = -1
-	sepI = -1
+	sepI = 0
 	attm = 0
 	modCost = -3.81469727E-06
 	modMass = 0
 	modSize = 0,0,0
-	link = radialRCSTank_4292846946
-	link = radialRCSTank_4292846900
-	link = radialRCSTank_4292846854
-	link = radialRCSTank_4292846808
-	link = radialRCSTank_4292846762
-	link = ALCOR.LanderCapsule_4292846716
-	attN = top,ALCOR.LanderCapsule_4292846716
-	attN = bottom,stackDecouplerMini_4292847030
+	link = radialRCSTank_4288884684
+	link = radialRCSTank_4288884640
+	link = radialRCSTank_4288884596
+	link = radialRCSTank_4288884552
+	link = radialRCSTank_4288884508
+	link = ALCOR.LanderCapsule_4288884464
+	attN = top,ALCOR.LanderCapsule_4288884464
+	attN = bottom,stackDecouplerMini_4288884764
 	EVENTS
 	{
 	}
@@ -7889,21 +7143,6 @@ PART
 		defaultScale = 0.625
 		defaultTransformScale = (0, 0, 0)
 		DryCost = 200
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -7974,9 +7213,9 @@ PART
 }
 PART
 {
-	part = radialRCSTank_4292846946
+	part = radialRCSTank_4288884684
 	partName = Part
-	pos = -1.64582765,19.9495049,0.610368133
+	pos = -1.64582765,19.9588814,0.610368133
 	attPos = 0,0,0
 	attPos0 = -0.440902114,-0.0015296936,2.98023224E-08
 	rot = 0,0.707106829,0,0.707106829
@@ -7986,21 +7225,21 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = -1
+	istg = 0
 	resPri = 0
 	dstg = 0
 	sidx = -1
 	sqor = -1
-	sepI = -1
+	sepI = 0
 	attm = 1
 	modCost = -216.764496
 	modMass = -0.0603666045
 	modSize = 0,0,0
-	sym = radialRCSTank_4292846900
-	sym = radialRCSTank_4292846854
-	sym = radialRCSTank_4292846808
-	sym = radialRCSTank_4292846762
-	srfN = srfAttach,rcsTankMini_4292846986
+	sym = radialRCSTank_4288884640
+	sym = radialRCSTank_4288884596
+	sym = radialRCSTank_4288884552
+	sym = radialRCSTank_4288884508
+	srfN = srfAttach,rcsTankMini_4288884722
 	EVENTS
 	{
 	}
@@ -8018,21 +7257,6 @@ PART
 		defaultScale = 100
 		defaultTransformScale = (1, 1, 1)
 		DryCost = 39.0223961
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -8103,9 +7327,9 @@ PART
 }
 PART
 {
-	part = radialRCSTank_4292846900
+	part = radialRCSTank_4288884640
 	partName = Part
-	pos = -1.34117222,19.9495049,1.02969313
+	pos = -1.34117222,19.9588814,1.0296936
 	attPos = 0,0,0
 	attPos0 = -0.136246204,-0.0015296936,0.419322848
 	rot = 0,0.987688541,0,0.156434506
@@ -8115,21 +7339,21 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = -1
+	istg = 0
 	resPri = 0
 	dstg = 0
 	sidx = -1
 	sqor = -1
-	sepI = -1
+	sepI = 0
 	attm = 1
 	modCost = -216.764496
 	modMass = -0.0603666045
 	modSize = 0,0,0
-	sym = radialRCSTank_4292846946
-	sym = radialRCSTank_4292846854
-	sym = radialRCSTank_4292846808
-	sym = radialRCSTank_4292846762
-	srfN = srfAttach,rcsTankMini_4292846986
+	sym = radialRCSTank_4288884684
+	sym = radialRCSTank_4288884596
+	sym = radialRCSTank_4288884552
+	sym = radialRCSTank_4288884508
+	srfN = srfAttach,rcsTankMini_4288884722
 	EVENTS
 	{
 	}
@@ -8147,21 +7371,6 @@ PART
 		defaultScale = 100
 		defaultTransformScale = (1, 1, 1)
 		DryCost = 39.0223961
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -8232,9 +7441,9 @@ PART
 }
 PART
 {
-	part = radialRCSTank_4292846854
+	part = radialRCSTank_4288884596
 	partName = Part
-	pos = -0.848228812,19.9495049,0.869524598
+	pos = -0.848228812,19.9588814,0.869524717
 	attPos = 0,0,0
 	attPos0 = 0.356697321,-0.0015296936,0.25915572
 	rot = 0,0.891006589,0,-0.453990698
@@ -8244,21 +7453,21 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = -1
+	istg = 0
 	resPri = 0
 	dstg = 0
 	sidx = -1
 	sqor = -1
-	sepI = -1
+	sepI = 0
 	attm = 1
 	modCost = -216.764496
 	modMass = -0.0603666045
 	modSize = 0,0,0
-	sym = radialRCSTank_4292846946
-	sym = radialRCSTank_4292846900
-	sym = radialRCSTank_4292846808
-	sym = radialRCSTank_4292846762
-	srfN = srfAttach,rcsTankMini_4292846986
+	sym = radialRCSTank_4288884684
+	sym = radialRCSTank_4288884640
+	sym = radialRCSTank_4288884552
+	sym = radialRCSTank_4288884508
+	srfN = srfAttach,rcsTankMini_4288884722
 	EVENTS
 	{
 	}
@@ -8276,21 +7485,6 @@ PART
 		defaultScale = 100
 		defaultTransformScale = (1, 1, 1)
 		DryCost = 39.0223961
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -8361,9 +7555,9 @@ PART
 }
 PART
 {
-	part = radialRCSTank_4292846808
+	part = radialRCSTank_4288884552
 	partName = Part
-	pos = -0.848227799,19.9495049,0.351209909
+	pos = -0.848227799,19.9588814,0.351209611
 	attPos = 0,0,0
 	attPos0 = 0.356697202,-0.0015296936,-0.259155899
 	rot = 0,0.453990459,0,-0.891006708
@@ -8373,21 +7567,21 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = -1
+	istg = 0
 	resPri = 0
 	dstg = 0
 	sidx = -1
 	sqor = -1
-	sepI = -1
+	sepI = 0
 	attm = 1
 	modCost = -216.764496
 	modMass = -0.0603666045
 	modSize = 0,0,0
-	sym = radialRCSTank_4292846946
-	sym = radialRCSTank_4292846900
-	sym = radialRCSTank_4292846854
-	sym = radialRCSTank_4292846762
-	srfN = srfAttach,rcsTankMini_4292846986
+	sym = radialRCSTank_4288884684
+	sym = radialRCSTank_4288884640
+	sym = radialRCSTank_4288884596
+	sym = radialRCSTank_4288884508
+	srfN = srfAttach,rcsTankMini_4288884722
 	EVENTS
 	{
 	}
@@ -8405,21 +7599,6 @@ PART
 		defaultScale = 100
 		defaultTransformScale = (1, 1, 1)
 		DryCost = 39.0223961
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -8490,9 +7669,9 @@ PART
 }
 PART
 {
-	part = radialRCSTank_4292846762
+	part = radialRCSTank_4288884508
 	partName = Part
-	pos = -1.3411715,19.9495049,0.191042781
+	pos = -1.3411715,19.9588814,0.191042393
 	attPos = 0,0,0
 	attPos0 = -0.136246324,-0.0015296936,-0.419322789
 	rot = 0,-0.15643464,0,-0.987688422
@@ -8502,21 +7681,21 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = -1
+	istg = 0
 	resPri = 0
 	dstg = 0
 	sidx = -1
 	sqor = -1
-	sepI = -1
+	sepI = 0
 	attm = 1
 	modCost = -216.764496
 	modMass = -0.0603666045
 	modSize = 0,0,0
-	sym = radialRCSTank_4292846946
-	sym = radialRCSTank_4292846900
-	sym = radialRCSTank_4292846854
-	sym = radialRCSTank_4292846808
-	srfN = srfAttach,rcsTankMini_4292846986
+	sym = radialRCSTank_4288884684
+	sym = radialRCSTank_4288884640
+	sym = radialRCSTank_4288884596
+	sym = radialRCSTank_4288884552
+	srfN = srfAttach,rcsTankMini_4288884722
 	EVENTS
 	{
 	}
@@ -8534,21 +7713,6 @@ PART
 		defaultScale = 100
 		defaultTransformScale = (1, 1, 1)
 		DryCost = 39.0223961
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -8619,9 +7783,9 @@ PART
 }
 PART
 {
-	part = ALCOR.LanderCapsule_4292846716
+	part = ALCOR.LanderCapsule_4288884464
 	partName = Part
-	pos = -1.20492554,20.7535439,0.610367775
+	pos = -1.20492554,20.7629204,0.610367775
 	attPos = 0,-0.0913124084,0
 	attPos0 = -1.20493126,20.7635765,0.610375345
 	rot = 0,0,0,1.00000012
@@ -8631,36 +7795,36 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = True
-	istg = -1
+	istg = 0
 	resPri = -20
 	dstg = 0
 	sidx = -1
 	sqor = -1
-	sepI = -1
+	sepI = 0
 	attm = 0
 	modCost = 7227.5
 	modMass = 0.425499886
 	modSize = 0,0,0
-	link = spotLight2_4292845804
-	link = SurfAntenna_4292845746
-	link = RCSBlock_4292845700
-	link = RCSBlock_4292845642
-	link = RCSBlock_4292845584
-	link = RCSBlock_4292845526
-	link = spotLight1_4292845468
-	link = solarPanels5_4292845410
-	link = solarPanels5_4292845362
-	link = KAL9000_4292845314
-	link = mumech.MJ2.AR202_4292845252
-	link = solarPanels5_4292845178
-	link = ExtCamRadialVErt_4292845130
-	link = dockingPort2_4292845034
-	link = RLA.mp.small.radial_4292844886
-	link = RLA.mp.small.radial_4292844814
-	link = RLA.mp.small.radial_4292844742
-	link = RLA.mp.small.radial_4292844670
-	attN = bottom,rcsTankMini_4292846986
-	attN = top,dockingPort2_4292845034
+	link = spotLight2_4288883570
+	link = SurfAntenna_4288883514
+	link = RCSBlock_4288883470
+	link = RCSBlock_4288883414
+	link = RCSBlock_4288883358
+	link = RCSBlock_4288883302
+	link = spotLight1_4288883246
+	link = solarPanels5_4288883190
+	link = solarPanels5_4288883144
+	link = KAL9000_4288883098
+	link = mumech.MJ2.AR202_4288883038
+	link = solarPanels5_4288882966
+	link = ExtCamRadialVErt_4288882920
+	link = dockingPort2_4288882826
+	link = RLA.mp.small.radial_4288882680
+	link = RLA.mp.small.radial_4288882610
+	link = RLA.mp.small.radial_4288882540
+	link = RLA.mp.small.radial_4288882470
+	attN = bottom,rcsTankMini_4288884722
+	attN = top,dockingPort2_4288882826
 	EVENTS
 	{
 	}
@@ -11143,21 +10307,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = ModuleConnectedLivingSpace
 		isEnabled = True
 		passable = True
@@ -11346,49 +10495,6 @@ PART
 	}
 	MODULE
 	{
-		name = GroundWorkshop
-		isEnabled = True
-		Working = False
-		LastUpdateTime = -1
-		ETA = -1
-		show_window = False
-		stagingEnabled = True
-		WindowPos = 365,256,550,240
-		Queue
-		{
-		}
-		KitUnderConstruction
-		{
-			vesselID = 00000000000000000000000000000000
-			KitName = 
-		}
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = OneTimeResourceConverter
-		isEnabled = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = PersistentDynamicPodNames
 		isEnabled = True
 		storedVesselName = 
@@ -11514,9 +10620,9 @@ PART
 }
 PART
 {
-	part = spotLight2_4292845804
+	part = spotLight2_4288883570
 	partName = Part
-	pos = -1.20492315,21.2814217,-0.480824471
+	pos = -1.20492303,21.2907982,-0.480825663
 	attPos = 0,0,0
 	attPos0 = 8.19563866E-08,0.545689583,-1.2473166
 	rot = 9.0402537E-08,0,4.06785716E-13,-1.00000012
@@ -11526,17 +10632,17 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = True
-	istg = -1
+	istg = 0
 	resPri = 0
 	dstg = 0
 	sidx = -1
 	sqor = -1
-	sepI = -1
+	sepI = 0
 	attm = 1
 	modCost = -92.5912018
 	modMass = -0.0138886794
 	modSize = 0,0,0
-	srfN = srfAttach,ALCOR.LanderCapsule_4292846716
+	srfN = srfAttach,ALCOR.LanderCapsule_4288884464
 	EVENTS
 	{
 	}
@@ -11600,21 +10706,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = ModuleLightEVAToggle
 		isEnabled = True
 		stagingEnabled = True
@@ -11647,9 +10738,9 @@ PART
 }
 PART
 {
-	part = SurfAntenna_4292845746
+	part = SurfAntenna_4288883514
 	partName = Part
-	pos = -2.07503271,20.9867363,1.1127274
+	pos = -2.07503271,20.9961128,1.11272812
 	attPos = 0,0,0
 	attPos0 = -0.891721487,0.233194351,0.514835656
 	rot = 0.683012486,-0.683013201,-0.183012605,0.183012813
@@ -11659,17 +10750,17 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = True
-	istg = -1
+	istg = 0
 	resPri = 0
 	dstg = 0
 	sidx = -1
 	sqor = -1
-	sepI = -1
+	sepI = 0
 	attm = 1
 	modCost = -225
 	modMass = -0.0112499995
 	modSize = 0,0,0
-	srfN = srfAttach,ALCOR.LanderCapsule_4292846716
+	srfN = srfAttach,ALCOR.LanderCapsule_4288884464
 	EVENTS
 	{
 	}
@@ -11751,21 +10842,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -11783,9 +10859,9 @@ PART
 }
 PART
 {
-	part = RCSBlock_4292845700
+	part = RCSBlock_4288883470
 	partName = Part
-	pos = -1.94219875,20.7607193,1.34806466
+	pos = -1.94219875,20.7700958,1.34806538
 	attPos = 0.014197588,0.092540741,-0.0145754218
 	attPos0 = -0.760909021,-0.0850477219,0.761958599
 	rot = 4.19219808E-13,-0.382682532,3.12638343E-13,-0.923880041
@@ -11795,20 +10871,20 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = True
-	istg = -1
+	istg = 0
 	resPri = 0
 	dstg = 0
 	sidx = -1
 	sqor = -1
-	sepI = -1
+	sepI = 0
 	attm = 1
 	modCost = -557.260376
 	modMass = -0.0449403562
 	modSize = 0,0,0
-	sym = RCSBlock_4292845526
-	sym = RCSBlock_4292845584
-	sym = RCSBlock_4292845642
-	srfN = srfAttach,ALCOR.LanderCapsule_4292846716
+	sym = RCSBlock_4288883302
+	sym = RCSBlock_4288883358
+	sym = RCSBlock_4288883414
+	srfN = srfAttach,ALCOR.LanderCapsule_4288884464
 	EVENTS
 	{
 	}
@@ -11869,21 +10945,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -11901,9 +10962,9 @@ PART
 }
 PART
 {
-	part = RCSBlock_4292845642
+	part = RCSBlock_4288883414
 	partName = Part
-	pos = -0.467237115,20.7607193,1.3476429
+	pos = -0.467237115,20.7700958,1.34764338
 	attPos = -0.0145751834,0.092540741,-0.0141976476
 	attPos0 = 0.76195848,-0.0850477219,0.760909021
 	rot = 1.77636104E-13,-0.923879743,1.17949986E-12,-0.382683486
@@ -11913,20 +10974,20 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = True
-	istg = -1
+	istg = 0
 	resPri = 0
 	dstg = 0
 	sidx = -1
 	sqor = -1
-	sepI = -1
+	sepI = 0
 	attm = 1
 	modCost = -557.260376
 	modMass = -0.0449403562
 	modSize = 0,0,0
-	sym = RCSBlock_4292845526
-	sym = RCSBlock_4292845584
-	sym = RCSBlock_4292845700
-	srfN = srfAttach,ALCOR.LanderCapsule_4292846716
+	sym = RCSBlock_4288883302
+	sym = RCSBlock_4288883358
+	sym = RCSBlock_4288883470
+	srfN = srfAttach,ALCOR.LanderCapsule_4288884464
 	EVENTS
 	{
 	}
@@ -11987,21 +11048,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -12019,9 +11065,9 @@ PART
 }
 PART
 {
-	part = RCSBlock_4292845584
+	part = RCSBlock_4288883358
 	partName = Part
-	pos = -0.467652559,20.7607193,-0.127326429
+	pos = -0.46765244,20.7700958,-0.127327442
 	attPos = -0.014197588,0.092540741,0.0145753622
 	attPos0 = 0.760908961,-0.0850477219,-0.761958659
 	rot = -7.67385667E-13,-0.923880041,6.82121135E-13,0.382682532
@@ -12031,20 +11077,20 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = True
-	istg = -1
+	istg = 0
 	resPri = 0
 	dstg = 0
 	sidx = -1
 	sqor = -1
-	sepI = -1
+	sepI = 0
 	attm = 1
 	modCost = -557.260376
 	modMass = -0.0449403562
 	modSize = 0,0,0
-	sym = RCSBlock_4292845526
-	sym = RCSBlock_4292845642
-	sym = RCSBlock_4292845700
-	srfN = srfAttach,ALCOR.LanderCapsule_4292846716
+	sym = RCSBlock_4288883302
+	sym = RCSBlock_4288883414
+	sym = RCSBlock_4288883470
+	srfN = srfAttach,ALCOR.LanderCapsule_4288884464
 	EVENTS
 	{
 	}
@@ -12105,21 +11151,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -12137,9 +11168,9 @@ PART
 }
 PART
 {
-	part = RCSBlock_4292845526
+	part = RCSBlock_4288883302
 	partName = Part
-	pos = -1.9426136,20.7607193,-0.126904309
+	pos = -1.9426136,20.7700958,-0.126904309
 	attPos = 0.0145753622,0.092540741,0.0141974688
 	attPos0 = -0.761958599,-0.0850477219,-0.760908902
 	rot = 1.09423538E-12,0.382683486,7.10544362E-14,-0.923879743
@@ -12149,20 +11180,20 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = True
-	istg = -1
+	istg = 0
 	resPri = 0
 	dstg = 0
 	sidx = -1
 	sqor = -1
-	sepI = -1
+	sepI = 0
 	attm = 1
 	modCost = -557.260376
 	modMass = -0.0449403562
 	modSize = 0,0,0
-	sym = RCSBlock_4292845584
-	sym = RCSBlock_4292845642
-	sym = RCSBlock_4292845700
-	srfN = srfAttach,ALCOR.LanderCapsule_4292846716
+	sym = RCSBlock_4288883358
+	sym = RCSBlock_4288883414
+	sym = RCSBlock_4288883470
+	srfN = srfAttach,ALCOR.LanderCapsule_4288884464
 	EVENTS
 	{
 	}
@@ -12223,21 +11254,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -12255,9 +11271,9 @@ PART
 }
 PART
 {
-	part = spotLight1_4292845468
+	part = spotLight1_4288883246
 	partName = Part
-	pos = -2.28276253,21.355587,0.610367835
+	pos = -2.28276253,21.3649635,0.610367835
 	attPos = 0,0,0
 	attPos0 = -1.19000924,0.580711365,8.94069672E-08
 	rot = 0.701057732,-0.0922959447,0.701057255,0.0922960341
@@ -12267,17 +11283,17 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = True
-	istg = -1
+	istg = 0
 	resPri = 0
 	dstg = 0
 	sidx = -1
 	sqor = -1
-	sepI = -1
+	sepI = 0
 	attm = 1
 	modCost = -87.5
 	modMass = -0.0131249996
 	modSize = 0,0,0
-	srfN = srfAttach,ALCOR.LanderCapsule_4292846716
+	srfN = srfAttach,ALCOR.LanderCapsule_4288884464
 	EVENTS
 	{
 	}
@@ -12341,21 +11357,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = ModuleLightEVAToggle
 		isEnabled = True
 		stagingEnabled = True
@@ -12388,9 +11389,9 @@ PART
 }
 PART
 {
-	part = solarPanels5_4292845410
+	part = solarPanels5_4288883190
 	partName = Part
-	pos = -1.68233967,21.0691376,-0.216541111
+	pos = -1.68233967,21.0785141,-0.216541827
 	attPos = 0,0,0
 	attPos0 = -0.477401912,0.315595627,-0.826884031
 	rot = -6.64818556E-09,0.965925932,-2.48134491E-08,-0.258819163
@@ -12400,17 +11401,17 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = True
-	istg = -1
+	istg = 0
 	resPri = 0
 	dstg = 0
 	sidx = -1
 	sqor = -1
-	sepI = -1
+	sepI = 0
 	attm = 1
 	modCost = -43.3124962
 	modMass = -0.00288750022
 	modSize = 0,0,0
-	srfN = srfAttach,ALCOR.LanderCapsule_4292846716
+	srfN = srfAttach,ALCOR.LanderCapsule_4288884464
 	EVENTS
 	{
 	}
@@ -12477,21 +11478,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -12525,9 +11511,9 @@ PART
 }
 PART
 {
-	part = solarPanels5_4292845362
+	part = solarPanels5_4288883144
 	partName = Part
-	pos = -0.535390198,21.4662323,0.996927023
+	pos = -0.535390317,21.4756088,0.996927261
 	attPos = 0,0,0
 	attPos0 = 0.669519722,0.712682962,0.386547297
 	rot = -0.422379822,0.436499655,0.243861258,0.756039143
@@ -12537,17 +11523,17 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = True
-	istg = -1
+	istg = 0
 	resPri = 0
 	dstg = 0
 	sidx = -1
 	sqor = -1
-	sepI = -1
+	sepI = 0
 	attm = 1
 	modCost = -43.3124962
 	modMass = -0.00288750022
 	modSize = 0,0,0
-	srfN = srfAttach,ALCOR.LanderCapsule_4292846716
+	srfN = srfAttach,ALCOR.LanderCapsule_4288884464
 	EVENTS
 	{
 	}
@@ -12614,21 +11600,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -12662,29 +11633,29 @@ PART
 }
 PART
 {
-	part = KAL9000_4292845314
+	part = KAL9000_4288883098
 	partName = Part
-	pos = -0.218789816,20.8917351,0.610366225
+	pos = -0.218789816,20.9011116,0.610366225
 	attPos = 0,0,0
 	attPos0 = 0.986120939,0.138191223,5.96046448E-08
-	rot = 1.35525005E-20,1,3.38819157E-21,4.17232513E-07
+	rot = 1.35525021E-20,1,3.38819318E-21,4.17232513E-07
 	attRot = 0,0,0,1
 	attRot0 = 0,1,0,3.37174782E-07
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = -1
+	istg = 0
 	resPri = 0
 	dstg = 0
 	sidx = -1
 	sqor = -1
-	sepI = -1
+	sepI = 0
 	attm = 1
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	srfN = srfAttach,ALCOR.LanderCapsule_4292846716
+	srfN = srfAttach,ALCOR.LanderCapsule_4288884464
 	EVENTS
 	{
 	}
@@ -12787,21 +11758,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = ModuleLightEVAToggle
 		isEnabled = True
 		stagingEnabled = True
@@ -12834,9 +11790,9 @@ PART
 }
 PART
 {
-	part = mumech.MJ2.AR202_4292845252
+	part = mumech.MJ2.AR202_4288883038
 	partName = Part
-	pos = -2.04271412,20.8809853,0.12667194
+	pos = -2.04271412,20.8903618,0.126671642
 	attPos = 0,0,0
 	attPos0 = -0.83777684,0.127441406,-0.483690858
 	rot = 1.99899827E-19,0.258819163,-5.42101086E-20,-0.965925992
@@ -12846,17 +11802,17 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = -1
+	istg = 0
 	resPri = 0
 	dstg = 0
 	sidx = -1
 	sqor = -1
-	sepI = -1
+	sepI = 0
 	attm = 1
 	modCost = 0
 	modMass = -9.49346941E-05
 	modSize = 0,0,0
-	srfN = srfAttach,ALCOR.LanderCapsule_4292846716
+	srfN = srfAttach,ALCOR.LanderCapsule_4288884464
 	EVENTS
 	{
 	}
@@ -13416,21 +12372,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -13527,9 +12468,9 @@ PART
 }
 PART
 {
-	part = solarPanels5_4292845178
+	part = solarPanels5_4288882966
 	partName = Part
-	pos = -1.20492864,21.2298813,1.59472692
+	pos = -1.20492876,21.2392578,1.59472775
 	attPos = 0,0,0
 	attPos0 = 0,0.476337433,0.984341979
 	rot = 6.24715781E-08,0,1.77635684E-14,1.00000012
@@ -13539,17 +12480,17 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = True
-	istg = -1
+	istg = 0
 	resPri = 0
 	dstg = 0
 	sidx = -1
 	sqor = -1
-	sepI = -1
+	sepI = 0
 	attm = 1
 	modCost = -43.3124962
 	modMass = -0.00288750022
 	modSize = 0,0,0
-	srfN = srfAttach,ALCOR.LanderCapsule_4292846716
+	srfN = srfAttach,ALCOR.LanderCapsule_4288884464
 	EVENTS
 	{
 	}
@@ -13616,21 +12557,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -13664,9 +12590,9 @@ PART
 }
 PART
 {
-	part = ExtCamRadialVErt_4292845130
+	part = ExtCamRadialVErt_4288882920
 	partName = Part
-	pos = -1.77182722,21.4290466,-0.199255943
+	pos = -1.77182698,21.4384232,-0.199256539
 	attPos = 0,0,0
 	attPos0 = -0.56690228,0.675502777,-0.809620857
 	rot = 0.277211726,-0.369564712,0.8792032,0.116523251
@@ -13676,17 +12602,17 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = -1
+	istg = 0
 	resPri = 0
 	dstg = 0
 	sidx = -1
 	sqor = -1
-	sepI = -1
+	sepI = 0
 	attm = 1
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	srfN = srfAttach,ALCOR.LanderCapsule_4292846716
+	srfN = srfAttach,ALCOR.LanderCapsule_4288884464
 	EVENTS
 	{
 	}
@@ -13702,21 +12628,6 @@ PART
 		isEnabled = True
 		current = 4
 		showCones = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -13747,9 +12658,9 @@ PART
 }
 PART
 {
-	part = dockingPort2_4292845034
+	part = dockingPort2_4288882826
 	partName = Part
-	pos = -1.20492554,21.6235428,0.610367775
+	pos = -1.20492554,21.6329193,0.610367775
 	attPos = 0,0,0
 	attPos0 = 0,0.870000839,0
 	rot = 0,-1.00000012,8.40779079E-45,0
@@ -13759,17 +12670,17 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = -1
+	istg = 0
 	resPri = 0
 	dstg = 0
 	sidx = -1
 	sqor = -1
-	sepI = 0
+	sepI = 1
 	attm = 0
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	attN = bottom,ALCOR.LanderCapsule_4292846716
+	attN = bottom,ALCOR.LanderCapsule_4288884464
 	EVENTS
 	{
 	}
@@ -13953,21 +12864,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = ModuleLight
 		isEnabled = True
 		isOn = False
@@ -14084,9 +12980,9 @@ PART
 }
 PART
 {
-	part = RLA.mp.small.radial_4292844886
+	part = RLA.mp.small.radial_4288882680
 	partName = Part
-	pos = -1.80426145,20.1828384,0.0110290051
+	pos = -1.80426145,20.192215,0.0110285878
 	attPos = 0,0,0
 	attPos0 = -0.594528556,-0.56470108,-0.594528556
 	rot = -7.0671177E-24,0.923879743,-1.70615341E-23,-0.382683277
@@ -14101,15 +12997,15 @@ PART
 	dstg = 0
 	sidx = 0
 	sqor = 0
-	sepI = -1
+	sepI = 0
 	attm = 1
 	modCost = -33.3887711
 	modMass = -0.013355515
 	modSize = 0,0,0
-	sym = RLA.mp.small.radial_4292844814
-	sym = RLA.mp.small.radial_4292844742
-	sym = RLA.mp.small.radial_4292844670
-	srfN = srfAttach,ALCOR.LanderCapsule_4292846716
+	sym = RLA.mp.small.radial_4288882610
+	sym = RLA.mp.small.radial_4288882540
+	sym = RLA.mp.small.radial_4288882470
+	srfN = srfAttach,ALCOR.LanderCapsule_4288884464
 	EVENTS
 	{
 	}
@@ -14266,21 +13162,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = LM_ASC
@@ -14318,9 +13199,9 @@ PART
 }
 PART
 {
-	part = RLA.mp.small.radial_4292844814
+	part = RLA.mp.small.radial_4288882610
 	partName = Part
-	pos = -1.80426288,20.1828384,1.20970869
+	pos = -1.80426288,20.192215,1.20970941
 	attPos = 0,0,0
 	attPos0 = -0.594528556,-0.56470108,0.594528496
 	rot = -1.70614789E-23,0.382683486,-7.0671177E-24,-0.923879743
@@ -14335,15 +13216,15 @@ PART
 	dstg = 0
 	sidx = 0
 	sqor = 0
-	sepI = -1
+	sepI = 0
 	attm = 1
 	modCost = -33.3887711
 	modMass = -0.013355515
 	modSize = 0,0,0
-	sym = RLA.mp.small.radial_4292844886
-	sym = RLA.mp.small.radial_4292844742
-	sym = RLA.mp.small.radial_4292844670
-	srfN = srfAttach,ALCOR.LanderCapsule_4292846716
+	sym = RLA.mp.small.radial_4288882680
+	sym = RLA.mp.small.radial_4288882540
+	sym = RLA.mp.small.radial_4288882470
+	srfN = srfAttach,ALCOR.LanderCapsule_4288884464
 	EVENTS
 	{
 	}
@@ -14500,21 +13381,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = LM_ASC
@@ -14552,9 +13418,9 @@ PART
 }
 PART
 {
-	part = RLA.mp.small.radial_4292844742
+	part = RLA.mp.small.radial_4288882540
 	partName = Part
-	pos = -0.605589867,20.1828384,1.20970678
+	pos = -0.605590105,20.192215,1.20970726
 	attPos = 0,0,0
 	attPos0 = 0.594528615,-0.56470108,0.594528496
 	rot = -1.70615326E-23,-0.382683247,7.06711928E-24,-0.923879802
@@ -14569,15 +13435,15 @@ PART
 	dstg = 0
 	sidx = 0
 	sqor = 0
-	sepI = -1
+	sepI = 0
 	attm = 1
 	modCost = -33.3887711
 	modMass = -0.013355515
 	modSize = 0,0,0
-	sym = RLA.mp.small.radial_4292844886
-	sym = RLA.mp.small.radial_4292844814
-	sym = RLA.mp.small.radial_4292844670
-	srfN = srfAttach,ALCOR.LanderCapsule_4292846716
+	sym = RLA.mp.small.radial_4288882680
+	sym = RLA.mp.small.radial_4288882610
+	sym = RLA.mp.small.radial_4288882470
+	srfN = srfAttach,ALCOR.LanderCapsule_4288884464
 	EVENTS
 	{
 	}
@@ -14734,21 +13600,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = LM_ASC
@@ -14786,9 +13637,9 @@ PART
 }
 PART
 {
-	part = RLA.mp.small.radial_4292844670
+	part = RLA.mp.small.radial_4288882470
 	partName = Part
-	pos = -0.605588317,20.1828384,0.0110266805
+	pos = -0.605588198,20.192215,0.0110260248
 	attPos = 0,0,0
 	attPos0 = 0.594528496,-0.56470108,-0.594528556
 	rot = -7.0671177E-24,-0.923879743,1.70614789E-23,-0.382683486
@@ -14803,15 +13654,15 @@ PART
 	dstg = 0
 	sidx = 0
 	sqor = 0
-	sepI = -1
+	sepI = 0
 	attm = 1
 	modCost = -33.3887711
 	modMass = -0.013355515
 	modSize = 0,0,0
-	sym = RLA.mp.small.radial_4292844886
-	sym = RLA.mp.small.radial_4292844814
-	sym = RLA.mp.small.radial_4292844742
-	srfN = srfAttach,ALCOR.LanderCapsule_4292846716
+	sym = RLA.mp.small.radial_4288882680
+	sym = RLA.mp.small.radial_4288882610
+	sym = RLA.mp.small.radial_4288882540
+	srfN = srfAttach,ALCOR.LanderCapsule_4288884464
 	EVENTS
 	{
 	}
@@ -14968,21 +13819,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = LM_ASC
@@ -15020,7 +13856,7 @@ PART
 }
 PART
 {
-	part = KW3mPetalAdapter_4292850426
+	part = KW3mPetalAdapter_4288882400
 	partName = Part
 	pos = -1.20492554,20.9900532,0.610367775
 	attPos = 0,-4.40693951,0
@@ -15032,21 +13868,21 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = True
-	istg = 0
+	istg = 3
 	resPri = 0
 	dstg = 5
 	sidx = 0
 	sqor = 4
-	sepI = 1
+	sepI = 0
 	attm = 0
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	link = Size3MediumTank_4292844598
-	link = RCSTank1-2_4292850238
-	attN = bottom,Size3MediumTank_4292844598
-	attN = payload,RCSTank1-2_4292850238
-	attN = top,liquidEngine3_4292851162
+	link = Size3MediumTank_4288882214
+	link = RCSTank1-2_4288887854
+	attN = bottom,Size3MediumTank_4288882214
+	attN = payload,RCSTank1-2_4288887854
+	attN = top,liquidEngine3_4288880952
 	EVENTS
 	{
 	}
@@ -15140,21 +13976,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -15172,7 +13993,7 @@ PART
 }
 PART
 {
-	part = Size3MediumTank_4292844598
+	part = Size3MediumTank_4288882214
 	partName = Part
 	pos = -1.20492554,16.2621288,0.610367775
 	attPos = 0,0,0
@@ -15184,19 +14005,19 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = True
-	istg = 0
+	istg = 3
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 1
+	sepI = 0
 	attm = 0
 	modCost = 0.000122070313
 	modMass = 0
 	modSize = 0,0,0
-	link = KW3mengineWildcatXR_4292844558
-	attN = top,KW3mPetalAdapter_4292850426
-	attN = bottom,KW3mengineWildcatXR_4292844558
+	link = KW3mengineWildcatXR_4288882176
+	attN = top,KW3mPetalAdapter_4288882400
+	attN = bottom,KW3mengineWildcatXR_4288882176
 	EVENTS
 	{
 	}
@@ -15214,21 +14035,6 @@ PART
 		defaultScale = 3.75
 		defaultTransformScale = (0, 0, 0)
 		DryCost = 6500
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -15422,7 +14228,7 @@ PART
 }
 PART
 {
-	part = KW3mengineWildcatXR_4292844558
+	part = KW3mengineWildcatXR_4288882176
 	partName = Part
 	pos = -1.20492554,10.8151283,0.610367775
 	attPos = 0,0,0
@@ -15439,14 +14245,14 @@ PART
 	dstg = 6
 	sidx = 0
 	sqor = 4
-	sepI = 1
+	sepI = 0
 	attm = 0
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	link = KW3mDecoupler_4292844468
-	attN = top2,Size3MediumTank_4292844598
-	attN = bottom,KW3mDecoupler_4292844468
+	link = KW3mDecoupler_4288882088
+	attN = top2,Size3MediumTank_4288882214
+	attN = bottom,KW3mDecoupler_4288882088
 	EVENTS
 	{
 	}
@@ -15605,21 +14411,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -15668,7 +14459,7 @@ PART
 }
 PART
 {
-	part = KW3mDecoupler_4292844468
+	part = KW3mDecoupler_4288882088
 	partName = Part
 	pos = -1.20492554,9.78262901,0.610367775
 	attPos = 0,0,0
@@ -15690,9 +14481,9 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	link = Size3LargeTank_4292844416
-	attN = bottom,Size3LargeTank_4292844416
-	attN = top,KW3mengineWildcatXR_4292844558
+	link = Size3LargeTank_4288882038
+	attN = bottom,Size3LargeTank_4288882038
+	attN = top,KW3mengineWildcatXR_4288882176
 	EVENTS
 	{
 	}
@@ -15744,21 +14535,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -15776,7 +14552,7 @@ PART
 }
 PART
 {
-	part = Size3LargeTank_4292844416
+	part = Size3LargeTank_4288882038
 	partName = Part
 	pos = -1.20492554,5.84762955,0.610367775
 	attPos = 0,0,0
@@ -15798,15 +14574,15 @@ PART
 	modCost = -0.000244140625
 	modMass = 0
 	modSize = 0,0,0
-	link = launchClamp1_4292844376
-	link = launchClamp1_4292844228
-	link = launchClamp1_4292844080
-	link = launchClamp1_4292843932
-	link = SSME_4292843784
-	link = SSME_4292843666
-	link = SSME_4292843548
-	link = SSME_4292843430
-	attN = top,KW3mDecoupler_4292844468
+	link = launchClamp1_4288882000
+	link = launchClamp1_4288881854
+	link = launchClamp1_4288881708
+	link = launchClamp1_4288881562
+	link = SSME_4288881416
+	link = SSME_4288881300
+	link = SSME_4288881184
+	link = SSME_4288881068
+	attN = top,KW3mDecoupler_4288882088
 	EVENTS
 	{
 	}
@@ -15824,21 +14600,6 @@ PART
 		defaultScale = 3.75
 		defaultTransformScale = (1, 1, 1)
 		DryCost = 13000
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -16032,7 +14793,7 @@ PART
 }
 PART
 {
-	part = launchClamp1_4292844376
+	part = launchClamp1_4288882000
 	partName = Part
 	pos = 0.67698741,1.8080101,2.49228048
 	attPos = 0,0,0
@@ -16054,10 +14815,10 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = launchClamp1_4292844228
-	sym = launchClamp1_4292844080
-	sym = launchClamp1_4292843932
-	srfN = srfAttach,Size3LargeTank_4292844416
+	sym = launchClamp1_4288881854
+	sym = launchClamp1_4288881708
+	sym = launchClamp1_4288881562
+	srfN = srfAttach,Size3LargeTank_4288882038
 	EVENTS
 	{
 	}
@@ -16138,21 +14899,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -16170,7 +14916,7 @@ PART
 }
 PART
 {
-	part = launchClamp1_4292844228
+	part = launchClamp1_4288881854
 	partName = Part
 	pos = 0.676987171,1.8080101,-1.27154446
 	attPos = 0,0,0
@@ -16192,10 +14938,10 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = launchClamp1_4292844376
-	sym = launchClamp1_4292844080
-	sym = launchClamp1_4292843932
-	srfN = srfAttach,Size3LargeTank_4292844416
+	sym = launchClamp1_4288882000
+	sym = launchClamp1_4288881708
+	sym = launchClamp1_4288881562
+	srfN = srfAttach,Size3LargeTank_4288882038
 	EVENTS
 	{
 	}
@@ -16276,21 +15022,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -16308,7 +15039,7 @@ PART
 }
 PART
 {
-	part = launchClamp1_4292844080
+	part = launchClamp1_4288881708
 	partName = Part
 	pos = -3.08683825,1.8080101,-1.27154446
 	attPos = 0,0,0
@@ -16330,10 +15061,10 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = launchClamp1_4292844376
-	sym = launchClamp1_4292844228
-	sym = launchClamp1_4292843932
-	srfN = srfAttach,Size3LargeTank_4292844416
+	sym = launchClamp1_4288882000
+	sym = launchClamp1_4288881854
+	sym = launchClamp1_4288881562
+	srfN = srfAttach,Size3LargeTank_4288882038
 	EVENTS
 	{
 	}
@@ -16414,21 +15145,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -16446,7 +15162,7 @@ PART
 }
 PART
 {
-	part = launchClamp1_4292843932
+	part = launchClamp1_4288881562
 	partName = Part
 	pos = -3.08683777,1.8080101,2.49228096
 	attPos = 0,0,0
@@ -16468,10 +15184,10 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = launchClamp1_4292844376
-	sym = launchClamp1_4292844228
-	sym = launchClamp1_4292844080
-	srfN = srfAttach,Size3LargeTank_4292844416
+	sym = launchClamp1_4288882000
+	sym = launchClamp1_4288881854
+	sym = launchClamp1_4288881708
+	srfN = srfAttach,Size3LargeTank_4288882038
 	EVENTS
 	{
 	}
@@ -16552,21 +15268,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -16584,7 +15285,7 @@ PART
 }
 PART
 {
-	part = SSME_4292843784
+	part = SSME_4288881416
 	partName = Part
 	pos = -2.05239964,2.14012909,1.4578414
 	attPos = 0.176097989,-0.0924978256,0.0790207982
@@ -16606,10 +15307,10 @@ PART
 	modCost = -3386.91016
 	modMass = -0.752646923
 	modSize = 0,0,0
-	sym = SSME_4292843666
-	sym = SSME_4292843548
-	sym = SSME_4292843430
-	srfN = ,Size3LargeTank_4292844416
+	sym = SSME_4288881300
+	sym = SSME_4288881184
+	sym = SSME_4288881068
+	srfN = ,Size3LargeTank_4288882038
 	EVENTS
 	{
 	}
@@ -16802,21 +15503,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = ModuleJettison
 		isEnabled = True
 		isJettisoned = True
@@ -16875,7 +15561,7 @@ PART
 }
 PART
 {
-	part = SSME_4292843666
+	part = SSME_4288881300
 	partName = Part
 	pos = -0.357452154,2.14012909,1.4578414
 	attPos = 0.176097989,-0.0924978256,0.0790207982
@@ -16897,10 +15583,10 @@ PART
 	modCost = -3386.91016
 	modMass = -0.752646923
 	modSize = 0,0,0
-	sym = SSME_4292843784
-	sym = SSME_4292843548
-	sym = SSME_4292843430
-	srfN = ,Size3LargeTank_4292844416
+	sym = SSME_4288881416
+	sym = SSME_4288881184
+	sym = SSME_4288881068
+	srfN = ,Size3LargeTank_4288882038
 	EVENTS
 	{
 	}
@@ -17093,21 +15779,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = ModuleJettison
 		isEnabled = True
 		isJettisoned = True
@@ -17166,7 +15837,7 @@ PART
 }
 PART
 {
-	part = SSME_4292843548
+	part = SSME_4288881184
 	partName = Part
 	pos = -0.357451916,2.14012909,-0.237105787
 	attPos = 0.176097989,-0.0924978256,0.0790207982
@@ -17188,10 +15859,10 @@ PART
 	modCost = -3386.91016
 	modMass = -0.752646923
 	modSize = 0,0,0
-	sym = SSME_4292843784
-	sym = SSME_4292843666
-	sym = SSME_4292843430
-	srfN = ,Size3LargeTank_4292844416
+	sym = SSME_4288881416
+	sym = SSME_4288881300
+	sym = SSME_4288881068
+	srfN = ,Size3LargeTank_4288882038
 	EVENTS
 	{
 	}
@@ -17384,21 +16055,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = ModuleJettison
 		isEnabled = True
 		isJettisoned = True
@@ -17457,7 +16113,7 @@ PART
 }
 PART
 {
-	part = SSME_4292843430
+	part = SSME_4288881068
 	partName = Part
 	pos = -2.05239916,2.14012909,-0.237105787
 	attPos = 0.176097989,-0.0924978256,0.0790207982
@@ -17479,10 +16135,10 @@ PART
 	modCost = -3386.91016
 	modMass = -0.752646923
 	modSize = 0,0,0
-	sym = SSME_4292843784
-	sym = SSME_4292843666
-	sym = SSME_4292843548
-	srfN = ,Size3LargeTank_4292844416
+	sym = SSME_4288881416
+	sym = SSME_4288881300
+	sym = SSME_4288881184
+	srfN = ,Size3LargeTank_4288882038
 	EVENTS
 	{
 	}
@@ -17675,21 +16331,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = ModuleJettison
 		isEnabled = True
 		isJettisoned = True
@@ -17748,7 +16389,7 @@ PART
 }
 PART
 {
-	part = liquidEngine3_4292851162
+	part = liquidEngine3_4288880952
 	partName = Part
 	pos = -1.20492554,23.0169926,0.610367775
 	attPos = -3.18323167E-13,2.94200134,-1.47385933E-07
@@ -17765,14 +16406,14 @@ PART
 	dstg = 6
 	sidx = 0
 	sqor = 3
-	sepI = 1
+	sepI = 2
 	attm = 0
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	link = KW3mPetalAdapter_4292850426
-	attN = top,fuelTank4-2_4292851210
-	attN = bottom,KW3mPetalAdapter_4292850426
+	link = KW3mPetalAdapter_4288882400
+	attN = top,fuelTank4-2_4288880722
+	attN = bottom,KW3mPetalAdapter_4288882400
 	EVENTS
 	{
 	}
@@ -17950,21 +16591,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = ModuleJettison
 		isEnabled = True
 		isJettisoned = True
@@ -18038,7 +16664,7 @@ PART
 }
 PART
 {
-	part = fuelTank4-2_4292851210
+	part = fuelTank4-2_4288880722
 	partName = Part
 	pos = -1.20492554,23.3661499,0.610367775
 	attPos = 0,0,0
@@ -18050,23 +16676,23 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 2
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 1
+	sepI = 2
 	attm = 0
 	modCost = -322.22171
 	modMass = -0.203648031
 	modSize = 0,0,0
-	link = solarPanels4_4286613056
-	link = solarPanels4_4286610098
-	link = solarPanels4_4286609968
-	link = solarPanels4_4286609838
-	link = liquidEngine3_4292851162
-	attN = top,NBdecouplerSlim2m_4292853230
-	attN = bottom,liquidEngine3_4292851162
+	link = solarPanels4_4288878722
+	link = solarPanels4_4288878598
+	link = solarPanels4_4288878474
+	link = solarPanels4_4288878350
+	link = liquidEngine3_4288880952
+	attN = top,NBdecouplerSlim2m_4288880676
+	attN = bottom,liquidEngine3_4288880952
 	EVENTS
 	{
 	}
@@ -18084,21 +16710,6 @@ PART
 		defaultScale = 2.5
 		defaultTransformScale = (1, 1, 1)
 		DryCost = 474.162872
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -18292,7 +16903,7 @@ PART
 }
 PART
 {
-	part = NBdecouplerSlim2m_4292853230
+	part = NBdecouplerSlim2m_4288880676
 	partName = Part
 	pos = -1.20492554,23.864397,0.610367775
 	attPos = 0,0,0
@@ -18314,12 +16925,12 @@ PART
 	modCost = -71.3123474
 	modMass = -0.0427875109
 	modSize = 0,0,0
-	link = RCSBlock_4292853174
-	link = RCSBlock_4292853116
-	link = RCSBlock_4292853058
-	link = RCSBlock_4292853000
-	link = fuelTank4-2_4292851210
-	attN = bottom,fuelTank4-2_4292851210
+	link = RCSBlock_4288880622
+	link = RCSBlock_4288880566
+	link = RCSBlock_4288880510
+	link = RCSBlock_4288880454
+	link = fuelTank4-2_4288880722
+	attN = bottom,fuelTank4-2_4288880722
 	attN = top,HeatShield2_4291056466
 	EVENTS
 	{
@@ -18436,21 +17047,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = SMJET_DEC
@@ -18468,7 +17064,7 @@ PART
 }
 PART
 {
-	part = RCSBlock_4292853174
+	part = RCSBlock_4288880622
 	partName = Part
 	pos = -0.265736222,23.8750572,-0.327682912
 	attPos = 0,0,0
@@ -18490,10 +17086,10 @@ PART
 	modCost = -439.815979
 	modMass = -0.0354690291
 	modSize = 0,0,0
-	sym = RCSBlock_4292853116
-	sym = RCSBlock_4292853058
-	sym = RCSBlock_4292853000
-	srfN = srfAttach,NBdecouplerSlim2m_4292853230
+	sym = RCSBlock_4288880566
+	sym = RCSBlock_4288880510
+	sym = RCSBlock_4288880454
+	srfN = srfAttach,NBdecouplerSlim2m_4288880676
 	EVENTS
 	{
 	}
@@ -18554,21 +17150,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -18586,7 +17167,7 @@ PART
 }
 PART
 {
-	part = RCSBlock_4292853116
+	part = RCSBlock_4288880566
 	partName = Part
 	pos = -2.14297628,23.8750572,-0.32882148
 	attPos = 0,0,0
@@ -18608,10 +17189,10 @@ PART
 	modCost = -439.815979
 	modMass = -0.0354690291
 	modSize = 0,0,0
-	sym = RCSBlock_4292853174
-	sym = RCSBlock_4292853058
-	sym = RCSBlock_4292853000
-	srfN = srfAttach,NBdecouplerSlim2m_4292853230
+	sym = RCSBlock_4288880622
+	sym = RCSBlock_4288880510
+	sym = RCSBlock_4288880454
+	srfN = srfAttach,NBdecouplerSlim2m_4288880676
 	EVENTS
 	{
 	}
@@ -18672,21 +17253,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -18704,7 +17270,7 @@ PART
 }
 PART
 {
-	part = RCSBlock_4292853058
+	part = RCSBlock_4288880510
 	partName = Part
 	pos = -2.14411545,23.8750572,1.54841876
 	attPos = 0,0,0
@@ -18726,10 +17292,10 @@ PART
 	modCost = -439.815979
 	modMass = -0.0354690291
 	modSize = 0,0,0
-	sym = RCSBlock_4292853174
-	sym = RCSBlock_4292853116
-	sym = RCSBlock_4292853000
-	srfN = srfAttach,NBdecouplerSlim2m_4292853230
+	sym = RCSBlock_4288880622
+	sym = RCSBlock_4288880566
+	sym = RCSBlock_4288880454
+	srfN = srfAttach,NBdecouplerSlim2m_4288880676
 	EVENTS
 	{
 	}
@@ -18790,21 +17356,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -18822,7 +17373,7 @@ PART
 }
 PART
 {
-	part = RCSBlock_4292853000
+	part = RCSBlock_4288880454
 	partName = Part
 	pos = -0.26687479,23.8750572,1.54955673
 	attPos = 0,0,0
@@ -18844,10 +17395,10 @@ PART
 	modCost = -439.815979
 	modMass = -0.0354690291
 	modSize = 0,0,0
-	sym = RCSBlock_4292853174
-	sym = RCSBlock_4292853116
-	sym = RCSBlock_4292853058
-	srfN = srfAttach,NBdecouplerSlim2m_4292853230
+	sym = RCSBlock_4288880622
+	sym = RCSBlock_4288880566
+	sym = RCSBlock_4288880510
+	srfN = srfAttach,NBdecouplerSlim2m_4288880676
 	EVENTS
 	{
 	}
@@ -18895,21 +17446,6 @@ PART
 		defaultScale = 100
 		defaultTransformScale = (1.25, 1.25, 1.25)
 		DryCost = 180.184036
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -18952,7 +17488,7 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = True
-	istg = 2
+	istg = -1
 	resPri = 0
 	dstg = 9
 	sidx = 1
@@ -18962,8 +17498,8 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	link = NBdecouplerSlim2m_4292853230
-	attN = bottom,NBdecouplerSlim2m_4292853230
+	link = NBdecouplerSlim2m_4288880676
+	attN = bottom,NBdecouplerSlim2m_4288880676
 	attN = top,Mark1-2Pod_4291056394
 	EVENTS
 	{
@@ -19104,21 +17640,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = HS
@@ -19136,7 +17657,7 @@ PART
 	RESOURCE
 	{
 		name = Ablator
-		amount = 479.99993595850162
+		amount = 319.99994935838316
 		maxAmount = 799.99986147503103
 		flowState = True
 		isTweakable = True
@@ -19159,12 +17680,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = True
-	istg = 2
+	istg = -1
 	resPri = 0
 	dstg = 10
 	sidx = -1
 	sqor = -1
-	sepI = 2
+	sepI = -1
 	attm = 0
 	modCost = 1930
 	modMass = 0.0295999981
@@ -19599,21 +18120,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = ModuleRCSFX
 		isEnabled = True
 		rcsEnabled = False
@@ -19782,49 +18288,6 @@ PART
 	{
 		name = USI_ModuleFieldRepair
 		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = GroundWorkshop
-		isEnabled = False
-		Working = False
-		LastUpdateTime = -1
-		ETA = -1
-		show_window = False
-		stagingEnabled = True
-		WindowPos = 365,256,550,240
-		Queue
-		{
-		}
-		KitUnderConstruction
-		{
-			vesselID = 00000000000000000000000000000000
-			KitName = 
-		}
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = OneTimeResourceConverter
-		isEnabled = False
 		stagingEnabled = True
 		EVENTS
 		{
@@ -20698,12 +19161,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = True
-	istg = 2
+	istg = -1
 	resPri = 0
 	dstg = 9
 	sidx = 2
 	sqor = 0
-	sepI = 2
+	sepI = -1
 	attm = 1
 	modCost = -80.6399612
 	modMass = -0.0403200015
@@ -20771,21 +19234,6 @@ PART
 		defaultTransformScale = (0.5, 0.5, 0.5)
 		DryCost = 69.3600388
 		stagingEnabled = False
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
 		EVENTS
 		{
 		}
@@ -20874,12 +19322,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = True
-	istg = 2
+	istg = -1
 	resPri = 0
 	dstg = 10
 	sidx = -1
 	sqor = -1
-	sepI = 2
+	sepI = -1
 	attm = 1
 	modCost = -38.2500038
 	modMass = -0.00255000009
@@ -20951,21 +19399,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -21011,12 +19444,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = True
-	istg = 2
+	istg = -1
 	resPri = 0
 	dstg = 10
 	sidx = -1
 	sqor = -1
-	sepI = 2
+	sepI = -1
 	attm = 1
 	modCost = -39.2925034
 	modMass = -0.00261950004
@@ -21088,21 +19521,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -21148,12 +19566,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = True
-	istg = 2
+	istg = -1
 	resPri = 0
 	dstg = 10
 	sidx = -1
 	sqor = -1
-	sepI = 2
+	sepI = -1
 	attm = 1
 	modCost = -38.25
 	modMass = -0.00255000009
@@ -21225,21 +19643,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -21285,12 +19688,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = True
-	istg = 2
+	istg = -1
 	resPri = 0
 	dstg = 9
 	sidx = 2
 	sqor = 0
-	sepI = 2
+	sepI = -1
 	attm = 1
 	modCost = 0
 	modMass = 0
@@ -21358,21 +19761,6 @@ PART
 		defaultTransformScale = (0.5, 0.5, 0.5)
 		DryCost = 150
 		stagingEnabled = False
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
 		EVENTS
 		{
 		}
@@ -21461,12 +19849,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = True
-	istg = 2
+	istg = -1
 	resPri = 0
 	dstg = 10
 	sidx = -1
 	sqor = -1
-	sepI = 2
+	sepI = -1
 	attm = 1
 	modCost = -96.7231979
 	modMass = -0.0145084793
@@ -21535,21 +19923,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = ModuleLightEVAToggle
 		isEnabled = True
 		stagingEnabled = True
@@ -21594,12 +19967,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = True
-	istg = 2
+	istg = -1
 	resPri = 0
 	dstg = 10
 	sidx = -1
 	sqor = -1
-	sepI = 2
+	sepI = -1
 	attm = 1
 	modCost = -251.999985
 	modMass = -0.0125999991
@@ -21686,21 +20059,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -21730,12 +20088,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 2
+	istg = -1
 	resPri = 0
 	dstg = 10
 	sidx = -1
 	sqor = -1
-	sepI = 2
+	sepI = -1
 	attm = 1
 	modCost = 0
 	modMass = -8.74999969E-05
@@ -21899,21 +20257,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -22022,12 +20365,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = True
-	istg = 2
+	istg = -1
 	resPri = 0
 	dstg = 9
 	sidx = 1
 	sqor = 0
-	sepI = 2
+	sepI = -1
 	attm = 1
 	modCost = -279
 	modMass = -0.0697500035
@@ -22098,21 +20441,6 @@ PART
 		defaultTransformScale = (1, 1, 1)
 		DryCost = 121.000015
 		stagingEnabled = False
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
 		EVENTS
 		{
 		}
@@ -22201,12 +20529,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = True
-	istg = 2
+	istg = -1
 	resPri = 0
 	dstg = 9
 	sidx = 1
 	sqor = 0
-	sepI = 2
+	sepI = -1
 	attm = 1
 	modCost = -279
 	modMass = -0.0697500035
@@ -22277,21 +20605,6 @@ PART
 		defaultTransformScale = (1, 1, 1)
 		DryCost = 121.000015
 		stagingEnabled = False
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
 		EVENTS
 		{
 		}
@@ -22380,12 +20693,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = True
-	istg = 2
+	istg = -1
 	resPri = 0
 	dstg = 9
 	sidx = 1
 	sqor = 0
-	sepI = 2
+	sepI = -1
 	attm = 1
 	modCost = -279
 	modMass = -0.0697500035
@@ -22456,21 +20769,6 @@ PART
 		defaultTransformScale = (1, 1, 1)
 		DryCost = 121.000015
 		stagingEnabled = False
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
 		EVENTS
 		{
 		}
@@ -22559,12 +20857,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = True
-	istg = 2
+	istg = -1
 	resPri = 0
 	dstg = 9
 	sidx = 1
 	sqor = 0
-	sepI = 2
+	sepI = -1
 	attm = 1
 	modCost = -279
 	modMass = -0.0697500035
@@ -22635,21 +20933,6 @@ PART
 		defaultTransformScale = (1, 1, 1)
 		DryCost = 121.000015
 		stagingEnabled = False
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
 		EVENTS
 		{
 		}
@@ -22738,12 +21021,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 2
+	istg = -1
 	resPri = 0
 	dstg = 10
 	sidx = -1
 	sqor = -1
-	sepI = 2
+	sepI = -1
 	attm = 1
 	modCost = 0
 	modMass = 0
@@ -22851,21 +21134,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = ModuleLightEVAToggle
 		isEnabled = True
 		stagingEnabled = True
@@ -22910,18 +21178,18 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = True
-	istg = 2
+	istg = -1
 	resPri = 0
 	dstg = 10
 	sidx = 2
 	sqor = 1
-	sepI = 3
+	sepI = 0
 	attm = 0
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	link = LaunchEscapeSystem_4292851580
-	attN = top,LaunchEscapeSystem_4292851580
+	link = LaunchEscapeSystem_4288879084
+	attN = top,LaunchEscapeSystem_4288879084
 	attN = bottom,Mark1-2Pod_4291056394
 	EVENTS
 	{
@@ -23106,21 +21374,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = ModuleLight
 		isEnabled = True
 		isOn = False
@@ -23237,7 +21490,7 @@ PART
 }
 PART
 {
-	part = LaunchEscapeSystem_4292851580
+	part = LaunchEscapeSystem_4288879084
 	partName = Part
 	pos = -1.20492554,27.697752,0.610367775
 	attPos = 0,0,0
@@ -23254,12 +21507,12 @@ PART
 	dstg = 10
 	sidx = 2
 	sqor = 0
-	sepI = 3
+	sepI = 0
 	attm = 0
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	link = ExtCamRadialVErt_4292851498
+	link = ExtCamRadialVErt_4288879004
 	attN = bottom,dockingPort2_4291055044
 	EVENTS
 	{
@@ -23340,21 +21593,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = LAS
@@ -23372,7 +21610,7 @@ PART
 	RESOURCE
 	{
 		name = SolidFuel
-		amount = 30
+		amount = 18.000000715255737
 		maxAmount = 30
 		flowState = True
 		isTweakable = True
@@ -23383,7 +21621,7 @@ PART
 }
 PART
 {
-	part = ExtCamRadialVErt_4292851498
+	part = ExtCamRadialVErt_4288879004
 	partName = Part
 	pos = -1.20492554,29.8193398,0.821571589
 	attPos = 0,0,0
@@ -23400,12 +21638,12 @@ PART
 	dstg = 10
 	sidx = -1
 	sqor = -1
-	sepI = 3
+	sepI = 0
 	attm = 1
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	srfN = srfAttach,LaunchEscapeSystem_4292851580
+	srfN = srfAttach,LaunchEscapeSystem_4288879084
 	EVENTS
 	{
 	}
@@ -23421,21 +21659,6 @@ PART
 		isEnabled = True
 		current = 5
 		showCones = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -23478,12 +21701,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 2
+	istg = -1
 	resPri = 0
 	dstg = 10
 	sidx = -1
 	sqor = -1
-	sepI = 2
+	sepI = -1
 	attm = 1
 	modCost = 0
 	modMass = 0
@@ -23504,21 +21727,6 @@ PART
 		isEnabled = True
 		current = 2
 		showCones = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -23561,12 +21769,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 2
+	istg = -1
 	resPri = 0
 	dstg = 10
 	sidx = -1
 	sqor = -1
-	sepI = 2
+	sepI = -1
 	attm = 1
 	modCost = 0
 	modMass = 0
@@ -23600,21 +21808,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = 
@@ -23632,7 +21825,7 @@ PART
 }
 PART
 {
-	part = solarPanels4_4286613056
+	part = solarPanels4_4288878722
 	partName = Part
 	pos = -2.09668612,23.0663185,0.103542328
 	attPos = -0.0139140487,2.86102295E-06,-5.36441803E-07
@@ -23644,20 +21837,20 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 2
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 1
+	sepI = 2
 	attm = 1
 	modCost = -330.751984
 	modMass = -0.0152319996
 	modSize = 0,0,0
-	sym = solarPanels4_4286610098
-	sym = solarPanels4_4286609968
-	sym = solarPanels4_4286609838
-	srfN = srfAttach,fuelTank4-2_4292851210
+	sym = solarPanels4_4288878598
+	sym = solarPanels4_4288878474
+	sym = solarPanels4_4288878350
+	srfN = srfAttach,fuelTank4-2_4288880722
 	EVENTS
 	{
 	}
@@ -23723,21 +21916,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = INH
@@ -23771,7 +21949,7 @@ PART
 }
 PART
 {
-	part = solarPanels4_4286610098
+	part = solarPanels4_4288878598
 	partName = Part
 	pos = -1.71175098,23.0663185,1.5021286
 	attPos = 1.78813934E-07,2.86102295E-06,0.013913691
@@ -23783,20 +21961,20 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 2
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 1
+	sepI = 2
 	attm = 1
 	modCost = -330.751984
 	modMass = -0.0152319996
 	modSize = 0,0,0
-	sym = solarPanels4_4286613056
-	sym = solarPanels4_4286609968
-	sym = solarPanels4_4286609838
-	srfN = srfAttach,fuelTank4-2_4292851210
+	sym = solarPanels4_4288878722
+	sym = solarPanels4_4288878474
+	sym = solarPanels4_4288878350
+	srfN = srfAttach,fuelTank4-2_4288880722
 	EVENTS
 	{
 	}
@@ -23862,21 +22040,6 @@ PART
 	}
 	MODULE
 	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
 		name = KOSNameTag
 		isEnabled = True
 		nameTag = INH
@@ -23910,7 +22073,7 @@ PART
 }
 PART
 {
-	part = solarPanels4_4286609968
+	part = solarPanels4_4288878474
 	partName = Part
 	pos = -0.31316483,23.0663185,1.11719322
 	attPos = 0.0139140487,2.86102295E-06,6.55651093E-07
@@ -23922,20 +22085,20 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 2
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 1
+	sepI = 2
 	attm = 1
 	modCost = -330.751984
 	modMass = -0.0152319996
 	modSize = 0,0,0
-	sym = solarPanels4_4286613056
-	sym = solarPanels4_4286610098
-	sym = solarPanels4_4286609838
-	srfN = srfAttach,fuelTank4-2_4292851210
+	sym = solarPanels4_4288878722
+	sym = solarPanels4_4288878598
+	sym = solarPanels4_4288878350
+	srfN = srfAttach,fuelTank4-2_4288880722
 	EVENTS
 	{
 	}
@@ -23988,21 +22151,6 @@ PART
 		defaultScale = 100
 		defaultTransformScale = (1, 1, 1)
 		DryCost = 49.2480164
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -24049,7 +22197,7 @@ PART
 }
 PART
 {
-	part = solarPanels4_4286609838
+	part = solarPanels4_4288878350
 	partName = Part
 	pos = -0.69810009,23.0663185,-0.281392932
 	attPos = 0,2.86102295E-06,-0.0139135122
@@ -24061,20 +22209,20 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 2
 	resPri = 0
 	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 1
+	sepI = 2
 	attm = 1
 	modCost = -330.751984
 	modMass = -0.0152319996
 	modSize = 0,0,0
-	sym = solarPanels4_4286613056
-	sym = solarPanels4_4286610098
-	sym = solarPanels4_4286609968
-	srfN = srfAttach,fuelTank4-2_4292851210
+	sym = solarPanels4_4288878722
+	sym = solarPanels4_4288878598
+	sym = solarPanels4_4288878474
+	srfN = srfAttach,fuelTank4-2_4288880722
 	EVENTS
 	{
 	}
@@ -24127,21 +22275,6 @@ PART
 		defaultScale = 100
 		defaultTransformScale = (1, 1, 1)
 		DryCost = 49.2480164
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = USI_ModuleRecycleablePart
-		isEnabled = True
 		stagingEnabled = True
 		EVENTS
 		{
