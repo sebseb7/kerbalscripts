@@ -14,6 +14,22 @@ function do_partmodule_event {
 do_partmodule_event("LM_ASC","ModuleEnginesFX","activate engine").
 do_partmodule_event("LMSEP","ModuleDecouple","decouple").
 
+
+set diff to ship:longitude+(18.669).
+if hastarget {
+
+	set warp to 4.
+	print target:longitude.
+	wait until target:longitude > diff. 
+	print target:longitude.
+	wait until target:longitude < diff.
+	print diff+" "+target:longitude.
+	set warp to 0.
+	wait 0.1.
+	run munasc.
+
+}
+
 // launch to orbit in vacuum (no atmosphere)
 set rb to 200000.//mun
 set mu to 6.5138398*10^10.
@@ -36,7 +52,7 @@ wait 0.1.
 
 set pitch to 0.
 //set incl to 0.099.
-set incl to 178.833.
+set incl to 179.79.
 //print target:orbit:inclination.
 //set incl to target:orbit:inclination.
 lock angle1 to arcsin(max(-1,min(1,cos(180+incl)/cos(ship:latitude)))).
@@ -53,6 +69,8 @@ set ag to mu/r^2.          // gravitational accelaration
 set ta to maxthrust/mass.  // thrust accelaration
 lock throttle to 1.
 wait until ship:velocity:surface:mag > 20.
+set kuniverse:timewarp:mode to "PHYSICS".
+set warp to 3.
 print "T+" + round(missiontime) + " Orbital orientation turn".
 // control speed and attitude
 set ot to round(missiontime).

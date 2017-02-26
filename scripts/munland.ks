@@ -26,28 +26,34 @@ run h.
 //lock veh_h to ((h_ - facing:forevector):mag)+1.21.
 lock stopat to 5.5.
 lock alt_radar to ship:altitude-max(0,ship:GEOPOSITION:TERRAINHEIGHT).
+	
 
-unlock steering.
-sas on.
-set kuniverse:timewarp:mode to "RAILS".
-set warp to 4.
-print ship:longitude.
-wait until ship:longitude > diff. 
-print ship:longitude.
-wait until ship:longitude < diff.
-print diff+" "+ship:longitude.
-set warp to 0.
-sas off.
-lock steering to lookdirup(ship:retrograde:vector, ship:facing:topvector).
-wait until VECTORANGLE(ship:retrograde:vector,SHIP:FACING:VECTOR) < 1.
-unlock steeting.
-sas on.
-set kuniverse:timewarp:mode to "PHYSICS".
-set warp to 2.
-wait until ship:longitude < pretarget.
-print pretarget+" "+ship:longitude.
-sas off.
-lock steering to lookdirup(ship:retrograde:vector, ship:facing:topvector).
+if ship:periapsis > 12000 {
+
+	unlock steering.
+	sas on.
+	set kuniverse:timewarp:mode to "RAILS".
+	set warp to 4.
+	print ship:longitude.
+	wait until ship:longitude > diff. 
+	print ship:longitude.
+	wait until ship:longitude < diff.
+	print diff+" "+ship:longitude.
+	set warp to 0.
+	sas off.
+	lock steering to lookdirup(ship:retrograde:vector, ship:facing:topvector).
+	wait until VECTORANGLE(ship:retrograde:vector,SHIP:FACING:VECTOR) < 1.
+	unlock steeting.
+	sas on.
+	set kuniverse:timewarp:mode to "PHYSICS".
+	set warp to 2.
+	wait until ship:longitude < pretarget.
+	print pretarget+" "+ship:longitude.
+	sas off.
+}
+
+set burnvector to lookdirup(ship:retrograde:vector, ship:facing:topvector).
+lock steering to burnvector.
 
 
 SET Kp TO 0.6.
@@ -64,8 +70,6 @@ print ship:longitude.
 print "- steer RG (for burn)".
 
 wait until VECTORANGLE(ship:retrograde:vector,SHIP:FACING:VECTOR) < 5.
-set burnvector to lookdirup(ship:retrograde:vector, ship:facing:topvector).
-lock steering to burnvector.
 	
 print "- fire".
 set thrott to 1.
@@ -79,16 +83,57 @@ set thrott to 0.
 
 print "- deorbit done".
 
-lock steering to lookdirup(ship:srfretrograde:vector, ship:facing:topvector).
+lock angle1 to VECTORANGLE(ship:srfretrograde:vector,ship:up:vector).
+//lock steering to lookdirup(ship:srfretrograde:vector, ship:facing:topvector).
+lock steering to lookdirup( HEADING(90-ship:heading, 90-(angle1) ):vector, ship:facing:topvector).
 	
-when alt_radar < 2000 then {
+when alt_radar < 5000 then {
 	set kuniverse:timewarp:warp to 2.
-	when alt_radar < 1000 then {
+	when alt_radar < 2000 then {
 		set kuniverse:timewarp:warp to 1.
-		when alt_radar < 200 then {
-			set kuniverse:timewarp:warp to 0.
-		}
 	}
+	
+	when alt_radar < 1000 then {
+	
+		set ok to 0.
+		FOR mypart IN ship:parts {
+		
+			if not(mypart:tag = "INH") and mypart:modules:contains("ModuleWheelDeployment") {
+
+				if mypart:getmodule("ModuleWheelDeployment"):hasevent("Extend") {
+					if ok = 0 {
+						mypart:getmodule("ModuleWheelDeployment"):DOEVENT("Extend").
+					}
+					set ok to 1.
+				}
+			}
+		}
+		set kuniverse:timewarp:warp to 0.
+	}
+}
+
+
+when alt_radar < 2000 then {
+	//cancel hspeed
+
+	print "-reduce".
+	lock steering to lookdirup( HEADING(90-ship:heading, 90-(8+angle1) ):vector, ship:facing:topvector).
+
+	when (ship:groundspeed < 0.1) then {
+		
+		print "-retro".
+	
+		lock steering to lookdirup(ship:srfretrograde:vector, ship:facing:topvector).
+
+	}
+	when alt_radar < 10 then {
+		
+		print "-up".
+	
+		lock steering to lookdirup(ship:up:vector, ship:facing:topvector).
+
+	}
+
 }
 
 UNTIL ship:verticalspeed >= -0.1 {
