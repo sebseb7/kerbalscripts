@@ -26,7 +26,6 @@ if hastarget {
 	print diff+" "+target:longitude.
 	set warp to 0.
 	wait 0.1.
-	run munasc.
 
 }
 
@@ -52,7 +51,7 @@ wait 0.1.
 
 set pitch to 0.
 //set incl to 0.099.
-set incl to 179.79.
+set incl to 179.99.
 //print target:orbit:inclination.
 //set incl to target:orbit:inclination.
 lock angle1 to arcsin(max(-1,min(1,cos(180+incl)/cos(ship:latitude)))).
