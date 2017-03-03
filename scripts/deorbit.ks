@@ -15,6 +15,7 @@ clearscreen.
 print "------------------------".
 print "-- Deorbit Initialted --".
 print "------------------------".
+logev("begin:"+ship:longitude).
 
 //set STEERINGMANAGER:ROLLCONTROLANGLERANGE to 1i0.
 
@@ -313,6 +314,7 @@ WHEN (ship:velocity:surface:mag < 1900 ) and (radar_alt < 40000) then {
 
 				when ship:velocity:surface:mag < 1 then {
 					logev("Contact").
+					logev("end:"+ship:longitude).
 					print "------------------------".
 					set prog_mode to 0.
 				}

@@ -9,7 +9,7 @@ if body:name = "Kerbin" {
 //	set angle to 7. //twr 1.4
 //	set angle to 7. //twr 1.4
 //	set angle to 9.5. //twr 1.8
-	set angle to 5.6. // twr 2.0
+//	set angle to 5.6. // twr 2.0 a17
 //	set angle to 6.1. // twr 2.1
 //	set angle to 6.8. // twr 2.2
 //	set angle to 8.5. // twr 2.2
@@ -17,6 +17,15 @@ if body:name = "Kerbin" {
 //	set angle to 17. // twr 3
 	set maxq to 15000.
 
+
+//  crew_1b
+	set angle to 5.8. // twr 1.5 crew
+	set initial_climb to 100.
+
+
+//  cargo_1
+//	set angle to 5.8. // twr 1.5 crew
+//	set initial_climb to 400.
 }
 
 
@@ -50,11 +59,14 @@ if not((eng_out() = 0)) or (maxthrust=0) {
 	logev("Ignition (incl:"+incl+")"). 
 	stage.
 }
-set arramp to radar_alt + 25.
+set arramp to radar_alt + initial_climb.
+
+when radar_alt > 10 then {
+	SET WARP TO 1.
+}
 
 when radar_alt > arramp or not (prog_mode = 1) then {
 	gear off.
-	SET WARP TO 1.
 	if not ( prog_mode = 1) {return false.}
 	logev("tower clear.").
 }
@@ -163,7 +175,7 @@ when (altitude > ha or apoapsis > lorb) or not (prog_mode = 1) then {
 	if altitude < vac {
 
 		logev("Waiting to leave atmosphere").
-//		SET WARP TO 3.
+		SET WARP TO 3.
 
 		lock steering to lookdirup(ship:prograde:vector, ship:facing:topvector).
 		
