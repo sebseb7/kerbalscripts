@@ -1,3 +1,10 @@
+// dont fail on dock
+// start without target
+// window open / close
+// tuning pid_x y z
+// sas switchable (start sas hold)
+// save tuning vars per ship
+
 SET Kp_z TO 1.
 SET Ki_z TO 0.
 SET Kd_z TO 0.
