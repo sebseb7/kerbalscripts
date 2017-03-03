@@ -113,8 +113,8 @@ if core:tag = "TUG" {
 	
 	run globals.
 
-	local ag6_o to ag6.
-	local seconds_o to sessiontime.
+	global ag6_o to ag6.
+	global seconds_o to sessiontime.
 
 	when true then {
 
@@ -123,11 +123,8 @@ if core:tag = "TUG" {
 		if ship:electriccharge < 10 return false.
 	
 		if not(ag6_o=ag6) {
-			preserve.
 			logev("ag6 - tug").
-
 			run dock.
-
 		}
 		
 		set ag6_o to ag6.
@@ -148,6 +145,7 @@ if core:tag = "AGC" {
 
 	global ag1_o to ag1.
 	global ag2_o to ag2.
+	global ag3_o to ag3.
 	global abort_o to abort.
 	global seconds_o to sessiontime+0.25.
 
@@ -159,6 +157,12 @@ if core:tag = "AGC" {
 			show_gui().
 		}
 		
+		if not(ag3_o=ag3) {
+			if prog_mode=0 {
+				set prog_mode to 4.
+				run exenode.
+			}
+		}
 		if not(ag2_o=ag2) {
 			if prog_mode=0 {
 				set prog_mode to 1.
@@ -174,6 +178,7 @@ if core:tag = "AGC" {
 
 		set ag1_o to ag1.
 		set ag2_o to ag2.
+		set ag3_o to ag3.
 		set abort_o to abort.
 		set seconds_o to sessiontime+0.25.
 	
