@@ -30,68 +30,125 @@ SET PID_x:minoutput TO -0.25.
 global end to false.
 
 
+if not(HASTARGET){
+	logev("notar").
+	reboot.
+}
+
+
 sas off.
 rcs on.
 
 global mode to "free".
+	
+global target_pos to 0.
+global target_orbit to 0.
+global target_obfac to 0.
+global target_facing to 0.
+global my_facing to 0.
+	
+global my_target to target.
 
-//print ship:position.
-print target:portfacing.
+if target:typename = "Vessel" {
 
-global targetpart to target.
+
+	lock target_pos to my_target:rootpart:position.
+	lock target_orbit to my_target:velocity:orbit.
+	lock target_obfac to my_target:facing.
+	lock target_facing to my_target:facing.
+	set my_facing to ship:facing.
+
+}
+if target:typename = "DockingPort" {
+
+	lock target_pos to my_target:nodeposition.
+	lock target_orbit to my_target:ship:velocity:orbit.
+	lock target_obfac to my_target:ship:facing.
+	lock target_facing to my_target:portfacing.
+	set my_facing to ship:facing.
+
+}
+
+
+//print target:portfacing.
+//(my_facing:vector * -1):direction + R(0,0,g_roll_correction).
+
 
 global speed_x to 0.
 global speed_y to 0.
 global speed_z to 0.
 
 global diff to 0.
-lock diff to targetpart:ship:velocity:orbit - ship:velocity:orbit.
+
+lock diff to target_orbit - ship:velocity:orbit.
 
 
-global offset_z to (targetpart:nodeposition * ship:facing:forevector).
-global offset_y to (targetpart:nodeposition * ship:facing:topvector).
-global offset_x to (targetpart:nodeposition * ship:facing:starvector).
+global offset_z to (target_pos * ship:facing:forevector).
+global offset_y to (target_pos * ship:facing:topvector).
+global offset_x to (target_pos * ship:facing:starvector).
 
 global g_roll_correction to 0.
 
-lock steering to (targetpart:portfacing:vector * -1):direction + R(0,0,g_roll_correction).
+lock steering to my_facing.
 
 global max_speed to 0.1.
 
 
 when true then {
 
-	set speed_z to max(-1*max_speed,min(max_speed,(targetpart:nodeposition * ship:facing:forevector)-offset_z)).
-	set speed_y to max(-1*max_speed,min(max_speed,(targetpart:nodeposition * ship:facing:topvector)-offset_y)).
-	set speed_x to max(-1*max_speed,min(max_speed,(targetpart:nodeposition * ship:facing:starvector)-offset_x)).
-
-	set PID_z:setpoint to -1 * speed_z.
-	set PID_y:setpoint to -1 * speed_y.
-	set PID_x:setpoint to -1 * speed_x.
+	set speed_z to max(-1*max_speed,min(max_speed,(target_pos * ship:facing:forevector)-offset_z)).
+	set speed_y to max(-1*max_speed,min(max_speed,(target_pos * ship:facing:topvector)-offset_y)).
+	set speed_x to max(-1*max_speed,min(max_speed,(target_pos * ship:facing:starvector)-offset_x)).
 
 	if mode = "hold" {
-		set SHIP:CONTROL:FORE      to -1 * PID_z:UPDATE(TIME:SECONDS,(diff * ship:facing:forevector)).
-		set SHIP:CONTROL:TOP       to -1 * PID_y:UPDATE(TIME:SECONDS,(diff * ship:facing:topvector)).
-		set SHIP:CONTROL:STARBOARD to -1 * PID_x:UPDATE(TIME:SECONDS,(diff * ship:facing:starvector)).
+		set PID_z:setpoint to -1 * speed_z.
+		set PID_y:setpoint to -1 * speed_y.
+		set PID_x:setpoint to -1 * speed_x.
+	}
+	if mode = "free" {
+		set PID_z:setpoint to 0.
+		set PID_y:setpoint to 0.
+		set PID_x:setpoint to 0.
+	}
+
+	set SHIP:CONTROL:FORE      to -1 * PID_z:UPDATE(TIME:SECONDS,(diff * ship:facing:forevector)).
+	set SHIP:CONTROL:TOP       to -1 * PID_y:UPDATE(TIME:SECONDS,(diff * ship:facing:topvector)).
+	set SHIP:CONTROL:STARBOARD to -1 * PID_x:UPDATE(TIME:SECONDS,(diff * ship:facing:starvector)).
+
+
+	if ship:controlpart:typename = "DockingPort" {
+		print "port".
+		print ship:controlpart:state.
+		if ship:controlpart:state = "Acquire" {
+			print "aq".
+			logev("endtug").
+		
+			global mode to "free".
+			SET SHIP:CONTROL:NEUTRALIZE to TRUE.
+			hgui:hide.
+			unlock steerting.
+			sas on.
+			rcs off.
+			set end to true.
+
+			when true then {
+				reboot.
+			}
+		}
 	}
 
 	return true.
 }
 
-on target {
-	logev("tar").
-	set targetpart to target.
-	return true.
-}
 
 on round(time:seconds,1) {
-	set zposlabel:text to "z "++round((targetpart:nodeposition * ship:facing:forevector),2).
-	set yposlabel:text to "y "++round((targetpart:nodeposition * ship:facing:topvector),2).
-	set xposlabel:text to "x "++round((targetpart:nodeposition * ship:facing:starvector),2).
+	set zposlabel:text to "z "++round((target_pos * ship:facing:forevector),2).
+	set yposlabel:text to "y "++round((target_pos * ship:facing:topvector),2).
+	set xposlabel:text to "x "++round((target_pos * ship:facing:starvector),2).
 	
-	set zsplabel:text to "z sp "+round(diff * ship:facing:forevector,2)+" tg "+round(speed_z,2).
-	set ysplabel:text to "y sp "+round(diff * ship:facing:topvector,2)+" tg "+round(speed_y,2).
-	set xsplabel:text to "x sp "+round(diff * ship:facing:starvector,2)+" tg "+round(speed_x,2).
+	set zsplabel:text to "z sp "+round(diff * ship:facing:forevector,2)+" tg "+round(-1 * speed_z,2)+" ac "+round(PID_z:output,2).
+	set ysplabel:text to "y sp "+round(diff * ship:facing:topvector,2)+" tg "+round(-1 * speed_y,2)+"  ac "+round(PID_y:output,2).
+	set xsplabel:text to "x sp "+round(diff * ship:facing:starvector,2)+" tg "+round(-1 * speed_x,2)+"  ac "+round(PID_x:output,2).
 
 
 	return true.
@@ -101,6 +158,10 @@ global hgui to gui(200).
 set hgui:x to 50.
 set hgui:y to 130.//von oben
 hgui:show().
+set hlayout1 to hgui:addhlayout().
+global steer_hold to hlayout1:addbutton("0rot").
+global steer_tgt to hlayout1:addbutton("Orb").
+global steer_port to hlayout1:addbutton("Align").
 global holdbutton to hgui:addbutton("Hold").
 global freebutton to hgui:addbutton("Free").
 global zposlabel to hgui:addlabel("z").
@@ -115,13 +176,26 @@ hgui:addlabel("maxT").
 global maxfield to hgui:ADDTEXTFIELD(""+round(0.25,2)).
 hgui:addlabel("maxS").
 global maxsfield to hgui:ADDTEXTFIELD(""+round(max_speed,2)).
-hgui:addlabel("P").
+hgui:addlabel("KP").
 global kpfield to hgui:ADDTEXTFIELD(""+PID_x:kp).
 global zsplabel to hgui:addlabel("z sp").
 global ysplabel to hgui:addlabel("y sp").
 global xsplabel to hgui:addlabel("x sp").
+global retargetbutton to hgui:addbutton("re-Target").
 global endbutton to hgui:addbutton("End").
 
+when steer_hold:pressed then {
+	set my_facing to ship:facing.
+	return true.
+}
+when steer_tgt:pressed then {
+	lock my_facing to target_obfac + R(0,0,g_roll_correction).
+	return true.
+}
+when steer_port:pressed then {
+	lock my_facing to (target_facing:vector * -1):direction + R(0,0,g_roll_correction).
+	return true.
+}
 
 when zposfield:confirmed then {
 	set offset_z to zposfield:text:tonumber.
@@ -169,23 +243,83 @@ when endbutton:pressed then {
 	sas on.
 	rcs off.
 	set end to true.
+
+	when true then {
+		reboot.
+	}
+
 	return true.
 }
 
 when freebutton:pressed then {
 	set mode to "free".
-	SET SHIP:CONTROL:NEUTRALIZE to TRUE.
 	return true.
 }
 when holdbutton:pressed then {
 	set mode to "hold".
-	set offset_z to (targetpart:nodeposition * ship:facing:forevector).
-	set offset_y to (targetpart:nodeposition * ship:facing:topvector).
-	set offset_x to (targetpart:nodeposition * ship:facing:starvector).
+	set offset_z to (target_pos * ship:facing:forevector).
+	set offset_y to (target_pos * ship:facing:topvector).
+	set offset_x to (target_pos * ship:facing:starvector).
 	set zposfield:text to ""+round(offset_z,1).
 	set yposfield:text to ""+round(offset_y,1).
 	set xposfield:text to ""+round(offset_x,1).
 	return true.
 }
 
+when retargetbutton:pressed then {
+
+	global my_target to target.
+
+	if target:typename = "Vessel" {
+
+		lock target_pos to my_target:rootpart:position.
+		lock target_orbit to my_target:velocity:orbit.
+		lock target_obfac to my_target:facing.
+		lock target_facing to my_target:facing.
+		set my_facing to ship:facing.
+		
+		set mode to "hold".
+		set offset_z to (target_pos * ship:facing:forevector).
+		set offset_y to (target_pos * ship:facing:topvector).
+		set offset_x to (target_pos * ship:facing:starvector).
+		set zposfield:text to ""+round(offset_z,1).
+		set yposfield:text to ""+round(offset_y,1).
+		set xposfield:text to ""+round(offset_x,1).
+
+	}
+	else if target:typename = "DockingPort" {
+
+		lock target_pos to my_target:nodeposition.
+		lock target_orbit to my_target:ship:velocity:orbit.
+		lock target_obfac to my_target:ship:facing.
+		lock target_facing to my_target:portfacing.
+		set my_facing to ship:facing.
+
+		set mode to "hold".
+		set offset_z to (target_pos * ship:facing:forevector).
+		set offset_y to (target_pos * ship:facing:topvector).
+		set offset_x to (target_pos * ship:facing:starvector).
+		set zposfield:text to ""+round(offset_z,1).
+		set yposfield:text to ""+round(offset_y,1).
+		set xposfield:text to ""+round(offset_x,1).
+
+	}else{
+		global mode to "free".
+		SET SHIP:CONTROL:NEUTRALIZE to TRUE.
+		hgui:hide.
+		unlock steerting.
+		sas on.
+		rcs off.
+		set end to true.
+
+		when true then {
+			reboot.
+		}
+	}
+	
+
+	logev("tar").
+	//set targetpart to target.
+	return true.
+}
 
