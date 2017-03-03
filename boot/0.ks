@@ -63,14 +63,17 @@ if core:tag = "DSKY" {
 }
 
 if core:tag = "AGC_STATION" {
+				
 	
 	run globals.
-	
+
 	local ag7_o to ag7.
 	local seconds_o to sessiontime.
 
 	sas off.
-	lock steering to prograde.
+	set g_roll_correction to 90.
+	lock correctRoll to R(0,0,g_roll_correction). 
+	lock steering to ship:prograde + correctRoll.
 
 	when true then {
 
@@ -88,7 +91,7 @@ if core:tag = "AGC_STATION" {
 			
 			}else{
 				sas off.
-				lock steering to prograde.
+				lock steering to ship:prograde + correctRoll.
 			}
 
 		}
@@ -101,6 +104,40 @@ if core:tag = "AGC_STATION" {
 	}
 	
 	logev("station ready").
+
+	WAIT UNTIL FALSE.
+}
+
+if core:tag = "TUG" {
+				
+	
+	run globals.
+
+	local ag6_o to ag6.
+	local seconds_o to sessiontime.
+
+	when true then {
+
+		if seconds_o+0.1 > sessiontime return true.
+	
+		if ship:electriccharge < 10 return false.
+	
+		if not(ag6_o=ag6) {
+			preserve.
+			logev("ag6 - tug").
+
+			run dock.
+
+		}
+		
+		set ag6_o to ag6.
+		set seconds_o to sessiontime.
+	
+		return true.
+
+	}
+	
+	logev("tug ready").
 
 	WAIT UNTIL FALSE.
 }
