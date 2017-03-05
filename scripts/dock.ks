@@ -34,7 +34,12 @@ if not(HASTARGET){
 	logev("notar").
 	reboot.
 }
+if not(ship:controlpart:typename="DockingPort"){
+	logev("nodock").
+	reboot.
+}
 
+global cpart to ship:controlpart.
 
 sas off.
 rcs on.
@@ -81,11 +86,16 @@ global speed_z to 0.
 global diff to 0.
 
 lock diff to target_orbit - ship:velocity:orbit.
+//lock diff to target_orbit - cpart:portfacing:forevector.
+
+lock offset_z1 to (cpart:nodeposition * ship:facing:forevector).
+lock offset_y1 to (cpart:nodeposition * ship:facing:topvector).
+lock offset_x1 to (cpart:nodeposition * ship:facing:starvector).
 
 
-global offset_z to (target_pos * ship:facing:forevector).
-global offset_y to (target_pos * ship:facing:topvector).
-global offset_x to (target_pos * ship:facing:starvector).
+global offset_z to 0.
+global offset_y to 0.
+global offset_x to 0.
 
 global g_roll_correction to 0.
 
@@ -96,11 +106,10 @@ global max_speed to 0.1.
 
 when true then {
 
-	set speed_z to max(-1*max_speed,min(max_speed,(target_pos * ship:facing:forevector)-offset_z)).
-	set speed_y to max(-1*max_speed,min(max_speed,(target_pos * ship:facing:topvector)-offset_y)).
-	set speed_x to max(-1*max_speed,min(max_speed,(target_pos * ship:facing:starvector)-offset_x)).
-
 	if mode = "hold" {
+		set speed_z to max(-1*max_speed,min(max_speed,0.4*((target_pos * ship:facing:forevector)-(offset_z1+offset_z)))).
+		set speed_y to max(-1*max_speed,min(max_speed,0.4*((target_pos * ship:facing:topvector)-(offset_y1+offset_y)))).
+		set speed_x to max(-1*max_speed,min(max_speed,0.4*((target_pos * ship:facing:starvector)-(offset_x1+offset_x)))).
 		set PID_z:setpoint to -1 * speed_z.
 		set PID_y:setpoint to -1 * speed_y.
 		set PID_x:setpoint to -1 * speed_x.
@@ -142,9 +151,9 @@ when true then {
 
 
 on round(time:seconds,1) {
-	set zposlabel:text to "z "++round((target_pos * ship:facing:forevector),2).
-	set yposlabel:text to "y "++round((target_pos * ship:facing:topvector),2).
-	set xposlabel:text to "x "++round((target_pos * ship:facing:starvector),2).
+	set zposlabel:text to "z "+round((target_pos * ship:facing:forevector)-offset_z1,2).
+	set yposlabel:text to "y "+round((target_pos * ship:facing:topvector)-offset_y1,2).
+	set xposlabel:text to "x "+round((target_pos * ship:facing:starvector)-offset_x1,2).
 	
 	set zsplabel:text to "z sp "+round(diff * ship:facing:forevector,2)+" tg "+round(-1 * speed_z,2)+" ac "+round(PID_z:output,2).
 	set ysplabel:text to "y sp "+round(diff * ship:facing:topvector,2)+" tg "+round(-1 * speed_y,2)+"  ac "+round(PID_y:output,2).
@@ -165,11 +174,11 @@ global steer_port to hlayout1:addbutton("Align").
 global holdbutton to hgui:addbutton("Hold").
 global freebutton to hgui:addbutton("Free").
 global zposlabel to hgui:addlabel("z").
-global zposfield to hgui:ADDTEXTFIELD(""+round(offset_z,1)).
+global zposfield to hgui:ADDTEXTFIELD("x").
 global yposlabel to hgui:addlabel("y").
-global yposfield to hgui:ADDTEXTFIELD(""+round(offset_y,1)).
+global yposfield to hgui:ADDTEXTFIELD("x").
 global xposlabel to hgui:addlabel("x").
-global xposfield to hgui:ADDTEXTFIELD(""+round(offset_x,1)).
+global xposfield to hgui:ADDTEXTFIELD("x").
 hgui:addlabel("roll").
 global rollfield to hgui:ADDTEXTFIELD(""+round(g_roll_correction,1)).
 hgui:addlabel("maxT").
@@ -193,7 +202,7 @@ when steer_tgt:pressed then {
 	return true.
 }
 when steer_port:pressed then {
-	lock my_facing to (target_facing:vector * -1):direction + R(0,0,g_roll_correction).
+	lock my_facing to LOOKDIRUP(target_facing:forevector * -1,target_facing:topvector) + R(0,0,g_roll_correction).
 	return true.
 }
 
@@ -210,6 +219,10 @@ when xposfield:confirmed then {
 	return true.
 }
 when rollfield:confirmed then {
+	set mode to "free".
+	set zposfield:text to "x".
+	set yposfield:text to "x".
+	set xposfield:text to "x".
 	set g_roll_correction to rollfield:text:tonumber.
 	return true.
 }
@@ -253,16 +266,19 @@ when endbutton:pressed then {
 
 when freebutton:pressed then {
 	set mode to "free".
+	set zposfield:text to "x".
+	set yposfield:text to "x".
+	set xposfield:text to "x".
 	return true.
 }
 when holdbutton:pressed then {
 	set mode to "hold".
-	set offset_z to (target_pos * ship:facing:forevector).
-	set offset_y to (target_pos * ship:facing:topvector).
-	set offset_x to (target_pos * ship:facing:starvector).
-	set zposfield:text to ""+round(offset_z,1).
-	set yposfield:text to ""+round(offset_y,1).
-	set xposfield:text to ""+round(offset_x,1).
+	set offset_z to (target_pos * ship:facing:forevector)-offset_z1.
+	set offset_y to (target_pos * ship:facing:topvector)-offset_y1.
+	set offset_x to (target_pos * ship:facing:starvector)-offset_x1.
+	set zposfield:text to ""+round(offset_z,2).
+	set yposfield:text to ""+round(offset_y,2).
+	set xposfield:text to ""+round(offset_x,2).
 	return true.
 }
 
@@ -277,15 +293,6 @@ when retargetbutton:pressed then {
 		lock target_obfac to my_target:facing.
 		lock target_facing to my_target:facing.
 		set my_facing to ship:facing.
-		
-		set mode to "hold".
-		set offset_z to (target_pos * ship:facing:forevector).
-		set offset_y to (target_pos * ship:facing:topvector).
-		set offset_x to (target_pos * ship:facing:starvector).
-		set zposfield:text to ""+round(offset_z,1).
-		set yposfield:text to ""+round(offset_y,1).
-		set xposfield:text to ""+round(offset_x,1).
-
 	}
 	else if target:typename = "DockingPort" {
 
@@ -294,15 +301,6 @@ when retargetbutton:pressed then {
 		lock target_obfac to my_target:ship:facing.
 		lock target_facing to my_target:portfacing.
 		set my_facing to ship:facing.
-
-		set mode to "hold".
-		set offset_z to (target_pos * ship:facing:forevector).
-		set offset_y to (target_pos * ship:facing:topvector).
-		set offset_x to (target_pos * ship:facing:starvector).
-		set zposfield:text to ""+round(offset_z,1).
-		set yposfield:text to ""+round(offset_y,1).
-		set xposfield:text to ""+round(offset_x,1).
-
 	}else{
 		global mode to "free".
 		SET SHIP:CONTROL:NEUTRALIZE to TRUE.
@@ -316,6 +314,14 @@ when retargetbutton:pressed then {
 			reboot.
 		}
 	}
+		
+	set mode to "free".
+	set offset_z to 0.
+	set offset_y to 0.
+	set offset_x to 0.
+	set zposfield:text to "x".
+	set yposfield:text to "x".
+	set xposfield:text to "x".
 	
 
 	logev("tar").
