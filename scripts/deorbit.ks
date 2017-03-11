@@ -164,33 +164,34 @@ function do_deorbit {
 	sas off.
 	lock steering to lookdirup(ship:retrograde:vector, ship:facing:topvector).
 	
-	when VECTORANGLE(SHIP:RETROGRADE:VECTOR,SHIP:FACING:VECTOR) < 5 then {
+	when VECTORANGLE(SHIP:RETROGRADE:VECTOR,SHIP:FACING:VECTOR) < 0.5 then {
+
+		unlock steering.
+		sas on.
+		set kuniverse:timewarp:mode to "RAILS".
+		set warp to 4.
+		wait until ship:longitude < 150.//from 100k orbit 
+		wait until ship:longitude > 150. // was 153 .. -68.6
+		set warp to 0.
+		sas off.
+		lock steering to lookdirup(ship:retrograde:vector, ship:facing:topvector).
 	
-		logev("- fire")..
-		set tset to 1.
+		when VECTORANGLE(SHIP:RETROGRADE:VECTOR,SHIP:FACING:VECTOR) < 5 then {
 		
-		when VECTORANGLE(SHIP:RETROGRADE:VECTOR,SHIP:FACING:VECTOR) > 6 or periapsis < deorbit_height or (ship:altitude < 65000 and periapsis < 60000) then {
-			
-			logev("- stop firing").
-			set tset to 0.
-			if (periapsis > deorbit_height)and((ship:altitude > 65000)or(periapsis > 60000)) {
-				do_deorbit().
-			}
-		}
+			logev("- fire")..
+			set tset to 1.
 		
+			when periapsis < deorbit_height then {
 
-		when (periapsis < deorbit_height) and (throttle = 0) then {
-
-			logev("- deorbit done").
-			set kuniverse:timewarp:warp	to 4.
-			when ship:altitude < 70000 and kuniverse:timewarp:mode = "PHYSICS" then {
+				logev("- deorbit done").
+				set kuniverse:timewarp:mode to "PHYSICS".
 				set kuniverse:timewarp:warp	to 4.
+				check_for_sm_sep().
+				unlock steering.
+				sas on.
 			}
-			check_for_sm_sep().
-			unlock steering.
-			sas on.
-		}
 
+		}
 	}
 	
 	when (ship:altitude < 65000) and (periapsis < 60000) then {
@@ -228,6 +229,14 @@ else
 //	//tail -1000 -f profile.txt | feedgnuplot --domain --terminal 'x11' -y2 1 --xlen 300 --stream 1 -ylabel speed -y2label g/alt*10k -y2 2
 //	return true.
 //}
+	
+WHEN radar_alt < 55000 then {
+	logev("steer unlock").
+	unlock steering.
+	sas off.
+	SET SHIP:CONTROL:NEUTRALIZE to TRUE.
+		
+}
 		
 when (radar_alt < 50000) and (ship:electriccharge < 15) then {
 
@@ -253,10 +262,6 @@ WHEN (ship:velocity:surface:mag < 1900 ) and (radar_alt < 40000) then {
 
 	WHEN (radar_alt < 6550) or (ship:electriccharge < 10) then {
 		set kuniverse:timewarp:warp	to 1.
-		logev("steer unlock").
-		unlock steering.
-		sas off.
-		
 	}
 
 	WHEN radar_alt < 6500 and ship:velocity:surface:mag < 700 then {

@@ -1,4 +1,4 @@
-run statwin.
+//run statwin.
 
 global g_roll_correction to -90.
 global correctRoll to R(0,0,g_roll_correction).
@@ -33,12 +33,20 @@ function logev {
 }
 
 
-global tasks to list().
-global groups to lexicon().
-global gui to gui(200).
-set gui:skin:label:fontsize to 15.
-set gui:skin:button:fontsize to 10.
-set gui:skin:button:height to 15.
+
+function do_partmodule_event {
+	parameter part_name.
+	parameter module_name.
+	parameter event_name.
+
+	for parapart IN SHIP:PARTSDUBBED(part_name)  {
+		if parapart:allmodules:contains(module_name) {
+			if parapart:getmodule(module_name):hasevent(event_name) {
+				parapart:getmodule(module_name):DOEVENT(event_name).
+			}
+		}
+	}
+}
 
 function register_task {
 	parameter group.
@@ -66,29 +74,6 @@ function set_task_state {
 			set task["led"]:pressed to false.
 		}else{
 			set task["led"]:pressed to true.
-		}
-	}
-}
-
-for file in open("/scripts/tasks"):list:values {
-
-	if file:isfile and file:extension="ks" {
-		print "RUN "+file:name.
-		runpath("/scripts/tasks/"+file:name).
-	}
-
-}
-
-function do_partmodule_event {
-	parameter part_name.
-	parameter module_name.
-	parameter event_name.
-
-	for parapart IN SHIP:PARTSDUBBED(part_name)  {
-		if parapart:allmodules:contains(module_name) {
-			if parapart:getmodule(module_name):hasevent(event_name) {
-				parapart:getmodule(module_name):DOEVENT(event_name).
-			}
 		}
 	}
 }
@@ -209,4 +194,24 @@ function show_gui {
 
 }
 
+if core:tag = "AGC" {
 
+	global tasks to list().
+	global groups to lexicon().
+	global gui to gui(200).
+	set gui:skin:label:fontsize to 15.
+	set gui:skin:button:fontsize to 10.
+	set gui:skin:button:height to 15.
+
+
+	for file in open("/scripts/tasks"):list:values {
+
+		if file:isfile and file:extension="ks" {
+			print "RUN "+file:name.
+			runpath("/scripts/tasks/"+file:name).
+		}
+
+	}
+
+
+}
