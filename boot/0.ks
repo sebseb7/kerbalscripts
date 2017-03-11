@@ -26,15 +26,16 @@ if homeconnection:isconnected {
 		}
 	}
 
-	for file in open("0:/scripts/tasks"):list:values {
 	
+	for file in open("0:/scripts/tasks"):list:values {
+
 		if file:isfile and ( not( EXISTS("/scripts/tasks/"+file:name) ) or ( not (file:readall:string = open("/scripts/tasks/"+file:name):readall:string )) ) {
 			copypath("0:/scripts/tasks/"+file:name,"/scripts/tasks/"+file:name).
 			PRINT "copy task: "+file:name.
 		}
 	}
 	for file in open("/scripts/tasks"):list:values {
-		
+	
 		if file:isfile and ( not( EXISTS("0:/scripts/tasks/"+file:name))) {
 			PRINT "delete task: "+file:name.
 			deletepath("/scripts/tasks/"+file:name).
@@ -71,7 +72,7 @@ if core:tag = "AGC_STATION" {
 	local seconds_o to sessiontime.
 
 	sas off.
-	set g_roll_correction to 90.
+	set g_roll_correction to 180.
 	lock correctRoll to R(0,0,g_roll_correction). 
 	lock steering to ship:prograde + correctRoll.
 
