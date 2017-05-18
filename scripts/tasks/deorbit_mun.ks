@@ -1,7 +1,9 @@
 
 function task_deorbit_mun
 {
-
+	gui:hide().
+	run once munland.
+	open_land_window().
 }
 
 

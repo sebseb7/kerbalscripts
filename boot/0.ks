@@ -72,7 +72,7 @@ if core:tag = "AGC_STATION" {
 	local seconds_o to sessiontime.
 
 	sas off.
-	set g_roll_correction to 180.
+	set g_roll_correction to 90.
 	lock correctRoll to R(0,0,g_roll_correction). 
 	lock steering to ship:prograde + correctRoll.
 
@@ -121,7 +121,7 @@ if core:tag = "TUG" {
 
 		if seconds_o+0.1 > sessiontime return true.
 	
-		if ship:electriccharge < 10 return false.
+		if ship:electriccharge < 3 return false.
 	
 		if not(ag6_o=ag6) {
 			logev("ag6 - tug").

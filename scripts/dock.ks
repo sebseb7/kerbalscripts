@@ -236,7 +236,7 @@ function check_buttons {
 		global mode to "free".
 		SET SHIP:CONTROL:NEUTRALIZE to TRUE.
 		dock_gui:hide.
-		unlock steerting.
+		unlock steering.
 		sas on.
 		rcs off.
 		set end to true.
@@ -287,7 +287,7 @@ function check_buttons {
 			global mode to "free".
 			SET SHIP:CONTROL:NEUTRALIZE to TRUE.
 			dock_gui:hide.
-			unlock steerting.
+			unlock steering.
 			sas on.
 			rcs off.
 			set end to true.
@@ -342,7 +342,7 @@ on round(time:seconds,1) {
 			global mode to "free".
 			SET SHIP:CONTROL:NEUTRALIZE to TRUE.
 			dock_gui:hide.
-			unlock steerting.
+			unlock steering.
 			sas on.
 			rcs off.
 			set end to true.

@@ -19,7 +19,7 @@ if body:name = "Kerbin" {
 
 
 //  crew_1b
-	set angle to 5.8. // twr 1.5 crew
+	set angle to 9.8. // twr 1.5 crew
 	set initial_climb to 100.
 
 
@@ -39,7 +39,7 @@ FUNCTION eng_out {
 			SET numOut TO numOut + 1.
 	return numOut.
 }
-
+rcs off.
 set tset to 1.
 lock throttle to tset. 
 
@@ -61,8 +61,8 @@ if not((eng_out() = 0)) or (maxthrust=0) {
 }
 set arramp to radar_alt + initial_climb.
 
-when radar_alt > 10 then {
-	SET WARP TO 1.
+when radar_alt > 20 then {
+//	SET WARP TO 1.
 }
 
 when radar_alt > arramp or not (prog_mode = 1) then {
@@ -71,7 +71,7 @@ when radar_alt > arramp or not (prog_mode = 1) then {
 	logev("tower clear.").
 }
 
-when ship:velocity:surface:mag > 20 or not (prog_mode = 1) then {
+when ship:velocity:surface:mag > 50 or not (prog_mode = 1) then {
 	
 	if not ( prog_mode = 1) {return false.}
 	lock pitch to -1*(VECTORANGLE(SHIP:UP:VECTOR,SHIP:srfprograde:VECTOR)+5).
@@ -81,7 +81,7 @@ when ship:velocity:surface:mag > 20 or not (prog_mode = 1) then {
 	when abs( VECTORANGLE(SHIP:UP:VECTOR,SHIP:FACING:VECTOR)) > angle or not (prog_mode = 1) then {
 		if not ( prog_mode = 1) {return false.}
 		logev("follow srfpg").
-		SET WARP TO 2.
+		SET WARP TO 1.
 		lock steering to lookdirup(ship:srfprograde:vector, ship:facing:topvector).
 	
 		when altitude > ha or apoapsis > lorb or not (prog_mode = 1) then {
@@ -144,6 +144,7 @@ when altitude > 48000 or not (prog_mode = 1) then {
 	if not ( prog_mode = 1) {return false.}
 		
 	run las_jet.
+	rcs on.
 
 }
 

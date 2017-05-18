@@ -164,17 +164,18 @@ function do_deorbit {
 	sas off.
 	lock steering to lookdirup(ship:retrograde:vector, ship:facing:topvector).
 	
-	when VECTORANGLE(SHIP:RETROGRADE:VECTOR,SHIP:FACING:VECTOR) < 0.5 then {
+	//when VECTORANGLE(SHIP:RETROGRADE:VECTOR,SHIP:FACING:VECTOR) < 0.5 then {
 
-		unlock steering.
-		sas on.
-		set kuniverse:timewarp:mode to "RAILS".
-		set warp to 4.
-		wait until ship:longitude < 150.//from 100k orbit 
-		wait until ship:longitude > 150. // was 153 .. -68.6
-		set warp to 0.
-		sas off.
-		lock steering to lookdirup(ship:retrograde:vector, ship:facing:topvector).
+
+		//unlock steering.
+		//sas on.
+		//set kuniverse:timewarp:mode to "RAILS".
+		//set warp to 4.
+		//wait until ship:longitude < 150.//from 100k orbit 
+		//wait until ship:longitude > 150. // was 153 .. -68.6
+		//set warp to 0.
+		//sas off.
+		//lock steering to lookdirup(ship:retrograde:vector, ship:facing:topvector).
 	
 		when VECTORANGLE(SHIP:RETROGRADE:VECTOR,SHIP:FACING:VECTOR) < 5 then {
 		
@@ -184,22 +185,22 @@ function do_deorbit {
 			when periapsis < deorbit_height then {
 
 				logev("- deorbit done").
-				set kuniverse:timewarp:mode to "PHYSICS".
-				set kuniverse:timewarp:warp	to 4.
+				set tset to 0.
+				//set kuniverse:timewarp:mode to "PHYSICS".
+				//set kuniverse:timewarp:warp	to 4.
 				check_for_sm_sep().
-				unlock steering.
-				sas on.
+				//unlock steering.
+				//sas on.
 			}
 
 		}
-	}
+	//}
 	
-	when (ship:altitude < 65000) and (periapsis < 60000) then {
-		set tset to 0.
-		check_for_sm_sep().
-		unlock steering.
-		sas on.
-	}
+//	when (ship:altitude < 65000) and (periapsis < periapsis < deorbit_height) then {
+//		check_for_sm_sep().
+//		unlock steering.
+//		sas on.
+//	}
 }
 
 if periapsis > deorbit_height {
@@ -230,7 +231,7 @@ else
 //	return true.
 //}
 	
-WHEN radar_alt < 55000 then {
+WHEN radar_alt < 54000 then {
 	logev("steer unlock").
 	unlock steering.
 	sas off.
@@ -275,10 +276,9 @@ WHEN (ship:velocity:surface:mag < 1900 ) and (radar_alt < 40000) then {
 			logev("full d1").
 			set_parachute_alt("PARA_D1",5000).
 		}
-		WHEN RADAR_alt < 1500  and ship:velocity:surface:mag < 500 then {
+		WHEN RADAR_alt < 2500  and ship:velocity:surface:mag < 500 then {
 			SET WARP TO 1.
-			logev("full d2 & cut D1").
-			cut_parachute("PARA_D1").
+			logev("full d2").
 			set_parachute_alt("PARA_D2",5000).
 		}
 			
@@ -289,7 +289,7 @@ WHEN (ship:velocity:surface:mag < 1900 ) and (radar_alt < 40000) then {
 	
 		WHEN radar_alt < 1000 and ship:velocity:surface:mag < 300 then {
 			
-			logev("Arm Main & Pre Main").
+			logev("Cut D & Arm Main & Pre Main").
 			arm_parachute("PARA_M1").
 			arm_parachute("PARA_M2").
 			arm_parachute("PARA_M3").
@@ -298,11 +298,12 @@ WHEN (ship:velocity:surface:mag < 1900 ) and (radar_alt < 40000) then {
 			set_parachute_pressure("PARA_M2",0).
 			set_parachute_pressure("PARA_M3",0).
 			set_parachute_pressure("PARA_M4",0).
+			cut_parachute("PARA_D1").
+			cut_parachute("PARA_D2").
 
 			WHEN RADAR_alt < 900  and ship:velocity:surface:mag < 250 then {
 				SET WARP TO 0.
-				logev("Cut D2 & Full 1").
-				cut_parachute("PARA_D2").
+				logev("Full 1").
 				set_parachute_alt("PARA_M1",5000).
 			}
 			WHEN RADAR_alt < 600  and ship:velocity:surface:mag < 250 then {
