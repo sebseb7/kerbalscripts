@@ -183,37 +183,37 @@ function init_main_gui {
 
 function check_buttons {
 
-	if gui_events["b_0rot"]:pressed {
+	if gui_events["b_0rot"]:takepress {
 		set my_facing to ship:facing.
 	}
-	if gui_events["b_steer_tgt"]:pressed {
+	if gui_events["b_steer_tgt"]:takepress {
 		lock my_facing to target_obfac + R(0,0,g_roll_correction).
 	}
-	if gui_events["b_steer_port"]:pressed {
+	if gui_events["b_steer_port"]:takepress {
 		lock my_facing to LOOKDIRUP(target_facing:forevector * -1,target_facing:topvector) + R(0,0,g_roll_correction).
 	}
 
 	if gui_events["f_zpos"]:confirmed {
-		set offset_z to gui_events["f_zpos"]:text:tonumber.
+		set offset_z to gui_events["f_zpos"]:text:tonumber(0).
 	}
 	if gui_events["f_ypos"]:confirmed {
-		set offset_y to gui_events["f_ypos"]:text:tonumber.
+		set offset_y to gui_events["f_ypos"]:text:tonumber(0).
 	}
 	if gui_events["f_xpos"]:confirmed {
-		set offset_x to gui_events["f_xpos"]:text:tonumber.
+		set offset_x to gui_events["f_xpos"]:text:tonumber(0).
 	}
 	if gui_events["f_roll"]:confirmed {
 		set mode to "free".
 		set gui_events["f_zpos"]:text to "x".
 		set gui_events["f_ypos"]:text to "x".
 		set gui_events["f_xpos"]:text to "x".
-		set g_roll_correction to gui_events["f_roll"]:text:tonumber.
+		set g_roll_correction to gui_events["f_roll"]:text:tonumber(0).
 	}
 	if gui_events["f_maxs"]:confirmed {
-		set max_speed to gui_events["f_maxs"]:text:tonumber.
+		set max_speed to gui_events["f_maxs"]:text:tonumber(0).
 	}
 	if gui_events["f_kp"]:confirmed {
-		local kp to gui_events["f_kp"]:text:tonumber.
+		local kp to gui_events["f_kp"]:text:tonumber(0).
 		set PID_x:kp to kp.
 		set PID_y:kp to kp.
 		set PID_z:kp to kp.
@@ -221,7 +221,7 @@ function check_buttons {
 		
 	if gui_events["f_maxt"]:confirmed {
 	
-		local l_max_speed to gui_events["f_maxt"]:text:tonumber.
+		local l_max_speed to gui_events["f_maxt"]:text:tonumber(0).
 
 		SET PID_z:maxoutput TO l_max_speed.
 		SET PID_z:minoutput TO -1 * l_max_speed.
@@ -232,11 +232,11 @@ function check_buttons {
 	}
 
 
-	if gui_events["b_end"]:pressed {
+	if gui_events["b_end"]:takepress {
 		global mode to "free".
 		SET SHIP:CONTROL:NEUTRALIZE to TRUE.
 		dock_gui:hide.
-		unlock steering.
+		unlock steerting.
 		sas on.
 		rcs off.
 		set end to true.
@@ -247,14 +247,14 @@ function check_buttons {
 
 	}
 
-	if gui_events["b_free"]:pressed {
+	if gui_events["b_free"]:takepress {
 		set mode to "free".
 		set gui_events["f_zpos"]:text to "x".
 		set gui_events["f_ypos"]:text to "x".
 		set gui_events["f_xpos"]:text to "x".
 	}
 
-	if gui_events["b_hold"]:pressed {
+	if gui_events["b_hold"]:takepress {
 		set mode to "hold".
 		set offset_z to (target_pos * ship:facing:forevector)-offset_z1.
 		set offset_y to (target_pos * ship:facing:topvector)-offset_y1.
@@ -264,7 +264,7 @@ function check_buttons {
 		set gui_events["f_xpos"]:text to ""+round(offset_x,2).
 	}
 
-	if gui_events["b_retarget"]:pressed {
+	if gui_events["b_retarget"]:takepress {
 
 		global my_target to target.
 
@@ -287,7 +287,7 @@ function check_buttons {
 			global mode to "free".
 			SET SHIP:CONTROL:NEUTRALIZE to TRUE.
 			dock_gui:hide.
-			unlock steering.
+			unlock steerting.
 			sas on.
 			rcs off.
 			set end to true.
@@ -342,7 +342,7 @@ on round(time:seconds,1) {
 			global mode to "free".
 			SET SHIP:CONTROL:NEUTRALIZE to TRUE.
 			dock_gui:hide.
-			unlock steering.
+			unlock steerting.
 			sas on.
 			rcs off.
 			set end to true.
