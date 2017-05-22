@@ -173,13 +173,13 @@ function show_gui {
 
 		if not(gui:visible) return false.
 
-		if close:pressed gui:hide().
+		if close:takepress gui:hide().
 			
 		for task in tasks {
 					
 			if task["type"]<2 {
 
-				if task["button"]:pressed {
+				if task["button"]:takepress {
 
 					task["callback"]().
 				}

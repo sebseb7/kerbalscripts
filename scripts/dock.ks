@@ -5,7 +5,7 @@
 // sas switchable (start sas hold)
 // save tuning vars per ship
 
-global dock_gui to gui(200).
+global dock_gui to gui(160).
 global gui_events to lexicon().
 
 SET Kp_z TO 3.
@@ -33,19 +33,8 @@ SET PID_x:minoutput TO -0.25.
 global end to false.
 
 
-if not(HASTARGET){
-	logev("notar").
-	reboot.
-}
-if not(ship:controlpart:typename="DockingPort"){
-	logev("nodock").
-	reboot.
-}
+global cpart to 0.
 
-global cpart to ship:controlpart.
-
-sas off.
-rcs on.
 
 global mode to "free".
 	
@@ -55,27 +44,8 @@ global target_obfac to 0.
 global target_facing to 0.
 global my_facing to 0.
 	
-global my_target to target.
+global my_target to 0.
 
-if target:typename = "Vessel" {
-
-
-	lock target_pos to my_target:rootpart:position.
-	lock target_orbit to my_target:velocity:orbit.
-	lock target_obfac to my_target:facing.
-	lock target_facing to my_target:facing.
-	set my_facing to ship:facing.
-
-}
-if target:typename = "DockingPort" {
-
-	lock target_pos to my_target:nodeposition.
-	lock target_orbit to my_target:ship:velocity:orbit.
-	lock target_obfac to my_target:ship:facing.
-	lock target_facing to my_target:portfacing.
-	set my_facing to ship:facing.
-
-}
 
 
 //print target:portfacing.
@@ -102,51 +72,44 @@ global offset_x to 0.
 
 global g_roll_correction to 0.
 
-lock steering to my_facing.
 
 global max_speed to 0.4.
 
 
-when true then {
+function start_control_loop
+{
+	when true then {
 
-	if mode = "hold" {
-		set speed_z to max(-1*max_speed,min(max_speed,0.2*((target_pos * ship:facing:forevector)-(offset_z1+offset_z)))).
-		set speed_y to max(-1*max_speed,min(max_speed,0.2*((target_pos * ship:facing:topvector)-(offset_y1+offset_y)))).
-		set speed_x to max(-1*max_speed,min(max_speed,0.2*((target_pos * ship:facing:starvector)-(offset_x1+offset_x)))).
-		set PID_z:setpoint to -1 * speed_z.
-		set PID_y:setpoint to -1 * speed_y.
-		set PID_x:setpoint to -1 * speed_x.
+		if mode = "hold" {
+			set speed_z to max(-1*max_speed,min(max_speed,0.2*((target_pos * ship:facing:forevector)-(offset_z1+offset_z)))).
+			set speed_y to max(-1*max_speed,min(max_speed,0.2*((target_pos * ship:facing:topvector)-(offset_y1+offset_y)))).
+			set speed_x to max(-1*max_speed,min(max_speed,0.2*((target_pos * ship:facing:starvector)-(offset_x1+offset_x)))).
+			set PID_z:setpoint to -1 * speed_z.
+			set PID_y:setpoint to -1 * speed_y.
+			set PID_x:setpoint to -1 * speed_x.
+		}
+
+		set SHIP:CONTROL:FORE      to -1 * PID_z:UPDATE(TIME:SECONDS,(diff * ship:facing:forevector)).
+		set SHIP:CONTROL:TOP       to -1 * PID_y:UPDATE(TIME:SECONDS,(diff * ship:facing:topvector)).
+		set SHIP:CONTROL:STARBOARD to -1 * PID_x:UPDATE(TIME:SECONDS,(diff * ship:facing:starvector)).
+
+		if end = true {
+			return false.
+		}
+
+
+		return true.
 	}
-
-	set SHIP:CONTROL:FORE      to -1 * PID_z:UPDATE(TIME:SECONDS,(diff * ship:facing:forevector)).
-	set SHIP:CONTROL:TOP       to -1 * PID_y:UPDATE(TIME:SECONDS,(diff * ship:facing:topvector)).
-	set SHIP:CONTROL:STARBOARD to -1 * PID_x:UPDATE(TIME:SECONDS,(diff * ship:facing:starvector)).
-
-
-
-	return true.
 }
-
-
-
-//function draw_ship_to_ship {
-//  parameter
-//      ship1,
-//	      ship2,
-//		      drawColor.
-//
-//			    local vdraw is vecdraw().
-//				  set vdraw:start to ship1:position.
-//				    set vdraw:vec to ship2:position - ship1:position.
-//					  set vdraw:color to drawColor.
-//					    set vdraw:show to true.
-//						  return vdraw.
-//						  }
-
 
 
 function init_main_gui {
 
+	set dock_gui:skin:label:fontsize to 9.
+	set dock_gui:skin:textfield:fontsize to 9.
+	set dock_gui:skin:button:fontsize to 10.
+	set dock_gui:skin:button:height to 15.
+	
 	set dock_gui:x to 50.
 	set dock_gui:y to 130.//von oben
 	local hlayout1 to dock_gui:addhlayout().
@@ -175,9 +138,6 @@ function init_main_gui {
 	gui_events:add("b_retarget",dock_gui:addbutton("re-Target")).
 	gui_events:add("b_end",dock_gui:addbutton("End")).
 
-	set dock_gui:skin:label:fontsize to 15.
-	set dock_gui:skin:button:fontsize to 10.
-	set dock_gui:skin:button:height to 15.
 }
 
 
@@ -236,15 +196,12 @@ function check_buttons {
 		global mode to "free".
 		SET SHIP:CONTROL:NEUTRALIZE to TRUE.
 		dock_gui:hide.
-		unlock steerting.
+		unlock steering.
 		sas on.
 		rcs off.
 		set end to true.
 
-		when true then {
-			reboot.
-		}
-
+		return.
 	}
 
 	if gui_events["b_free"]:takepress {
@@ -287,7 +244,7 @@ function check_buttons {
 			global mode to "free".
 			SET SHIP:CONTROL:NEUTRALIZE to TRUE.
 			dock_gui:hide.
-			unlock steerting.
+			unlock steering.
 			sas on.
 			rcs off.
 			set end to true.
@@ -312,56 +269,94 @@ function check_buttons {
 }
 
 
-on round(time:seconds,1) {
+function start_control_loop2
+{
+	on round(time:seconds,1) {
 
-	check_buttons().
-	set gui_events["l_zpos"]:text to "z "+round((target_pos * ship:facing:forevector)-offset_z1,2).
-	set gui_events["l_ypos"]:text to "y "+round((target_pos * ship:facing:topvector)-offset_y1,2).
-	set gui_events["l_xpos"]:text to "x "+round((target_pos * ship:facing:starvector)-offset_x1,2).
-	
-	set gui_events["l_zsp"]:text to "z sp "+round(diff * ship:facing:forevector,2)+" tg "+round(-1 * speed_z,2)+" ac "+round(PID_z:output,2).
-	set gui_events["l_ysp"]:text to "y sp "+round(diff * ship:facing:topvector,2)+" tg "+round(-1 * speed_y,2)+"  ac "+round(PID_y:output,2).
-	set gui_events["l_xsp"]:text to "x sp "+round(diff * ship:facing:starvector,2)+" tg "+round(-1 * speed_x,2)+"  ac "+round(PID_x:output,2).
-	
-	
-	if mode = "free" {
-		set PID_z:setpoint to 0.
-		set PID_y:setpoint to 0.
-		set PID_x:setpoint to 0.
-	}
-	
-	
-	
-	if ship:controlpart:typename = "DockingPort" {
-		//print "port".
-		//print ship:controlpart:state.
-		if ship:controlpart:state = "Acquire" {
-			print "aq".
-			logev("endtug").
+		check_buttons().
+		set gui_events["l_zpos"]:text to "z "+round((target_pos * ship:facing:forevector)-offset_z1,2).
+		set gui_events["l_ypos"]:text to "y "+round((target_pos * ship:facing:topvector)-offset_y1,2).
+		set gui_events["l_xpos"]:text to "x "+round((target_pos * ship:facing:starvector)-offset_x1,2).
 		
-			global mode to "free".
-			SET SHIP:CONTROL:NEUTRALIZE to TRUE.
-			dock_gui:hide.
-			unlock steerting.
-			sas on.
-			rcs off.
-			set end to true.
+		set gui_events["l_zsp"]:text to "z sp "+round(diff * ship:facing:forevector,2)+" tg "+round(-1 * speed_z,2)+" ac "+round(PID_z:output,2).
+		set gui_events["l_ysp"]:text to "y sp "+round(diff * ship:facing:topvector,2)+" tg "+round(-1 * speed_y,2)+"  ac "+round(PID_y:output,2).
+		set gui_events["l_xsp"]:text to "x sp "+round(diff * ship:facing:starvector,2)+" tg "+round(-1 * speed_x,2)+"  ac "+round(PID_x:output,2).
+		
+		
+		if mode = "free" {
+			set PID_z:setpoint to 0.
+			set PID_y:setpoint to 0.
+			set PID_x:setpoint to 0.
+		}
+		
+		
+		
+		if ship:controlpart:typename = "DockingPort" {
+			//print "port".
+			//print ship:controlpart:state.
+			if ship:controlpart:state = "Acquire" {
+				print "aq".
+				logev("endtug").
+			
+				global mode to "free".
+				SET SHIP:CONTROL:NEUTRALIZE to TRUE.
+				dock_gui:hide.
+				unlock steering.
+				sas on.
+				rcs off.
+				set end to true.
 
-			when true then {
-				reboot.
 			}
 		}
+				
+		if end = true {
+			return false.
+		}
+
+
+		return true.
 	}
-
-
-	return true.
 }
 
-if dock_gui:widgets:length = 0 {
-	init_main_gui().
-}
 
-dock_gui:show().
+function showdockgui
+{
+	if not(HASTARGET){
+		logev("notar").
+		return.
+	}
+	if not(ship:controlpart:typename="DockingPort"){
+		logev("nodock").
+		return.
+	}
+	set my_target to target.
+	set cpart to ship:controlpart.
+
+	if target:typename = "Vessel" {
+		lock target_pos to my_target:rootpart:position.
+		lock target_orbit to my_target:velocity:orbit.
+		lock target_obfac to my_target:facing.
+		lock target_facing to my_target:facing.
+		set my_facing to ship:facing.
+	}
+	if target:typename = "DockingPort" {
+		lock target_pos to my_target:nodeposition.
+		lock target_orbit to my_target:ship:velocity:orbit.
+		lock target_obfac to my_target:ship:facing.
+		lock target_facing to my_target:portfacing.
+		set my_facing to ship:facing.
+	}
+	set end to false.
+	sas off.
+	rcs on.
+	lock steering to my_facing.
+	if dock_gui:widgets:length = 0 {
+		init_main_gui().
+	}
+	dock_gui:show().
+	start_control_loop().
+	start_control_loop2().
+}
 
 
 

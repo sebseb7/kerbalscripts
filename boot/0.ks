@@ -113,6 +113,7 @@ if core:tag = "TUG" {
 				
 	
 	run globals.
+	run dock.
 
 	global ag6_o to ag6.
 	global seconds_o to sessiontime.
@@ -124,8 +125,8 @@ if core:tag = "TUG" {
 		if ship:electriccharge < 3 return false.
 	
 		if not(ag6_o=ag6) {
+			showdockgui().
 			logev("ag6 - tug").
-			run dock.
 		}
 		
 		set ag6_o to ag6.
