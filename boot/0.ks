@@ -67,39 +67,31 @@ if core:tag = "AGC_STATION" {
 				
 	
 	run globals.
+	run station.
 
 	local ag7_o to ag7.
+	local ag8_o to ag8.
 	local seconds_o to sessiontime.
-
-	sas off.
-	set g_roll_correction to 90.
-	lock correctRoll to R(0,0,g_roll_correction). 
-	lock steering to ship:prograde + correctRoll.
 
 	when true then {
 
 		if seconds_o+0.1 > sessiontime return true.
 	
 		if ship:electriccharge < 10 return false.
-	
-		if not(ag7_o=ag7) {
-			preserve.
-			logev("ag7 - agc sas"+sas).
-
-			if sas = False {
-				unlock steering.
-				sas on.
-			
-			}else{
-				sas off.
-				lock steering to ship:prograde + correctRoll.
-			}
-
-		}
 		
-		set ag7_o to ag7.
-		set seconds_o to sessiontime.
+		if not(ag7_o=ag7) {
+			station_toggle().
+			logev("at7 - toggle").
+		}
+		if not(ag8_o=ag8) {
+			station_gui().
+			logev("at8 - gui").
+		}
 	
+		set ag7_o to ag7.
+		set ag8_o to ag8.
+		set seconds_o to sessiontime.
+
 		return true.
 
 	}
