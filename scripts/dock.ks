@@ -96,7 +96,10 @@ function start_control_loop
 		if end = true {
 			return false.
 		}
-
+		//tail -s 0.2 -f /cygdrive/c/Users/seb/Desktop/Kerbal\ Space\ Program13/Ships/Script/logs/pidtune.txt | ./feedgnuplot --terminal wxt --stream 0.2 --lines --domain --xlen 3 --legend 0 P --legend 1 I --legend 2 D --legend 3 E --ymin -1 --ymax 1
+		local logpid to PID_y.
+		//tail -f pidtune.txt| feedgnuplot --terminal x11 --stream 0.2 --lines --domain --xlen 3 --legend 0 P --legend 1 I --legend 2 D --legend 3 E --ymin -1 --ymax 1
+		log round(missiontime,2)+" "+round(logpid:pterm*5,2)+" "+round(logpid:iterm*5,2)+" "+round(logpid:dterm*5,2)+" "+round(-1*logpid:error*5,2) to "0:/logs/pidtune.txt".
 
 		return true.
 	}
@@ -132,6 +135,8 @@ function init_main_gui {
 	gui_events:add("f_maxs",dock_gui:ADDTEXTFIELD(""+round(max_speed,2))).
 	dock_gui:addlabel("KP").
 	gui_events:add("f_kp",dock_gui:ADDTEXTFIELD(""+PID_x:kp)).
+	dock_gui:addlabel("KI").
+	gui_events:add("f_ki",dock_gui:ADDTEXTFIELD(""+PID_x:ki)).
 	gui_events:add("l_zsp",dock_gui:addlabel("z sp")).
 	gui_events:add("l_ysp",dock_gui:addlabel("y sp")).
 	gui_events:add("l_xsp",dock_gui:addlabel("x sp")).
@@ -177,6 +182,12 @@ function check_buttons {
 		set PID_x:kp to kp.
 		set PID_y:kp to kp.
 		set PID_z:kp to kp.
+	}
+	if gui_events["f_ki"]:confirmed {
+		local ki to gui_events["f_ki"]:text:tonumber(0).
+		set PID_x:ki to ki.
+		set PID_y:ki to ki.
+		set PID_z:ki to ki.
 	}
 		
 	if gui_events["f_maxt"]:confirmed {

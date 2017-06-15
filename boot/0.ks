@@ -50,8 +50,15 @@ if homeconnection:isconnected {
 cd("/scripts").
 
 
-if core:tag = "AGC_HOV" {
+if core:tag = "HOV" {
+				
+	run globals.
 	run hover.
+
+	hover_show_gui().
+	
+	logev("hov ready").
+
 	WAIT UNTIL FALSE.
 }
 
